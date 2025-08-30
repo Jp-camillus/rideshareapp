@@ -4,9 +4,11 @@ import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/booking_conf
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/matchingtriplist.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/search_trip_section_(passenger)1.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/search_trip_section_(passenger)2.dart';
+import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/searchlivetriptracking.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/searchtripdetailsmap.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/tripbookingsummary.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/tripdetails.dart';
+import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/upcomingtripoverview.dart';
 import 'package:rideshareapp/screen/Search_Trip_Section_(Passenger)/upcomingtrip.dart';
 import 'package:rideshareapp/screen/auth/signin/fingerprint.dart';
 import 'package:rideshareapp/screen/auth/signin/loginscreenpin.dart';
@@ -28,6 +30,7 @@ import 'package:rideshareapp/screen/homescreen/tripoverview.dart';
 import 'package:rideshareapp/screen/kyc/driver_license_verification.dart';
 import 'package:rideshareapp/screen/kyc/driver_verification.dart';
 import 'package:rideshareapp/screen/kyc/vehicleinformation.dart';
+import 'package:rideshareapp/screen/notification/notificationscreen.dart';
 import 'package:rideshareapp/widget/homescreenwidget.dart';
 import 'package:rideshareapp/widget/texter.dart';
 
@@ -61,7 +64,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.fff
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Upcomingtrip(),
+      home: Notificationscreen(),
     );
   }
 }

@@ -37,6 +37,7 @@ class Appimage {
   static const lin = 'asset/images/2lin.png';
   static const planmap = 'asset/images/planmap.png';
   static const arrow = 'asset/images/arrow.png';
+  static const messagesucces = 'asset/images/messagesucces.png';
   static const profile = 'asset/images/profile.jpg';
   static const qrcode = 'asset/images/qrcode.png';
   static const questionman = 'asset/images/questionman.png';
@@ -46,6 +47,11 @@ class Appimage {
   static const womanlookup = 'asset/images/womanlookup.png';
   static const wallet = 'asset/svg/wallet.png';
   static const location = 'asset/svg/location.png';
+  static const rednotif = 'asset/svg/rednotif.png';
+  static const bluenotif = 'asset/svg/bluenotif.png';
+  static const nonotif = 'asset/svg/nonotif.png';
+  static const promotion = 'asset/svg/promotion.png';
+  static const bluechat = 'asset/svg/bluechat.png';
   static const visa = 'asset/svg/visa.png';
   static const verifyicon = 'asset/svg/verifyicon.png';
   static const vector1 = 'asset/svg/Vector (1).png';

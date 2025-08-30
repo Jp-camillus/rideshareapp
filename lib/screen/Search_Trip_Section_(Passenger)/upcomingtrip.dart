@@ -17,6 +17,15 @@ class _UpcomingtripState extends State<Upcomingtrip> {
   bool upcomingtapped = false;
   bool ongointriptapped = false;
   bool completedtriptapped = false;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      upcomingtapped = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height.round();
@@ -369,9 +378,14 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                       style: TextStyle(color: Appcolor.primarrylight),
                     ),
                   if (completedtriptapped)
-                    Text(
-                      'Rebook',
-                      style: TextStyle(color: Appcolor.primarrylight),
+                    GestureDetector(
+                      onTap: () {
+                        completedTrip(context);
+                      },
+                      child: Text(
+                        'Rebook',
+                        style: TextStyle(color: Appcolor.primarrylight),
+                      ),
                     ),
                 ],
               ),
@@ -379,6 +393,44 @@ class _UpcomingtripState extends State<Upcomingtrip> {
           ),
         ),
       ),
+    );
+  }
+
+  void completedTrip(BuildContext context) {
+    var h = MediaQuery.of(context).size.height.round();
+    var w = MediaQuery.of(context).size.width.round();
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          child: Container(
+            height: h * 0.29,
+            width: w * 0.5,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image(image: AssetImage(Appimage.messagesucces)),
+                  Text('Are you sure to re-book this trip?'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Custombuttom(tittle: 'Yes, I’m Sure', width: w * 0.3),
+                      Spacewidgetwidth(space: 10),
+                      Text('No, Don’t', style: TextStyle(color: Colors.red)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
