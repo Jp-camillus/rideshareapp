@@ -50,7 +50,7 @@ class _SearchlivetriptrackingState extends State<Searchlivetriptracking> {
                       Get.back();
                     },
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
+                      
                       child: Icon(
                         Icons.arrow_back,
                         color: Appcolor.primarrylight,

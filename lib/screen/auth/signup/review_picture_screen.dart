@@ -18,7 +18,7 @@ class ReviewPictureScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width.round();
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(

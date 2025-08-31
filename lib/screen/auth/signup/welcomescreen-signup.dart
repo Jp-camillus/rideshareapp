@@ -15,7 +15,7 @@ class Welcomescreensignup extends StatelessWidget {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: Column(
         children: [
           Spacewidgetheight(space: h * 0.1),

@@ -239,7 +239,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     final w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: SafeArea(
         child: Column(
           children: [
