@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
 import 'bindings/app_bindings.dart';
 import 'route/app_routes.dart';
 import 'route/app_pages.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'theme/app_theme.dart';
 

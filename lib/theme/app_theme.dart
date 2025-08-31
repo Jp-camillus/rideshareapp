@@ -4,11 +4,10 @@ import 'package:get/get.dart';
 import '../constant/appcolor.dart';
 
 class AppThemes {
-
-   /// Track current theme mode
+  /// Track current theme mode
   var themeMode = ThemeMode.light.obs;
 
-  /// Toggle between light and dark 
+  /// Toggle between light and dark
   void toggleTheme() {
     if (themeMode.value == ThemeMode.dark) {
       themeMode.value = ThemeMode.light;
@@ -38,7 +37,7 @@ class AppThemes {
     ),
     shadowColor: AppColors.borderLight,
     dividerTheme: const DividerThemeData(color: AppColors.borderLight),
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
       color: AppColors.cardLight,
       shadowColor: AppColors.borderLight,
     ),
@@ -79,7 +78,7 @@ class AppThemes {
       onError: AppColors.textWhite,
     ),
     shadowColor: AppColors.darkBorder,
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
       color: AppColors.darkCard,
       shadowColor: AppColors.darkBorder,
     ),
