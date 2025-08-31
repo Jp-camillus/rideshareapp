@@ -367,7 +367,7 @@ class DashboardHome extends StatelessWidget {
                           fromLocation: 'Ikeja',
                           toLocation: 'Lekki',
                           passengerAvatarUrl: 'https://example.com/sarah.jpg',
-                          status: index % 3 == 0 ? 'Pending' : index % 3 == 1 ? 'Accepted' : 'Rejected',
+                          status: index % 3 == 0 ? 'Pending' : index % 2 == 1 ? 'Accepted' : 'Rejected',
                           onAccept: () {
                             print('Accepted Sarah\'s request');
                             _handleAcceptRequest('sarah_123');

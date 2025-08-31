@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
+import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/network_image.dart';
 
-import '../theme/app_theme.dart';
 
 // Upcoming Trip Card Widget
 class UpcomingTripCard extends StatelessWidget {
@@ -390,38 +389,28 @@ class BookingRequestCard extends StatelessWidget {
             // Action buttons for pending requests
             Row(
               children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: onAccept,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 8.h),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
-                    ),
-                    child: Text(
-                      'Accept',
-                      style: TextStyle(fontSize: 14.sp),
-                    ),
-                  ),
+                  Custombuttomwithicon(
+                    width: 100,
+                  tap: () {},
+                  tittle: 'Accept',
+                  icon: Icon(Icons.circle, color: Colors.white, size: 0,),
                 ),
+                
                 SizedBox(width: 12.w),
                 Expanded(
                   child: OutlinedButton(
                     onPressed: onReject,
                     style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.red,
+                      foregroundColor: AppColors.error,
                       padding: EdgeInsets.symmetric(vertical: 8.h),
-                      side: BorderSide(color: Colors.red),
+                      side: BorderSide(color: Colors.transparent),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
                     child: Text(
                       'Reject',
-                      style: TextStyle(fontSize: 14.sp),
+                      style: TextStyle(fontSize: 16.sp),
                     ),
                   ),
                 ),
