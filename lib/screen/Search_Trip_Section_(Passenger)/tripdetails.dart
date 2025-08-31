@@ -29,7 +29,7 @@ class SearchTripdetails extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
+                        
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,

@@ -13,3 +13,54 @@ class Appcolor {
 
   // static const gradientblue = Color.fromRGBO(0, 122, 255, 1);
 }
+
+// Use App Colors please !!!! 
+class AppColors {
+  // LIGHT MODE
+  static const Color primaryBlue = Color(0xFF007AFF);
+  static const Color primaryPurple = Color(0xFF6C63FF);
+  static const Color primaryOrange = Color(0xFFFF7043);
+  static const Color primaryRed = Color(0xFFFF3D71);
+
+  static const Color textPrimary = Color(0xFF000000);
+  static const Color textSecondary = Color(0xFF8C8C8C);
+  static const Color textMuted = Color(0xFFBFBFBF);
+  static const Color textWhite = Color(0xFFFFFFFF);
+
+  static const Color backgroundLight = Color(0xFFF9FAFB);
+  static const Color cardLight = Color(0xFFFFFFFF);
+  static const Color navInactive = Color(0xFFF2F4F7);
+
+  static const Color success = Color(0xFF27AE60);
+  static const Color warning = Color(0xFFFF9900);
+  static const Color error = Color(0xFFFF3B30);
+
+  static const Color borderLight = Color(0xFFE5E7EB);
+
+  static const Color colorBlue = Color(0xFF0152A8);
+
+  // DARK MODE
+  static const Color darkBackground = Color(0xFF121212);
+  static const Color darkCard = Color(0xFF1E1E1E);
+
+  static const Color darkTextPrimary = Color(0xFFFFFFFF);
+  static const Color darkTextSecondary = Color(0xFFB0B0B0);
+  static const Color darkTextMuted = Color(0xFF8A8A8A);
+
+  static const Color darkNavInactive = Color(0xFF2C2C2C);
+  static const Color darkBorder = Color(0xFF333333);
+
+  // Gradients
+  static const LinearGradient tripGradient = LinearGradient(
+    colors: [primaryBlue, primaryPurple],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient packageGradient = LinearGradient(
+    colors: [primaryOrange, primaryRed],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+}
+

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signin/signin.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Welcomescreensignin extends StatelessWidget {
+import '../../../controllers/auth_controller.dart';
+import '../../../services/navigation_service.dart';
+
+class Welcomescreensignin extends GetView<LoginController> {
   const Welcomescreensignin({super.key});
 
   @override
@@ -14,7 +19,7 @@ class Welcomescreensignin extends StatelessWidget {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: Column(
         children: [
           Spacewidgetheight(space: h * 0.1),
@@ -107,12 +112,17 @@ class Welcomescreensignin extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Welcome',
-                      style: TextStyle(
-                        color: Appcolor.primarrylight,
-                        fontSize: h * 0.039,
-                        fontWeight: FontWeight.w500,
+                    InkWell(
+                      onTap: () {
+                        Get.offNamed(AppRoutes.dashboard);
+                      },
+                      child: Text(
+                        'Welcome',
+                        style: TextStyle(
+                          color: Appcolor.primarrylight,
+                          fontSize: h * 0.039,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     Spacewidgetwidth(space: w * 0.02),

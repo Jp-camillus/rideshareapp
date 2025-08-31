@@ -234,7 +234,7 @@ class _LoginscreenpinState extends State<Loginscreenpin> {
     final w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: SafeArea(
         child: Column(
           children: [
