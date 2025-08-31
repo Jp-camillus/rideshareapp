@@ -30,6 +30,12 @@ import 'package:rideshareapp/screen/homescreen/tripoverview.dart';
 import 'package:rideshareapp/screen/kyc/driver_license_verification.dart';
 import 'package:rideshareapp/screen/kyc/driver_verification.dart';
 import 'package:rideshareapp/screen/kyc/vehicleinformation.dart';
+import 'package:rideshareapp/screen/logistics/deliver_type.dart';
+import 'package:rideshareapp/screen/logistics/farestimateandconfirmation.dart';
+import 'package:rideshareapp/screen/logistics/homescreen.dart';
+import 'package:rideshareapp/screen/logistics/packagedetails.dart';
+import 'package:rideshareapp/screen/logistics/pickupanddropoffdetails.dart';
+import 'package:rideshareapp/screen/logistics/selectvehicletype.dart';
 import 'package:rideshareapp/screen/notification/notificationscreen.dart';
 import 'package:rideshareapp/widget/homescreenwidget.dart';
 import 'package:rideshareapp/widget/texter.dart';
@@ -64,7 +70,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.fff
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Notificationscreen(),
+      home: Farestimateandconfirmation(),
     );
   }
 }

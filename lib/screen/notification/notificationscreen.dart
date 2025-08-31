@@ -229,8 +229,97 @@ class _NotificationscreenState extends State<Notificationscreen> {
           h * 0.12,
           Color.fromRGBO(245, 250, 255, 1),
           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(children: [Image(image: AssetImage(Appimage.bluenotif))]),
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.bluenotif)),
+                  Spacewidgetwidth(space: 5),
+                  Text(
+                    'Trip Confirmed',
+                    style: TextStyle(
+                      fontSize: h * 0.02,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Your ride from Lagos toIbadan at 8:00 AM on Apr 30 is confirmed.',
+                style: TextStyle(fontSize: h * 0.015),
+              ),
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.clock)),
+                  Text('10 mins ago'),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Spacewidgetheight(space: h * 0.02),
+        _buildcard(
+          h * 0.12,
+          Color.fromRGBO(245, 250, 255, 1),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.bluenotif)),
+                  Spacewidgetwidth(space: 5),
+                  Text(
+                    'Trip Confirmed',
+                    style: TextStyle(
+                      fontSize: h * 0.02,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Your ride from Lagos toIbadan at 8:00 AM on Apr 30 is confirmed.',
+                style: TextStyle(fontSize: h * 0.015),
+              ),
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.clock)),
+                  Text('10 mins ago'),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Spacewidgetheight(space: h * 0.02),
+        _buildcard(
+          h * 0.12,
+          Color.fromRGBO(245, 250, 255, 1),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.bluenotif)),
+                  Spacewidgetwidth(space: 5),
+                  Text(
+                    'Trip Confirmed',
+                    style: TextStyle(
+                      fontSize: h * 0.02,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'Your ride from Lagos toIbadan at 8:00 AM on Apr 30 is confirmed.',
+                style: TextStyle(fontSize: h * 0.015),
+              ),
+              Row(
+                children: [
+                  Image(image: AssetImage(Appimage.clock)),
+                  Text('10 mins ago'),
+                ],
+              ),
             ],
           ),
         ),

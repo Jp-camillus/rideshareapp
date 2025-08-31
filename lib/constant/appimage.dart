@@ -51,6 +51,9 @@ class Appimage {
   static const bluenotif = 'asset/svg/bluenotif.png';
   static const nonotif = 'asset/svg/nonotif.png';
   static const promotion = 'asset/svg/promotion.png';
+  static const van = 'asset/svg/van.png';
+  static const box = 'asset/svg/box.png';
+  static const locationwhite = 'asset/svg/locationwhite.png';
   static const bluechat = 'asset/svg/bluechat.png';
   static const visa = 'asset/svg/visa.png';
   static const verifyicon = 'asset/svg/verifyicon.png';
@@ -76,8 +79,10 @@ class Appimage {
   static const cartag = 'asset/svg/cartag.png';
   static const sarh = 'asset/svg/sarh.png';
   static const money = 'asset/svg/money.png';
+  static const good = 'asset/svg/good.png';
   static const caricon = 'asset/svg/caricon.png';
   static const cameraadd = 'asset/svg/cameraadd.png';
+  static const solarcameralinear = 'asset/svg/solar_camera-linear.png';
   static const clock = 'asset/svg/clock.png';
   static const cameraplus = 'asset/svg/camera-plus.png';
   static const call = 'asset/svg/Call.png';
@@ -89,8 +94,10 @@ class Appimage {
   static const bankcard = 'asset/svg/bankcard.png';
   static const attach = 'asset/svg/attach.png';
   static const close = 'asset/svg/close.png';
+  static const loading = 'asset/svg/loading.png';
   static const person = 'asset/svg/Person.png';
   static const arrow2 = 'asset/svg/arrow2.png';
+  static const blue2arrow = 'asset/svg/blue2arrow.png';
   static const gallary = 'asset/svg/gallary.png';
   static const capture = 'asset/svg/capture.png';
   static const email = 'asset/svg/Email.png';
@@ -98,11 +105,25 @@ class Appimage {
   static const cameracancel = 'asset/svg/cameracancel.png';
   static const idgood = 'asset/svg/idgood.png';
   static const calendar = 'asset/svg/calendar.png';
+  static const vector = 'asset/svg/Vector (14).png';
   static const check = 'asset/svg/check.png';
+  static const calendarandclockk = 'asset/svg/calendarandclockk.png';
+  static const kkkkkk = 'asset/svg/kkkkkk.png';
+  static const truck = 'asset/svg/truck.png';
+  static const letsiconsdoneringround =
+      'asset/svg/lets-icons_done-ring-round.png';
+  static const motorbike = 'asset/svg/motorbike.png';
+  // static const kkkkkk = 'asset/svg/kkkkkk.png';
+  // static const kkkkkk = 'asset/svg/kkkkkk.png';
   static const carbonreview = 'asset/svg/carbon_review.png';
   // static const lok = 'asset/svg/lok.png';
   static const searchnormal = 'asset/svg/search-normal.png';
   static const claritycarline = 'asset/svg/clarity_car-line.png';
   static const maskgroup = 'asset/images/Mask group.png';
   static const c = 'asset/images/c.png';
+  static const cup = 'asset/images/cup.png';
+  static const documents = 'asset/images/documents.png';
+  static const mediumbox = 'asset/images/mediumbox.png';
+  static const fragile = 'asset/images/fragile.png';
+  static const smallparcel = 'asset/images/smallparcel.png';
 }
