@@ -5,6 +5,7 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/screen/auth/signup/phone_number_verification.dart';
 import 'package:rideshareapp/screen/auth/signup/phone_number_verifysucessful.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -86,27 +87,29 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           color: filled ? Colors.black54 : const Color(0xFFE0E3E7),
           width: 1.2,
         ),
-        boxShadow: filled
-            ? [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.06),
-                  blurRadius: 6,
-                  offset: const Offset(0, 2),
-                ),
-              ]
-            : null,
+        boxShadow:
+            filled
+                ? [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.06),
+                    blurRadius: 6,
+                    offset: const Offset(0, 2),
+                  ),
+                ]
+                : null,
       ),
       alignment: Alignment.center,
-      child: filled
-          ? Text(
-              value ?? "",
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.black87,
-                fontWeight: FontWeight.w600,
-              ),
-            )
-          : null,
+      child:
+          filled
+              ? Text(
+                value ?? "",
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+              : null,
     );
   }
 
@@ -161,15 +164,15 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             ],
           ),
           alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(vertical: 6),
+          height: 53.973331451416016,
+          width: 137.27999877929688,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 number,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
+                style: AppThemes.titleLarge.copyWith(
+                  color: AppColors.textPrimary,
                 ),
               ),
               if (letters.isNotEmpty)
@@ -179,7 +182,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     letters,
                     style: const TextStyle(
                       letterSpacing: 2,
-                      fontSize: 10,
+                      fontSize: 9,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -239,7 +242,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     final w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      
       body: SafeArea(
         child: Column(
           children: [
@@ -256,14 +258,17 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                         children: [
                           Text(
                             'Verify Your Phone Number',
-                            style: TextStyle(
-                              fontSize: h * 0.035,
-                              fontWeight: FontWeight.w500,
+                            style: AppThemes.titleLarge.copyWith(
+                              color: AppColors.textPrimary,
                             ),
                           ),
                           const Spacewidgetheight(space: 10),
                           Text(
                             "Enter the 6-digit code sent to: ${widget.phoneNumber} ",
+                            style: TextStyle(
+                              fontSize: 13.9,
+                              color: AppColors.textSecondary,
+                            ),
                           ),
                         ],
                       ),
@@ -292,113 +297,24 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                         ),
                       ),
                       alignment: Alignment.center,
-                      child: (_secondsRemaining > 0)
-                          ? Column(
-                              children: [
-                                Spacewidgetheight(space: h * 0.05),
-                                Text(
-                                  "Resend Code in 00:${_secondsRemaining.toString().padLeft(2, '0')}",
-                                  style: const TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                                Spacewidgetheight(space: h * 0.15),
-                                Text(
-                                  'Change Phone Number',
-                                  style: TextStyle(
-                                    fontSize: h * 0.021,
-                                    color: Appcolor.primarrylight,
-                                  ),
-                                ),
-                                Spacewidgetheight(space: h * 0.01),
-
-                                Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Get.to(
-                                              PhoneNumberVerifysucessful(),
-                                            );
-                                          },
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              gradient: activatebutton
-                                                  ? LinearGradient(
-                                                      colors: [
-                                                        Appcolor.gradientblue,
-                                                        Appcolor.gradientorang,
-                                                      ],
-                                                    )
-                                                  : const LinearGradient(
-                                                      colors: [
-                                                        Colors.grey,
-                                                        Colors.grey,
-                                                      ],
-                                                    ),
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                    w * 0.06,
-                                                  ),
-                                            ),
-                                            height: h * 0.06,
-                                            alignment: Alignment.center,
-                                            width: w * 0.38,
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(
-                                                8.0,
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  const Text(
-                                                    'Continue',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                  Spacewidgetwidth(space: 5),
-                                                  Icon(
-                                                    Icons
-                                                        .arrow_forward_ios_outlined,
-                                                    color: Colors.white,
-                                                    size: h * 0.015,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )
-                          : TextButton(
-                              onPressed: _startTimer,
-                              child: Column(
+                      child:
+                          (_secondsRemaining > 0)
+                              ? Column(
                                 children: [
                                   Spacewidgetheight(space: h * 0.05),
-
                                   Text(
-                                    "Resend Code",
-                                    style: TextStyle(
+                                    "Resend Code in 00:${_secondsRemaining.toString().padLeft(2, '0')}",
+                                    style: const TextStyle(
                                       fontSize: 13,
-                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.textSecondary,
                                     ),
                                   ),
                                   Spacewidgetheight(space: h * 0.15),
                                   Text(
                                     'Change Phone Number',
                                     style: TextStyle(
-                                      fontSize: h * 0.021,
-                                      color: Appcolor.primarrylight,
+                                      fontSize: 15,
+                                      color: AppColors.primaryBlue,
                                     ),
                                   ),
                                   Spacewidgetheight(space: h * 0.01),
@@ -417,20 +333,22 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                gradient: activatebutton
-                                                    ? LinearGradient(
-                                                        colors: [
-                                                          Appcolor.gradientblue,
-                                                          Appcolor
-                                                              .gradientorang,
-                                                        ],
-                                                      )
-                                                    : const LinearGradient(
-                                                        colors: [
-                                                          Colors.grey,
-                                                          Colors.grey,
-                                                        ],
-                                                      ),
+                                                gradient:
+                                                    activatebutton
+                                                        ? LinearGradient(
+                                                          colors: [
+                                                            Appcolor
+                                                                .gradientblue,
+                                                            Appcolor
+                                                                .gradientorang,
+                                                          ],
+                                                        )
+                                                        : const LinearGradient(
+                                                          colors: [
+                                                            Colors.grey,
+                                                            Colors.grey,
+                                                          ],
+                                                        ),
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                       w * 0.06,
@@ -470,8 +388,104 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                     ],
                                   ),
                                 ],
+                              )
+                              : TextButton(
+                                onPressed: _startTimer,
+                                child: Column(
+                                  children: [
+                                    Spacewidgetheight(space: h * 0.05),
+
+                                    Text(
+                                      "Resend Code",
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Spacewidgetheight(space: h * 0.15),
+                                    Text(
+                                      'Change Phone Number',
+                                      style: TextStyle(
+                                        fontSize: h * 0.021,
+                                        color: Appcolor.primarrylight,
+                                      ),
+                                    ),
+                                    Spacewidgetheight(space: h * 0.01),
+
+                                    Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            GestureDetector(
+                                              onTap: () {
+                                                Get.to(
+                                                  PhoneNumberVerifysucessful(),
+                                                );
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  gradient:
+                                                      activatebutton
+                                                          ? LinearGradient(
+                                                            colors: [
+                                                              Appcolor
+                                                                  .gradientblue,
+                                                              Appcolor
+                                                                  .gradientorang,
+                                                            ],
+                                                          )
+                                                          : const LinearGradient(
+                                                            colors: [
+                                                              Colors.grey,
+                                                              Colors.grey,
+                                                            ],
+                                                          ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        w * 0.06,
+                                                      ),
+                                                ),
+                                                height: h * 0.06,
+                                                alignment: Alignment.center,
+                                                width: w * 0.38,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(
+                                                    8.0,
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      const Text(
+                                                        'Continue',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
+                                                      Spacewidgetwidth(
+                                                        space: 5,
+                                                      ),
+                                                      Icon(
+                                                        Icons
+                                                            .arrow_forward_ios_outlined,
+                                                        color: Colors.white,
+                                                        size: h * 0.015,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
                     ),
                   ],
                 ),

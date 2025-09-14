@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/logistics/packagedetails.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Pickupanddropoffdetails extends StatelessWidget {
@@ -75,7 +78,22 @@ class Pickupanddropoffdetails extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text('Step 1 of 5'), Text('20% Complete')],
+                  children: [
+                    Text(
+                      'Step 1 of 5',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    Text(
+                      '20% Complete',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                  ],
                 ),
                 Container(
                   height: h * 0.0152,
@@ -90,7 +108,7 @@ class Pickupanddropoffdetails extends StatelessWidget {
                         width: w * 0.2,
                         height: h * 0.0152,
                         decoration: BoxDecoration(
-                          color: Appcolor.primary,
+                          color: AppColors.colorBlue,
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
@@ -133,19 +151,28 @@ class Pickupanddropoffdetails extends StatelessWidget {
                           children: [
                             Text(
                               'Pickup & Drop-off Details',
-                              style: TextStyle(
-                                fontSize: h * 0.025,
-                                fontWeight: FontWeight.w700,
+                              style: AppThemes.titleMedium.copyWith(
+                                color: AppColors.textPrimary,
                               ),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.all(0),
                               leading: Icon(Icons.location_on_outlined),
-                              title: Text('From'),
+                              title: Text(
+                                'From',
+                                style: TextStyle(
+                                  fontSize: 15.7,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                             ),
                             TextField(
                               decoration: InputDecoration(
                                 hintText: 'Pickup Address',
+                                hintStyle: TextStyle(
+                                  fontSize: 15.7,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
                             ),
                             Row(
@@ -157,12 +184,22 @@ class Pickupanddropoffdetails extends StatelessWidget {
                             ListTile(
                               contentPadding: EdgeInsets.all(0),
                               leading: Image(image: AssetImage(Appimage.s)),
-                              title: Text('To'),
+                              title: Text(
+                                'To',
+                                style: TextStyle(
+                                  fontSize: 15.7,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                             ),
                             TextField(
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0),
                                 hintText: 'Drop-off Address',
+                                hintStyle: TextStyle(
+                                  fontSize: 15.7,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
                             ),
                             Spacewidgetheight(space: 5),
@@ -172,7 +209,9 @@ class Pickupanddropoffdetails extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.to(Packagedetails());
+                                  },
                                   child: Container(
                                     decoration: BoxDecoration(
                                       gradient: LinearGradient(
@@ -224,6 +263,7 @@ class Pickupanddropoffdetails extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

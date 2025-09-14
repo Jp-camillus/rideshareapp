@@ -1,8 +1,24 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/auth/signin/signin.dart';
+import 'package:rideshareapp/screen/auth/signin/welcomescreen-signin.dart';
+import 'package:rideshareapp/screen/auth/signup/create-your-account.dart';
+import 'package:rideshareapp/screen/auth/signup/otp_verification_screen.dart';
+import 'package:rideshareapp/screen/auth/signup/phone_number_verification.dart';
+import 'package:rideshareapp/screen/auth/signup/review_picture_screen.dart';
+import 'package:rideshareapp/screen/auth/signup/signupsuccessfull.dart';
+import 'package:rideshareapp/screen/logistics/deliver_type.dart';
+import 'package:rideshareapp/screen/logistics/farestimateandconfirmation.dart';
+import 'package:rideshareapp/screen/logistics/homescreen.dart';
+import 'package:rideshareapp/screen/logistics/pickupanddropoffdetails.dart';
+import 'package:rideshareapp/screen/logistics/selectvehicletype.dart';
+import 'package:rideshareapp/screen/nav/bottom_nav.dart';
 
 import 'bindings/app_bindings.dart';
 import 'route/app_routes.dart';
@@ -19,7 +35,12 @@ void main() {
     DeviceOrientation.portraitDown,
   ]);
 
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -40,8 +61,9 @@ class MyApp extends StatelessWidget {
               darkTheme: appThemes.darkTheme,
               themeMode: appThemes.themeMode.value,
               initialBinding: AppBinding(),
-              initialRoute: AppRoutes.welcomeScreen,
-              getPages: AppPages.routes,
+              // initialRoute: AppRoutes.dashboard,
+              home: ReviewPictureScreen(imagePath: Appimage.agwas),
+              // getPages: AppPages.routes,
             );
           }),
     );

@@ -27,15 +27,16 @@ class _CustombuttomState extends State<Custombuttom> {
       onTap: widget.tap,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Appcolor.gradientblue, Appcolor.gradientorang],
-          ),
+          gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
         height: h * 0.06,
         alignment: Alignment.center,
         width: widget.width,
-        child: Text(widget.tittle, style: TextStyle(color: Colors.white)),
+        child: Text(
+          widget.tittle,
+          style: TextStyle(color: AppColors.textWhite, fontSize: 16),
+        ),
       ),
     );
   }
@@ -68,9 +69,7 @@ class _CustombuttomwithiconState extends State<Custombuttomwithicon> {
       onTap: widget.tap,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Appcolor.gradientblue, Appcolor.gradientorang],
-          ),
+          gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
         height: h * 0.06,
@@ -82,7 +81,10 @@ class _CustombuttomwithiconState extends State<Custombuttomwithicon> {
             children: [
               widget.icon,
               Spacewidgetwidth(space: w * 0.02),
-              Text(widget.tittle, style: TextStyle(color: Colors.white)),
+              Text(
+                widget.tittle,
+                style: TextStyle(fontSize: 16, color: AppColors.textWhite),
+              ),
             ],
           ),
         ),

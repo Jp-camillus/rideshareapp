@@ -34,14 +34,14 @@ class _CustomtextfieldState extends State<Customtextfield> {
           suffixIcon: widget.suffixicon,
           prefixIcon: widget.prefixicon,
           hintText: widget.tittle,
-          hintStyle: TextStyle(color: Appcolor.grytextfield),
+          hintStyle: TextStyle(color: AppColors.textSecondary, fontSize: 14),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Appcolor.primary),
+            borderSide: BorderSide(color: AppColors.primaryBlue),
             borderRadius: BorderRadius.circular(w * 0.039),
           ),
 
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Appcolor.grytextfield),
+            borderSide: BorderSide(color: AppColors.borderLight),
             borderRadius: BorderRadius.circular(w * 0.039),
           ),
         ),
@@ -51,14 +51,14 @@ class _CustomtextfieldState extends State<Customtextfield> {
         decoration: InputDecoration(
           prefixIcon: widget.prefixicon,
           hintText: widget.tittle,
-          hintStyle: TextStyle(color: Appcolor.grytextfield),
+          hintStyle: TextStyle(color: AppColors.textSecondary, fontSize: 14),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Appcolor.primary),
+            borderSide: BorderSide(color: AppColors.primaryBlue),
             borderRadius: BorderRadius.circular(w * 0.039),
           ),
 
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Appcolor.grytextfield),
+            borderSide: BorderSide(color: AppColors.borderLight),
             borderRadius: BorderRadius.circular(w * 0.039),
           ),
         ),
@@ -67,14 +67,14 @@ class _CustomtextfieldState extends State<Customtextfield> {
     return TextField(
       decoration: InputDecoration(
         hintText: widget.tittle,
-        hintStyle: TextStyle(color: Appcolor.grytextfield),
+        hintStyle: TextStyle(color: AppColors.textSecondary, fontSize: 14),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Appcolor.primary),
+          borderSide: BorderSide(color: AppColors.primaryBlue),
           borderRadius: BorderRadius.circular(w * 0.039),
         ),
 
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Appcolor.grytextfield),
+          borderSide: BorderSide(color: AppColors.borderLight),
           borderRadius: BorderRadius.circular(w * 0.039),
         ),
       ),

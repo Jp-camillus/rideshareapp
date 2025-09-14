@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/logistics/farestimateandconfirmation.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Selectvehicletype extends StatelessWidget {
@@ -76,7 +79,22 @@ class Selectvehicletype extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Step 4 of 5'), Text('80% Complete')],
+                    children: [
+                      Text(
+                        'Step 4 of 5',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      Text(
+                        '80% Complete',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
                     height: h * 0.0152,
@@ -137,9 +155,8 @@ class Selectvehicletype extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Select Vehicle Type',
-                                    style: TextStyle(
-                                      fontSize: h * 0.025,
-                                      fontWeight: FontWeight.w500,
+                                    style: AppThemes.titleMedium.copyWith(
+                                      color: AppColors.textPrimary,
                                     ),
                                   ),
                                 ],
@@ -161,11 +178,23 @@ class Selectvehicletype extends StatelessWidget {
                                       leading: Image(
                                         image: AssetImage(Appimage.motorbike),
                                       ),
-                                      title: Text('Motorbike'),
-                                      subtitle: Text('15-30 mins'),
+                                      title: Text(
+                                        'Motorbike',
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        '15-30 mins',
+                                        style: TextStyle(
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                       trailing: Text(
                                         'N1,500',
-                                        style: TextStyle(fontSize: h * 0.02),
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -190,11 +219,23 @@ class Selectvehicletype extends StatelessWidget {
                                           Appimage.claritycarline,
                                         ),
                                       ),
-                                      title: Text('Car'),
-                                      subtitle: Text('20-40 mins'),
+                                      title: Text(
+                                        'Car',
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        '20-40 mins',
+                                        style: TextStyle(
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                       trailing: Text(
                                         'N2,500',
-                                        style: TextStyle(fontSize: h * 0.02),
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -217,11 +258,23 @@ class Selectvehicletype extends StatelessWidget {
                                       leading: Image(
                                         image: AssetImage(Appimage.van),
                                       ),
-                                      title: Text('Van'),
-                                      subtitle: Text('30-60 mins'),
+                                      title: Text(
+                                        'Van',
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        '30-60 mins',
+                                        style: TextStyle(
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                       trailing: Text(
                                         'N3,500',
-                                        style: TextStyle(fontSize: h * 0.02),
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -244,11 +297,23 @@ class Selectvehicletype extends StatelessWidget {
                                       leading: Image(
                                         image: AssetImage(Appimage.truck),
                                       ),
-                                      title: Text('Truck'),
-                                      subtitle: Text('45-90 mins'),
+                                      title: Text(
+                                        'Truck',
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        '45-90 mins',
+                                        style: TextStyle(
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                       trailing: Text(
                                         'N4,500',
-                                        style: TextStyle(fontSize: h * 0.02),
+                                        style: TextStyle(
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -260,7 +325,9 @@ class Selectvehicletype extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(Farestimateandconfirmation());
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -313,6 +380,7 @@ class Selectvehicletype extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

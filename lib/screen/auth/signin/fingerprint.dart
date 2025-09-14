@@ -5,6 +5,7 @@ import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signin/loginscreenpin.dart';
 import 'package:rideshareapp/screen/homescreen/homescreen.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Fingerprint extends StatefulWidget {
@@ -79,26 +80,26 @@ class _FingerprintState extends State<Fingerprint> {
               children: [
                 Text(
                   'Welcome ',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: Appcolor.primarrylight,
-                    fontSize: h * 0.035,
+                  style: AppThemes.titleLarge.copyWith(
+                    color: AppColors.primaryBlue,
+                    fontSize: 32,
                   ),
                 ),
                 Text(
                   'back!',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: h * 0.035,
+                  style: AppThemes.titleLarge.copyWith(
+                    fontSize: 32,
+
+                    color: AppColors.textPrimary,
                   ),
                 ),
               ],
             ),
             Text(
               'Alayande',
-              style: TextStyle(
-                fontSize: h * 0.03,
-                color: const Color.fromRGBO(75, 85, 99, 1),
+              style: AppThemes.titleSmall.copyWith(
+                fontSize: 16,
+                color: AppColors.textSecondary,
               ),
             ),
             Spacewidgetheight(space: h * 0.15),
@@ -110,7 +111,13 @@ class _FingerprintState extends State<Fingerprint> {
             ),
 
             Spacewidgetheight(space: 10),
-            const Text('Tap to login with your fingerprint'),
+            Text(
+              'Tap to login with your fingerprint',
+              style: AppThemes.titleSmall.copyWith(
+                fontSize: 15,
+                color: AppColors.textSecondary,
+              ),
+            ),
             Spacewidgetheight(space: h * 0.2),
 
             GestureDetector(
@@ -120,9 +127,21 @@ class _FingerprintState extends State<Fingerprint> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Log in with your'),
+                  Text(
+                    'Log in with your',
+                    style: AppThemes.titleSmall.copyWith(
+                      fontSize: 13.9,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
-                  Text('PIN', style: TextStyle(color: Appcolor.primarrylight)),
+                  Text(
+                    'PIN',
+                    style: AppThemes.titleSmall.copyWith(
+                      fontSize: 13.9,
+                      color: AppColors.primaryBlue,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -169,13 +188,16 @@ class _FingerprintState extends State<Fingerprint> {
                 Spacewidgetheight(space: 10),
                 Text(
                   "Kindly verify your",
-                  style: TextStyle(fontSize: h * 0.025),
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 13.9,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Text(
                   "fingerprint",
-                  style: TextStyle(
-                    fontSize: h * 0.03,
-                    color: Appcolor.primarrylight,
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 13.9,
+                    color: AppColors.primaryBlue,
                   ),
                 ),
               ],

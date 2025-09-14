@@ -1,5 +1,6 @@
 class Appimage {
   static const agwas = 'asset/images/agwas.jpg';
+  static const delivery = 'asset/images/delivery.png';
   static const cameraborder = 'asset/images/cameraborder.png';
   static const carandmap = 'asset/images/carandmap.png';
   static const customerman = 'asset/images/customerman.png';
@@ -32,6 +33,7 @@ class Appimage {
   static const s9 = 'asset/images/s9.png';
   static const s10 = 'asset/images/s10.png';
   static const marketcar = 'asset/images/marketcar.png';
+  static const mrktar = 'asset/images/mrktar.png';
   static const googl = 'asset/images/googl.png';
   static const facebook = 'asset/images/facebook.png';
   static const lin = 'asset/images/2lin.png';
@@ -68,7 +70,7 @@ class Appimage {
   static const messagepin = 'asset/svg/messagepin.png';
   static const messagelink = 'asset/svg/messagelink.png';
   static const message = 'asset/svg/Message.png';
-  static const messageoutline = 'asset/svg/messageoutline.png';
+  static const messageoutline = 'asset/svg/mesageoutline.png';
   static const mastercard = 'asset/svg/mastercard.png';
   static const id = 'asset/svg/id.png';
   static const greenwallet = 'asset/svg/greenwallet.png';
@@ -78,6 +80,7 @@ class Appimage {
   static const chair = 'asset/svg/chair.png';
   static const cartag = 'asset/svg/cartag.png';
   static const sarh = 'asset/svg/sarh.png';
+  static const hugeiconsvan = 'asset/svg/hugeicons_van.png';
   static const money = 'asset/svg/money.png';
   static const good = 'asset/svg/good.png';
   static const caricon = 'asset/svg/caricon.png';
@@ -86,6 +89,9 @@ class Appimage {
   static const clock = 'asset/svg/clock.png';
   static const cameraplus = 'asset/svg/camera-plus.png';
   static const call = 'asset/svg/Call.png';
+  static const notiff = 'asset/svg/notiff.png';
+  static const verify = 'asset/svg/verify.png';
+  static const globe = 'asset/svg/Globe.png';
   static const calenderclock = 'asset/svg/calenderclock.png';
   static const bottomroad = 'asset/svg/bottomroad.png';
   static const sl = 'asset/svg/sl.png';
@@ -96,6 +102,11 @@ class Appimage {
   static const close = 'asset/svg/close.png';
   static const loading = 'asset/svg/loading.png';
   static const person = 'asset/svg/Person.png';
+  static const car = 'asset/svg/car.png';
+  static const like = 'asset/svg/like.png';
+  static const logout = 'asset/svg/logout.png';
+  static const lock = 'asset/svg/lock.png';
+  static const setting = 'asset/svg/setting-5.png';
   static const arrow2 = 'asset/svg/arrow2.png';
   static const blue2arrow = 'asset/svg/blue2arrow.png';
   static const gallary = 'asset/svg/gallary.png';

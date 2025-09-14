@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/applylogisticspartner/applyasalogisticspartner.dart';
+import 'package:rideshareapp/screen/logistics/deliver_type.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Packagedetails extends StatelessWidget {
@@ -108,7 +111,7 @@ class Packagedetails extends StatelessWidget {
                   ),
                   Spacewidgetheight(space: h * 0.03),
                   Container(
-                    height: h * 0.881,
+                    height: h * 0.951,
                     width: w * 0.902,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -121,7 +124,7 @@ class Packagedetails extends StatelessWidget {
                     ),
                     child: Center(
                       child: Container(
-                        height: h * 0.8808,
+                        height: h * 0.9508,
                         width: w * 0.9,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -163,7 +166,10 @@ class Packagedetails extends StatelessWidget {
                                 ],
                               ),
                               Spacewidgetheight(space: h * 0.03),
-                              Text('Weight'),
+                              Text(
+                                'Weight',
+                                style: TextStyle(color: AppColors.textPrimary),
+                              ),
                               Spacewidgetheight(space: 10),
 
                               Container(
@@ -199,7 +205,10 @@ class Packagedetails extends StatelessWidget {
                                 ),
                               ),
                               Spacewidgetheight(space: h * 0.039),
-                              Text('Description'),
+                              Text(
+                                'Description',
+                                style: TextStyle(color: AppColors.textPrimary),
+                              ),
                               Spacewidgetheight(space: 10),
                               TextField(
                                 maxLines: 5,
@@ -213,6 +222,9 @@ class Packagedetails extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   hintText: 'Write about yourself',
+                                  hintStyle: TextStyle(
+                                    color: AppColors.textSecondary,
+                                  ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Appcolor.primary,
@@ -225,28 +237,26 @@ class Packagedetails extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
-                                    height: h * 0.05,
-                                    width: w * 0.6,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Color.fromRGBO(209, 213, 219, 1),
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image(
-                                            image: AssetImage(
-                                              Appimage.solarcameralinear,
+                                  DashedRoundedBox(
+                                    child: Container(
+                                      height: h * 0.05,
+                                      width: w * 0.6,
+                                      decoration: BoxDecoration(),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image(
+                                              image: AssetImage(
+                                                Appimage.solarcameralinear,
+                                              ),
                                             ),
-                                          ),
-                                          Spacewidgetwidth(space: 10),
-                                          Text('Take Package Picture'),
-                                        ],
+                                            Spacewidgetwidth(space: 10),
+                                            Text('Take Package Picture'),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -257,7 +267,9 @@ class Packagedetails extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(DeliverType());
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -310,6 +322,7 @@ class Packagedetails extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

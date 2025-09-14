@@ -6,6 +6,7 @@ import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signin/fingerprint.dart';
 import 'package:rideshareapp/screen/auth/signin/loginscreenpin.dart';
 import 'package:rideshareapp/screen/auth/signup/welcomescreen-signup.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/customtextfield.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -18,7 +19,6 @@ class Signin extends StatelessWidget {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,18 +115,18 @@ class Signin extends StatelessWidget {
                     children: [
                       Text(
                         'Welcome',
-                        style: TextStyle(
-                          color: Appcolor.primarrylight,
-                          fontSize: h * 0.039,
-                          fontWeight: FontWeight.w500,
+                        style: AppThemes.titleLarge.copyWith(
+                          color: AppColors.primaryBlue,
+                          fontSize: 32,
                         ),
                       ),
                       Spacewidgetwidth(space: w * 0.02),
                       Text(
                         'back!',
-                        style: TextStyle(
-                          fontSize: h * 0.039,
-                          fontWeight: FontWeight.w500,
+                        style: AppThemes.titleLarge.copyWith(
+                          fontSize: 32,
+
+                          color: AppColors.textPrimary,
                         ),
                       ),
                     ],
@@ -138,6 +138,10 @@ class Signin extends StatelessWidget {
                     //   fontSize: h * 0.039,
                     //   fontWeight: FontWeight.w500,
                     // ),
+                    style: AppThemes.titleSmall.copyWith(
+                      fontSize: 16,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
                   Text(
                     'messages',
@@ -145,9 +149,23 @@ class Signin extends StatelessWidget {
                     //   fontSize: h * 0.039,
                     //   fontWeight: FontWeight.w500,
                     // ),
+                    style: AppThemes.titleSmall.copyWith(
+                      fontSize: 16,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
                   Spacewidgetheight(space: h * 0.02),
-                  Row(children: [Text('Email')]),
+                  Row(
+                    children: [
+                      Text(
+                        'Email',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
                   Spacewidgetheight(space: 8),
                   Customtextfield(
                     iwantfronticon: true,
@@ -158,7 +176,17 @@ class Signin extends StatelessWidget {
                     obscure: false,
                   ),
                   Spacewidgetheight(space: 25),
-                  Row(children: [Text('Password')]),
+                  Row(
+                    children: [
+                      Text(
+                        'Password',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
                   Spacewidgetheight(space: 8),
                   Customtextfield(
                     iwantfronticon: true,
@@ -182,7 +210,10 @@ class Signin extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('I want to create an account ?'),
+                      Text(
+                        'I want to create an account ?',
+                        style: TextStyle(fontSize: 13.83),
+                      ),
                       Spacewidgetwidth(space: 5),
                       GestureDetector(
                         onTap: () {
@@ -190,7 +221,10 @@ class Signin extends StatelessWidget {
                         },
                         child: Text(
                           'Sign Up',
-                          style: TextStyle(color: Appcolor.primarrylight),
+                          style: TextStyle(
+                            color: AppColors.primaryBlue,
+                            fontSize: 13.83,
+                          ),
                         ),
                       ),
                     ],

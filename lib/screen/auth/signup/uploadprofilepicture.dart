@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signup/camerascreen.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Uploadprofilepicture extends StatefulWidget {
@@ -35,13 +36,18 @@ class _UploadprofilepictureState extends State<Uploadprofilepicture> {
                 children: [
                   Text(
                     'Add Your Profile Photo',
-                    style: TextStyle(
-                      fontSize: h * 0.035,
-                      fontWeight: FontWeight.w500,
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.textPrimary,
                     ),
                   ),
                   const Spacewidgetheight(space: 10),
-                  const Text('Your photo will help others recognize you. '),
+                  const Text(
+                    'Your photo will help others recognize you. ',
+                    style: TextStyle(
+                      fontSize: 13.9,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                   Spacewidgetheight(space: h * 0.15),
 
                   // Make image clickable
@@ -98,7 +104,7 @@ class _UploadprofilepictureState extends State<Uploadprofilepicture> {
                             children: [
                               const Text(
                                 'Continue',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: AppColors.textWhite),
                               ),
                               Spacewidgetwidth(space: 5),
                               Icon(
