@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rideshareapp/screen/applylogisticspartner/accountsetting.dart';
+import 'package:rideshareapp/screen/logistics/homescreen.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/upcomingtrippassenger.dart';
 
 import '../../controllers/bottom_nav_controller.dart';
 
@@ -18,17 +21,17 @@ class MainDashboard extends GetView<BottomNavController> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true, // <-- important for the pop-up/bump overflow
-      
+
       body: Obx(() {
         switch (controller.selectedIndex.value) {
           case 0:
-            return const DashboardHome();
+            return const Logisticshomescreen();
           case 1:
-            return const MyTripsScreen();
+            return const Upcomingtrippassenger();
           case 2:
             return const ReceiptsScreen();
           case 3:
-            return const AccountScreen();
+            return const AccountSettingsScreen();
           default:
             return const DashboardHome();
         }

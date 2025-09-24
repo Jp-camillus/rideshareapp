@@ -4,6 +4,7 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signup/signupsuccessfull.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/customtextfield.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -39,17 +40,31 @@ class _CreateyouraccountState extends State<Createyouraccount> {
               ),
               Text(
                 'Create your account',
-                style: TextStyle(
-                  fontSize: h * 0.028,
-                  fontWeight: FontWeight.w700,
+                style: AppThemes.titleLarge.copyWith(
+                  color: AppColors.textPrimary,
                 ),
               ),
               Spacewidgetheight(space: 5),
 
-              Text('Join thousands of trusted riders and drivers across'),
-              Text(' Nigeria.'),
+              Text(
+                'Join thousands of trusted riders and drivers across',
+                style: AppThemes.titleSmall.copyWith(
+                  fontSize: 14,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+              Text(
+                ' Nigeria.',
+                style: AppThemes.titleSmall.copyWith(
+                  fontSize: 14,
+                  color: AppColors.textSecondary,
+                ),
+              ),
               Spacewidgetheight(space: 25),
-              Text('Full Name'),
+              Text(
+                'Full Name',
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
+              ),
               Spacewidgetheight(space: 8),
               Customtextfield(
                 iwantfronticon: true,
@@ -60,7 +75,10 @@ class _CreateyouraccountState extends State<Createyouraccount> {
                 obscure: false,
               ),
               Spacewidgetheight(space: 25),
-              Text('Email'),
+              Text(
+                'Email',
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
+              ),
               Spacewidgetheight(space: 8),
               Customtextfield(
                 iwantfronticon: true,
@@ -71,7 +89,10 @@ class _CreateyouraccountState extends State<Createyouraccount> {
                 obscure: false,
               ),
               Spacewidgetheight(space: 25),
-              Text('Password'),
+              Text(
+                'Password',
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
+              ),
               Spacewidgetheight(space: 8),
               Customtextfield(
                 iwantfronticon: true,
@@ -82,7 +103,10 @@ class _CreateyouraccountState extends State<Createyouraccount> {
                 obscure: false,
               ),
               Spacewidgetheight(space: 25),
-              Text('Confirm Password'),
+              Text(
+                'Confirm Password',
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
+              ),
               Spacewidgetheight(space: 8),
               Customtextfield(
                 iwantfronticon: true,
@@ -96,6 +120,7 @@ class _CreateyouraccountState extends State<Createyouraccount> {
 
               Text(
                 'At least 8 characters, 1 uppercase letter, 1 number, 1 symbol',
+                style: TextStyle(fontSize: 10, color: AppColors.textSecondary),
               ),
               ListTile(
                 contentPadding: EdgeInsets.all(0),
@@ -105,13 +130,16 @@ class _CreateyouraccountState extends State<Createyouraccount> {
                   children: [
                     Text(
                       'By Signing up, you agree to the',
-                      style: TextStyle(fontSize: h * 0.016),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                     Text(
                       ' Terms of Service',
                       style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: h * 0.016,
+                        fontSize: 12,
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -119,12 +147,18 @@ class _CreateyouraccountState extends State<Createyouraccount> {
                 subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text('and', style: TextStyle(fontSize: h * 0.016)),
+                    Text(
+                      'and',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
                     Text(
                       '  Privacy Policy',
                       style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: h * 0.016,
+                        fontSize: 12,
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -142,12 +176,18 @@ class _CreateyouraccountState extends State<Createyouraccount> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Already have an account?'),
+                  Text(
+                    'Already have an account?',
+                    style: TextStyle(fontSize: 13.83),
+                  ),
                   Spacewidgetwidth(space: 5),
 
                   Text(
                     'Sign In',
-                    style: TextStyle(color: Appcolor.primarrylight),
+                    style: TextStyle(
+                      color: AppColors.primaryBlue,
+                      fontSize: 13.83,
+                    ),
                   ),
                 ],
               ),

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -112,7 +114,7 @@ class _FarestimateandconfirmationState
                     child: Row(
                       children: [
                         Container(
-                          width: w * 0.939,
+                          width: w * 0.935,
                           height: h * 0.0152,
                           decoration: BoxDecoration(
                             color: Appcolor.primary,
@@ -160,179 +162,188 @@ class _FarestimateandconfirmationState
 
                               Text(
                                 'Fare Estimate & Confirmation',
-                                style: TextStyle(
-                                  fontSize: h * 0.025,
-                                  fontWeight: FontWeight.w700,
+                                style: AppThemes.titleMedium.copyWith(
+                                  color: AppColors.textPrimary,
                                 ),
                               ),
                               Spacewidgetheight(space: h * 0.01),
-                              Container(
-                                height: h * 0.39,
-                                width: w.toDouble(),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [Spacewidgetwidth(space: 10)],
-                                      ),
-                                      Divider(),
-                                      Spacewidgetheight(space: 10),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Vehicle Type',
-                                            style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                75,
-                                                79,
-                                                99,
-                                                1,
-                                              ),
-                                            ),
-                                          ),
-                                          Text('Motorbike'),
-                                        ],
-                                      ),
-                                      Spacewidgetheight(space: 20),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'ETA',
-                                            style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                75,
-                                                79,
-                                                99,
-                                                1,
-                                              ),
-                                            ),
-                                          ),
-                                          Text('15-30 min'),
-                                        ],
-                                      ),
-                                      Spacewidgetheight(space: 20),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Delivery Type',
-                                            style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                75,
-                                                79,
-                                                99,
-                                                1,
-                                              ),
-                                            ),
-                                          ),
-                                          Text('instant'),
-                                        ],
-                                      ),
-                                      Spacewidgetheight(space: 20),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Estimated Price',
-                                            style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                75,
-                                                79,
-                                                99,
-                                                1,
-                                              ),
-                                            ),
-                                          ),
-                                          Text('₦1,500'),
-                                        ],
-                                      ),
-                                      Spacewidgetheight(space: 10),
-                                      Divider(),
-                                      Row(
-                                        children: [
-                                          Image(
-                                            image: AssetImage(Appimage.clock),
-                                          ),
-                                          Spacewidgetwidth(space: 10),
-                                          Text(
-                                            'Free cancellation before January 15',
-                                          ),
-                                        ],
-                                      ),
-                                      Spacewidgetheight(space: h * 0.051),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            50,
-                                          ),
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            colors: [
-                                              Appcolor.bottombackground,
-                                              const Color.fromARGB(
-                                                87,
-                                                255,
-                                                245,
-                                                237,
-                                              ),
-                                              const Color.fromARGB(
-                                                17,
-                                                180,
-                                                197,
-                                                253,
-                                              ),
-                                            ],
+                              Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [Spacewidgetwidth(space: 10)],
+                                    ),
+                                    Divider(),
+                                    Spacewidgetheight(space: 10),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Vehicle Type',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            color: AppColors.textSecondary,
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(15),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Total',
-                                                style: TextStyle(
-                                                  fontSize: h * 0.025,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                              Text(' (NGN)'),
-                                              Spacer(),
-                                              Text(
-                                                '₦1,600',
-                                                style: TextStyle(
-                                                  fontSize: h * 0.025,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ],
+                                        Text(
+                                          'Motorbike',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: AppColors.textPrimary,
                                           ),
                                         ),
+                                      ],
+                                    ),
+                                    Spacewidgetheight(space: 20),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'ETA',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
+                                        Text(
+                                          '15-30 min',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacewidgetheight(space: 20),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Delivery Type',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
+                                        Text(
+                                          'instant',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacewidgetheight(space: 20),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Estimated Price',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
+                                        Text(
+                                          '₦1,500',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacewidgetheight(space: 10),
+                                    Divider(),
+                                    Row(
+                                      children: [
+                                        Image(
+                                          image: AssetImage(Appimage.clock),
+                                        ),
+                                        Spacewidgetwidth(space: 10),
+                                        Text(
+                                          'Free cancellation before January 15',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacewidgetheight(space: h * 0.051),
+                                    Container(
+                                      width: 365.1633605957031,
+                                      height: 55.94390106201172,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(50),
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            Appcolor.bottombackground,
+                                            const Color.fromARGB(
+                                              87,
+                                              255,
+                                              245,
+                                              237,
+                                            ),
+                                            const Color.fromARGB(
+                                              17,
+                                              180,
+                                              197,
+                                              253,
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ],
-                                  ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(15),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              'Total',
+                                              style: TextStyle(
+                                                fontSize: 17,
+                                                color: AppColors.textSecondary,
+                                              ),
+                                            ),
+                                            Text(
+                                              ' (NGN)',
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                color: AppColors.textSecondary,
+                                              ),
+                                            ),
+                                            Spacer(),
+                                            Text(
+                                              '₦1,600',
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                color: AppColors.textPrimary,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Text(
                                 'Select Payment Method:',
-                                style: TextStyle(
-                                  fontSize: h * 0.022,
-                                  fontWeight: FontWeight.w500,
+                                style: AppThemes.titleMedium.copyWith(
+                                  color: AppColors.textPrimary,
+                                  fontSize: 17,
                                 ),
                               ),
                               Row(
@@ -342,7 +353,13 @@ class _FarestimateandconfirmationState
                                     groupValue: true,
                                     onChanged: (value) {},
                                   ),
-                                  Text('Wallet'),
+                                  Text(
+                                    'Wallet',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
                                 ],
                               ),
                               Row(
@@ -352,7 +369,13 @@ class _FarestimateandconfirmationState
                                     groupValue: true,
                                     onChanged: (value) {},
                                   ),
-                                  Text('Bank Transfer'),
+                                  Text(
+                                    'Bank Transfer',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
                                 ],
                               ),
                               Row(
@@ -362,7 +385,13 @@ class _FarestimateandconfirmationState
                                     groupValue: true,
                                     onChanged: (value) {},
                                   ),
-                                  Text('Debit/Credit Card'),
+                                  Text(
+                                    'Debit/Credit Card',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
                                 ],
                               ),
                               Spacewidgetheight(space: h * 0.02),
@@ -388,10 +417,10 @@ class _FarestimateandconfirmationState
                                 children: [
                                   Custombuttom(
                                     tap: () {
-                                      _showpackagedelivereddialogu();
+                                      _trackingmapdialogue(context);
                                     },
                                     tittle: 'Confirm Booking & Pay',
-                                    width: w * 0.388,
+                                    width: w * 0.5,
                                   ),
                                 ],
                               ),
@@ -408,6 +437,7 @@ class _FarestimateandconfirmationState
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 
@@ -472,9 +502,8 @@ class _FarestimateandconfirmationState
                               Image(image: AssetImage(Appimage.truck)),
                               Text(
                                 'Live Tracking Map',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: h * 0.02,
+                                style: AppThemes.titleMedium.copyWith(
+                                  color: AppColors.textPrimary,
                                 ),
                               ),
                               Text('Driver Location: 40.7107, -74.0116'),
@@ -485,8 +514,8 @@ class _FarestimateandconfirmationState
                     ),
                     Spacewidgetheight(space: h * 0.02),
                     Container(
-                      height: h * 0.2,
-                      width: w.toDouble(),
+                      height: 179.46466064453125,
+                      width: 394.26617431640625,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
@@ -500,41 +529,67 @@ class _FarestimateandconfirmationState
                           children: [
                             Text(
                               'Package Details',
-                              style: TextStyle(
-                                fontSize: h * 0.028,
-                                fontWeight: FontWeight.w500,
+                              style: AppThemes.titleMedium.copyWith(
+                                color: AppColors.textPrimary,
                               ),
                             ),
                             Spacewidgetheight(space: h * 0.02),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Type'),
+                                Text(
+                                  'Type',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                                 Text(
                                   'small parcel',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textPrimary,
+                                  ),
                                 ),
                               ],
                             ),
-                            Spacewidgetheight(space: h * 0.02),
+                            Spacewidgetheight(space: h * 0.01),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Weight'),
+                                Text(
+                                  'Weight',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                                 Text(
                                   '0-5kg',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textPrimary,
+                                  ),
                                 ),
                               ],
                             ),
-                            Spacewidgetheight(space: h * 0.02),
+                            Spacewidgetheight(space: h * 0.01),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Vehicle'),
+                                Text(
+                                  'Vehicle',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                                 Text(
                                   'car',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: AppColors.textPrimary,
+                                  ),
                                 ),
                               ],
                             ),
@@ -547,9 +602,8 @@ class _FarestimateandconfirmationState
                       children: [
                         Text(
                           'Delivery Progress',
-                          style: TextStyle(
-                            fontSize: h * 0.026,
-                            fontWeight: FontWeight.w500,
+                          style: AppThemes.titleMedium.copyWith(
+                            color: AppColors.textPrimary,
                           ),
                         ),
                       ],
@@ -560,36 +614,102 @@ class _FarestimateandconfirmationState
                       leading: Image(
                         image: AssetImage(Appimage.letsiconsdoneringround),
                       ),
-                      title: Text('Driver Assigned'),
-                      subtitle: Text('2:30 PM'),
+                      title: Text(
+                        'Driver Assigned',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '2:30 PM',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
                     ),
 
                     ListTile(
                       leading: CircleAvatar(
                         radius: w * 0.039,
                         backgroundColor: Color.fromRGBO(0, 86, 179, 0.15),
-                        child: Text('2', style: TextStyle(fontSize: h * 0.013)),
+                        child: Text(
+                          '2',
+                          style: TextStyle(
+                            fontSize: h * 0.013,
+                            color: AppColors.textPrimary,
+                          ),
+                        ),
                       ),
-                      title: Text('Package Picked Up'),
-                      subtitle: Text('2:45 PM'),
+                      title: Text(
+                        'Package Picked Up',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '2:45 PM',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
                     ),
                     ListTile(
                       leading: CircleAvatar(
                         radius: w * 0.039,
                         backgroundColor: Color.fromRGBO(0, 86, 179, 0.15),
-                        child: Text('3', style: TextStyle(fontSize: h * 0.013)),
+                        child: Text(
+                          '3',
+                          style: TextStyle(
+                            fontSize: h * 0.013,
+                            color: AppColors.textPrimary,
+                          ),
+                        ),
                       ),
-                      title: Text('In Transit'),
-                      subtitle: Text('3:00 PM'),
+                      title: Text(
+                        'In Transit',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '3:00 PM',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
                     ),
                     ListTile(
                       leading: CircleAvatar(
                         radius: w * 0.039,
                         backgroundColor: Color.fromRGBO(0, 86, 179, 0.15),
-                        child: Text('4', style: TextStyle(fontSize: h * 0.013)),
+                        child: Text(
+                          '4',
+                          style: TextStyle(
+                            fontSize: h * 0.013,
+                            color: AppColors.textPrimary,
+                          ),
+                        ),
                       ),
-                      title: Text('Delivered'),
-                      subtitle: Text('Pending'),
+                      title: Text(
+                        'Delivered',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Pending',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -631,15 +751,26 @@ class _FarestimateandconfirmationState
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.w700,
-                      fontSize: h * 0.025,
+                      fontSize: 23.48,
                     ),
                   ),
                   Spacewidgetheight(space: 20),
-                  Text('Your package has been successfully'),
-                  Text(' delivered.'),
+                  Text(
+                    'Your package has been successfully delivered.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16.44,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetheight(space: 20),
 
-                  Custombuttom(tittle: 'Rate Driver', width: w * 0.3),
+                  Custombuttom(
+                    tittle: 'Rate Driver',
+                    width: 130,
+                    height: 48,
+                    fontsize: 16,
+                  ),
                   Spacewidgetheight(space: h * 0.02),
                   Container(
                     height: h * 0.2,
@@ -658,7 +789,8 @@ class _FarestimateandconfirmationState
                           Text(
                             'Package Details',
                             style: TextStyle(
-                              fontSize: h * 0.028,
+                              fontSize: 18.15,
+                              color: AppColors.textPrimary,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -666,10 +798,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Type'),
+                              Text(
+                                'Type',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 'small parcel',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),
@@ -677,10 +818,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Weight'),
+                              Text(
+                                'Weight',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 '0-5kg',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),
@@ -688,10 +838,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Vehicle'),
+                              Text(
+                                'Vehicle',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 'car',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),

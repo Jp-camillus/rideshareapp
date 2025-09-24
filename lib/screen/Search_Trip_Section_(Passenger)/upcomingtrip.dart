@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -43,11 +44,8 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                     Get.back();
                   },
                   child: CircleAvatar(
-                    
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Appcolor.primarrylight,
-                    ),
+                    backgroundColor: AppColors.cardLight,
+                    child: Icon(Icons.arrow_back, color: AppColors.primaryBlue),
                   ),
                 ),
               ],
@@ -57,27 +55,27 @@ class _UpcomingtripState extends State<Upcomingtrip> {
               children: [
                 Text(
                   'Trips',
-                  style: TextStyle(
-                    fontSize: h * 0.02,
-                    fontWeight: FontWeight.w600,
+                  style: AppThemes.titleSmall.copyWith(
+                    color: AppColors.textPrimary,
                   ),
                 ),
               ],
             ),
             Card(
-              elevation: 7,
+              elevation: 5,
               shadowColor: const Color.fromARGB(104, 0, 0, 0),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(25),
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
+                  color: AppColors.backgroundLight,
+                  borderRadius: BorderRadius.circular(25),
                 ),
-                height: h * 0.08,
+                height: h * 0.07,
                 width: w.toDouble(),
                 child: Padding(
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(10),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,25 +88,34 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                               completedtriptapped = false;
                             });
                           },
-                          child: upcomingtapped
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'Upcoming Trip',
-                                      style: TextStyle(
-                                        color: Appcolor.primarrylight,
+                          child:
+                              upcomingtapped
+                                  ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Upcoming Trip',
+                                        style: TextStyle(
+                                          fontSize: 12.9,
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: w * 0.2,
-                                      child: Divider(
-                                        color: Appcolor.primarrylight,
+                                      SizedBox(
+                                        width: w * 0.2,
+                                        child: Divider(
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
+                                    ],
+                                  )
+                                  : Text(
+                                    'Upcoming Trip',
+                                    style: TextStyle(
+                                      fontSize: 12.9,
+
+                                      color: AppColors.textSecondary,
                                     ),
-                                  ],
-                                )
-                              : Text('Upcoming Trip'),
+                                  ),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -118,25 +125,35 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                               completedtriptapped = false;
                             });
                           },
-                          child: ongointriptapped
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'Ongoing Trip',
-                                      style: TextStyle(
-                                        color: Appcolor.primarrylight,
+                          child:
+                              ongointriptapped
+                                  ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Ongoing Trip',
+                                        style: TextStyle(
+                                          fontSize: 12.9,
+
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: w * 0.2,
-                                      child: Divider(
-                                        color: Appcolor.primarrylight,
+                                      SizedBox(
+                                        width: w * 0.2,
+                                        child: Divider(
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
+                                    ],
+                                  )
+                                  : Text(
+                                    'Ongoing Trip',
+                                    style: TextStyle(
+                                      fontSize: 12.9,
+
+                                      color: AppColors.textSecondary,
                                     ),
-                                  ],
-                                )
-                              : Text('Ongoing Trip'),
+                                  ),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -146,25 +163,35 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                               completedtriptapped = true;
                             });
                           },
-                          child: completedtriptapped
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'Completed Trip',
-                                      style: TextStyle(
-                                        color: Appcolor.primarrylight,
+                          child:
+                              completedtriptapped
+                                  ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Completed Trip',
+                                        style: TextStyle(
+                                          fontSize: 12.9,
+
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: w * 0.2,
-                                      child: Divider(
-                                        color: Appcolor.primarrylight,
+                                      SizedBox(
+                                        width: w * 0.2,
+                                        child: Divider(
+                                          color: AppColors.primaryBlue,
+                                        ),
                                       ),
+                                    ],
+                                  )
+                                  : Text(
+                                    'Completed Trip',
+                                    style: TextStyle(
+                                      fontSize: 12.9,
+
+                                      color: AppColors.textSecondary,
                                     ),
-                                  ],
-                                )
-                              : Text('Completed Trip'),
+                                  ),
                         ),
                       ],
                     ),
@@ -240,9 +267,8 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                     children: [
                       Text(
                         'Chinedu O.',
-                        style: TextStyle(
-                          fontSize: h * 0.018,
-                          fontWeight: FontWeight.w600,
+                        style: AppThemes.titleSmall.copyWith(
+                          color: AppColors.textPrimary,
                         ),
                       ),
                       Row(
@@ -250,14 +276,14 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                         children: [
                           Icon(
                             Icons.star,
-                            color: Colors.deepOrange,
-                            size: h * 0.015,
+                            size: 12,
+                            color: AppColors.primaryOrange,
                           ),
                           Text(
                             '4.2',
                             style: TextStyle(
-                              color: Colors.deepOrange,
-                              fontSize: h * 0.015,
+                              color: AppColors.primaryOrange,
+                              fontSize: 10,
                             ),
                           ),
                         ],
@@ -273,7 +299,10 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                         Spacewidgetwidth(space: 5),
                         Text(
                           'Remind me',
-                          style: TextStyle(fontWeight: FontWeight.w700),
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: AppColors.textPrimary,
+                          ),
                         ),
                         Switch(
                           materialTapTargetSize:
@@ -308,24 +337,30 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                   Spacewidgetwidth(space: 5),
 
                   Text(
-                    'Ibadan (Iwo Road Park)',
-                    style: TextStyle(fontSize: h * 0.015),
+                    'Ibadan (Iwo Road Park),',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
                   Spacewidgetwidth(space: 5),
 
-                  Container(width: w * 0.07, child: Divider()),
+                  Container(width: w * 0.05, child: Divider()),
                   Spacewidgetwidth(space: 5),
 
                   Icon(
                     Icons.location_on_outlined,
-                    color: Appcolor.primarrylight,
+                    color: AppColors.primaryBlue,
                     size: h * 0.02,
                   ),
                   Spacewidgetwidth(space: 5),
 
                   Text(
                     'Lagos (Ojota Bus Terminal)',
-                    style: TextStyle(fontSize: h * 0.015),
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
                 ],
               ),
@@ -334,26 +369,56 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                   Image(image: AssetImage(Appimage.chair)),
                   Spacewidgetwidth(space: 5),
 
-                  Text('Pickup Point:'),
+                  Text(
+                    'Pickup Point:',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: w * 0.05),
-                  Text('Agric Bus Stop'),
+                  Text(
+                    'Agric Bus Stop',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               Row(
                 children: [
                   Image(image: AssetImage(Appimage.calendar)),
-                  Text('Tuesday, April 30, 2025'),
+                  Text(
+                    'Tuesday, April 30, 2025',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
                   Text("|"),
                   Spacewidgetwidth(space: 5),
                   Image(image: AssetImage(Appimage.clock)),
-                  Text('8:00 AM'),
+                  Text(
+                    '8:00 AM',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
                   Text("|"),
                   Spacewidgetwidth(space: 5),
                   Image(image: AssetImage(Appimage.chair)),
 
-                  Text(' 1 seat'),
+                  Text(
+                    ' 1 seat',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               Spacewidgetheight(space: h * 0.02),
@@ -365,7 +430,7 @@ class _UpcomingtripState extends State<Upcomingtrip> {
                   if (ongointriptapped)
                     Custombuttom(tittle: 'View Trip', width: w * 0.28),
                   if (completedtriptapped)
-                    Custombuttom(tittle: 'Leave a Review', width: w * 0.28),
+                    Custombuttom(tittle: 'Leave a Review', width: w * 0.32),
                   Spacewidgetwidth(space: w * 0.05),
                   if (upcomingtapped)
                     Text(

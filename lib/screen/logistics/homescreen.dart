@@ -4,6 +4,11 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/homescreen/tripdetails.dart';
+import 'package:rideshareapp/screen/logistics/pickupanddropoffdetails.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/confirmrecruitingctrip.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/tripoverview.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/upcomingtripview.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -35,7 +40,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   Spacewidgetwidth(space: w * 0.031),
                   Text(
                     'Lagos (Ojota Bus Terminal)',
-                    style: TextStyle(fontSize: h * 0.015),
+                    style: Theme.of(context).textTheme.labelSmall,
                   ),
                 ],
               ),
@@ -49,7 +54,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.5),
+                        padding: const EdgeInsets.all(7),
                         child: Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -57,15 +62,18 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                             border: Border.all(color: Colors.grey),
                           ),
                           alignment: Alignment.center,
-                          child: const Padding(
-                            padding: EdgeInsets.all(6.0),
-                            child: Icon(Icons.notifications_none_outlined),
+                          child: Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Icon(
+                              Icons.notifications_none_outlined,
+                              size: h * 0.02,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
                         right: w * 0.01,
-                        bottom: h * 0.039,
+                        bottom: h * 0.025,
                         child: CircleAvatar(
                           radius: w * 0.015,
                           backgroundColor: Colors.red,
@@ -83,16 +91,21 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                 ],
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
                     "Welcome back,",
-                    style: TextStyle(
-                      fontSize: h * 0.025,
-                      fontWeight: FontWeight.w600,
+                    style: AppThemes.titleMedium.copyWith(
+                      color: AppColors.textPrimary,
                     ),
                   ),
-                  Spacewidgetwidth(space: 10),
-                  Text('Ahmed'),
+                  Spacewidgetwidth(space: 2),
+                  Text(
+                    'Ahmed',
+                    style: AppThemes.bodySmall.copyWith(
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               Spacewidgetheight(space: h * 0.03),
@@ -100,48 +113,60 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                 children: [
                   Image(image: AssetImage(Appimage.wallet)),
                   Spacewidgetwidth(space: 5),
-                  Text('N5,740', style: TextStyle(fontSize: h * 0.025)),
+                  Text(
+                    'N5,740',
+                    style: AppThemes.titleMedium.copyWith(
+                      color: AppColors.textPrimary,
+                      fontWeight: FontWeight.w100,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
-                  Icon(Icons.visibility_outlined),
+                  Icon(
+                    Icons.visibility_outlined,
+                    color: AppColors.textSecondary,
+                  ),
                 ],
               ),
               Spacewidgetheight(space: h * 0.03),
 
-              Container(
-                height: h * 0.17,
-                width: w.toDouble(),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Appcolor.gradientblue, Appcolor.gradientorang],
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: h * 0.17,
+                  width: w.toDouble(),
+                  decoration: BoxDecoration(
+                    gradient: AppColors.buttongradient,
+                    borderRadius: BorderRadius.circular(w * 0.05),
                   ),
-                  borderRadius: BorderRadius.circular(w * 0.05),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image(image: AssetImage(Appimage.van)),
-                          Icon(Icons.arrow_forward, color: Colors.white),
-                        ],
-                      ),
-                      Text(
-                        'Join a trip',
-                        style: TextStyle(
-                          fontSize: h * 0.022,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image(image: AssetImage(Appimage.hugeiconsvan)),
+                            Icon(Icons.arrow_forward, color: Colors.white),
+                          ],
                         ),
-                      ),
-                      Text(
-                        'Search for rides or book',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
+                        Text(
+                          'Join a trip',
+                          style: AppThemes.titleLarge.copyWith(
+                            fontSize: 15,
+                            color: AppColors.textWhite,
+                          ),
+                        ),
+                        Text(
+                          'Search for rides or book',
+                          style: AppThemes.titleSmall.copyWith(
+                            fontSize: 10,
+                            color: AppColors.textWhite,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -175,57 +200,66 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                           ),
                           Text(
                             'Post a trip',
-                            style: TextStyle(
-                              fontSize: h * 0.022,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                            style: AppThemes.titleLarge.copyWith(
+                              fontSize: 15,
+                              color: AppColors.textWhite,
                             ),
                           ),
                           Text(
                             'Offer seat as a Driver',
-                            style: TextStyle(color: Colors.white),
+                            style: AppThemes.titleSmall.copyWith(
+                              fontSize: 10,
+                              color: AppColors.textWhite,
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  Container(
-                    height: h * 0.17,
-                    width: w * 0.43,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Appcolor.gradientorang,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image(image: AssetImage(Appimage.box)),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
-                                size: h * 0.02,
-                              ),
-                            ],
-                          ),
-                          Text(
-                            'Send Package',
-                            style: TextStyle(
-                              fontSize: h * 0.022,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(Pickupanddropoffdetails());
+                    },
+                    child: Container(
+                      height: h * 0.17,
+                      width: w * 0.43,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Appcolor.gradientorang,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image(image: AssetImage(Appimage.box)),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: h * 0.02,
+                                ),
+                              ],
                             ),
-                          ),
-                          Text(
-                            'Create delivery order',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                            Text(
+                              'Send Package',
+                              style: AppThemes.titleLarge.copyWith(
+                                fontSize: 15,
+                                color: AppColors.textWhite,
+                              ),
+                            ),
+                            Text(
+                              'Create delivery order',
+                              style: AppThemes.titleSmall.copyWith(
+                                fontSize: 10,
+                                color: AppColors.textWhite,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -293,14 +327,14 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                         ),
                         Positioned(
                           right: w * 0.001,
-                          bottom: h * 0.016,
+                          bottom: h * 0.013,
                           left: w * 0.32,
 
                           child: Text(
                             'Top Rated Driver',
-                            style: TextStyle(
-                              fontSize: h * 0.02,
-                              fontWeight: FontWeight.w500,
+                            style: AppThemes.titleLarge.copyWith(
+                              color: AppColors.textPrimary,
+                              fontSize: 13,
                             ),
                           ),
                         ),
@@ -309,17 +343,17 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   ),
                 ],
               ),
+
               Spacewidgetheight(space: h * 0.028),
 
               Spacewidgetheight(space: 20),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Get.to(Tripdetails());
-                      },
+                      onTap: () {},
                       child: Card(
                         elevation: 8,
                         shadowColor: const Color.fromARGB(15, 13, 125, 244),
@@ -331,12 +365,10 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(h * 0.02),
                           ),
-                          height: h * 0.37,
-                          width: w * 0.8,
+                          height: 325,
+                          width: 308,
                           child: GestureDetector(
-                            onTap: () {
-                              Get.to(Tripdetails());
-                            },
+                            onTap: () {},
                             child: Padding(
                               padding: EdgeInsets.all(15),
                               child: Column(
@@ -388,25 +420,32 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                         children: [
                                           Text(
                                             'Aisha B.',
-                                            style: TextStyle(
-                                              fontSize: h * 0.022,
-                                            ),
+                                            style: AppThemes.titleLarge
+                                                .copyWith(
+                                                  color: AppColors.textPrimary,
+                                                  fontSize: 15.5,
+                                                ),
                                           ),
                                           Row(
                                             children: [
                                               Icon(
                                                 Icons.star,
-                                                color: Colors.deepOrange,
+                                                color: AppColors.primaryOrange,
                                                 size: h * 0.02,
                                               ),
                                               Text(
                                                 '4.2',
                                                 style: TextStyle(
-                                                  color: Colors.deepOrange,
+                                                  color:
+                                                      AppColors.primaryOrange,
+                                                  fontSize: 10,
                                                 ),
                                               ),
                                               Spacewidgetwidth(space: 5),
-                                              Text('85 trips'),
+                                              Text(
+                                                '85 trips',
+                                                style: TextStyle(fontSize: 8.5),
+                                              ),
                                             ],
                                           ),
                                         ],
@@ -414,9 +453,9 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                       Spacer(),
                                       Text(
                                         '₦3,500',
-                                        style: TextStyle(
-                                          fontSize: h * 0.02,
-                                          fontWeight: FontWeight.w700,
+                                        style: AppThemes.titleLarge.copyWith(
+                                          color: AppColors.textPrimary,
+                                          fontSize: 12.67,
                                         ),
                                       ),
                                     ],
@@ -431,7 +470,10 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                         color: Appcolor.primarrylight,
                                       ),
                                       Spacewidgetwidth(space: 2),
-                                      Text('Lagos (Ojota Bus Terminal)'),
+                                      Text(
+                                        'Lagos (Ojota Bus Terminal)',
+                                        style: TextStyle(fontSize: 10.56),
+                                      ),
                                     ],
                                   ),
                                   Row(
@@ -456,7 +498,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                       //   ),
                                       // ),
                                       Text(
-                                        '-------------------------------------------------------- ',
+                                        '----------------------------------- ',
                                         style: TextStyle(
                                           color: Appcolor.grytextfield,
                                         ),
@@ -465,12 +507,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                         height: h * 0.03,
                                         width: w * 0.2,
                                         decoration: BoxDecoration(
-                                          color: Color.fromRGBO(
-                                            231,
-                                            255,
-                                            237,
-                                            1,
-                                          ),
+                                          color: AppColors.fadegreen,
                                           borderRadius: BorderRadius.circular(
                                             10,
                                           ),
@@ -479,12 +516,8 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                           child: Text(
                                             'Confirmed',
                                             style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                52,
-                                                199,
-                                                89,
-                                                1,
-                                              ),
+                                              fontSize: 9,
+                                              color: AppColors.success,
                                             ),
                                           ),
                                         ),
@@ -497,7 +530,10 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                     children: [
                                       Image(image: AssetImage(Appimage.s)),
                                       Spacewidgetwidth(space: 2),
-                                      Text('Ibadan (Iwo Road Park)'),
+                                      Text(
+                                        'Ibadan (Iwo Road Park)',
+                                        style: TextStyle(fontSize: 10.56),
+                                      ),
                                     ],
                                   ),
                                   Spacewidgetheight(space: 10),
@@ -511,7 +547,13 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                           Image(
                                             image: AssetImage(Appimage.clock),
                                           ),
-                                          Text('8:00 AM'),
+                                          Text(
+                                            '8:00 AM',
+                                            style: TextStyle(
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                       Column(
@@ -521,13 +563,25 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                               Appimage.calendar,
                                             ),
                                           ),
-                                          Text('Tuesday, April 30, 2025'),
+                                          Text(
+                                            'Tuesday, April 30, 2025',
+                                            style: TextStyle(
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                       Column(
                                         children: [
                                           Image(image: AssetImage(Appimage.sl)),
-                                          Text('1 seat'),
+                                          Text(
+                                            '1 seat',
+                                            style: TextStyle(
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -536,41 +590,53 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                                   Row(
                                     children: [
                                       Container(
+                                        height: 33,
+                                        width: 85,
                                         decoration: BoxDecoration(
-                                          color: Appcolor.primary,
+                                          color: AppColors.colorBlue,
                                           borderRadius: BorderRadius.circular(
                                             20,
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(15),
+                                        child: Center(
                                           child: Text(
                                             'View Trip',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              fontSize: 13.5,
+                                              color: AppColors.textWhite,
                                             ),
                                           ),
                                         ),
                                       ),
                                       Spacewidgetwidth(space: w * 0.03),
                                       Container(
+                                        height: 33,
+                                        width: 83,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                            color: Appcolor.primary,
+                                            color: AppColors.primaryBlue,
                                           ),
                                           borderRadius: BorderRadius.circular(
                                             20,
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(15),
-                                          child: Text('Chat'),
+                                        child: Center(
+                                          child: Text(
+                                            'Chat',
+                                            style: TextStyle(
+                                              color: AppColors.primaryBlue,
+                                              fontSize: 13.5,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                       Spacewidgetwidth(space: w * 0.03),
                                       Text(
                                         'Cancel',
-                                        style: TextStyle(color: Colors.red),
+                                        style: TextStyle(
+                                          fontSize: 13.5,
+                                          color: AppColors.primaryRed,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -582,253 +648,324 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                       ),
                     ),
                     Spacewidgetwidth(space: w * 0.015),
-                    Card(
-                      elevation: 8,
-                      shadowColor: const Color.fromARGB(15, 13, 125, 244),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(h * 0.02),
-                      ),
-                      child: Container(
-                        height: h * 0.37,
-
-                        decoration: BoxDecoration(
-                          color: Colors.white,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Card(
+                        elevation: 8,
+                        shadowColor: const Color.fromARGB(15, 13, 125, 244),
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(h * 0.02),
                         ),
-                        width: w * 0.8,
-                        child: Padding(
-                          padding: EdgeInsets.all(15),
-                          child: Column(
-                            children: [
-                              Row(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(h * 0.02),
+                          ),
+                          height: 325,
+                          width: 308,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Padding(
+                              padding: EdgeInsets.all(15),
+                              child: Column(
                                 children: [
-                                  Container(
-                                    width: w * 0.17,
-
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          top: h * 0.01,
-                                          left: w * 0.05,
-                                          child: Container(
-                                            height: h * 0.041,
-                                            width: w * 0.12,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                fit: BoxFit.contain,
-                                                image: AssetImage(
-                                                  Appimage.whitecar,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Container(
-                                            height: h * 0.05,
-                                            width: w * 0.07,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                  Appimage.smileman,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Spacewidgetwidth(space: 10),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                  Row(
                                     children: [
-                                      Text(
-                                        'Aisha B.',
-                                        style: TextStyle(fontSize: h * 0.022),
+                                      Container(
+                                        width: w * 0.17,
+
+                                        child: Stack(
+                                          children: [
+                                            Positioned(
+                                              top: h * 0.01,
+                                              left: w * 0.05,
+                                              child: Container(
+                                                height: h * 0.041,
+                                                width: w * 0.12,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    fit: BoxFit.contain,
+                                                    image: AssetImage(
+                                                      Appimage.whitecar,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              child: Container(
+                                                height: h * 0.05,
+                                                width: w * 0.07,
+                                                decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  image: DecorationImage(
+                                                    image: AssetImage(
+                                                      Appimage.smileman,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      Row(
+                                      Spacewidgetwidth(space: 10),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.deepOrange,
-                                            size: h * 0.02,
+                                          Text(
+                                            'Aisha B.',
+                                            style: AppThemes.titleLarge
+                                                .copyWith(
+                                                  color: AppColors.textPrimary,
+                                                  fontSize: 15.5,
+                                                ),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                color: AppColors.primaryOrange,
+                                                size: h * 0.02,
+                                              ),
+                                              Text(
+                                                '4.2',
+                                                style: TextStyle(
+                                                  color:
+                                                      AppColors.primaryOrange,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                              Spacewidgetwidth(space: 5),
+                                              Text(
+                                                '85 trips',
+                                                style: TextStyle(fontSize: 8.5),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Spacer(),
+                                      Text(
+                                        '₦3,500',
+                                        style: AppThemes.titleLarge.copyWith(
+                                          color: AppColors.textPrimary,
+                                          fontSize: 12.67,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Divider(color: Appcolor.grytextfield),
+                                  Spacewidgetheight(space: 10),
+
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_on_outlined,
+                                        color: Appcolor.primarrylight,
+                                      ),
+                                      Spacewidgetwidth(space: 2),
+                                      Text(
+                                        'Lagos (Ojota Bus Terminal)',
+                                        style: TextStyle(fontSize: 10.56),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Spacewidgetwidth(space: h * 0.012),
+                                      Text(
+                                        '|',
+                                        style: TextStyle(
+                                          fontSize: h * 0.026,
+                                          color: Appcolor.grytextfield,
+                                        ),
+                                      ),
+                                      // Container(
+                                      //   width: w * 0.68,
+                                      //   decoration: BoxDecoration(
+                                      //     border: Border(
+                                      //       bottom: BorderSide(
+                                      //         style: BorderStyle.soli,
+                                      //         color: Appcolor.grytextfield,
+                                      //       ),
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      Text(
+                                        '----------------------------------- ',
+                                        style: TextStyle(
+                                          color: Appcolor.grytextfield,
+                                        ),
+                                      ),
+                                      Container(
+                                        height: h * 0.03,
+                                        width: w * 0.2,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.fadegreen,
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Confirmed',
+                                            style: TextStyle(
+                                              fontSize: 9,
+                                              color: AppColors.success,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Spacewidgetheight(space: 10),
+
+                                  Row(
+                                    children: [
+                                      Image(image: AssetImage(Appimage.s)),
+                                      Spacewidgetwidth(space: 2),
+                                      Text(
+                                        'Ibadan (Iwo Road Park)',
+                                        style: TextStyle(fontSize: 10.56),
+                                      ),
+                                    ],
+                                  ),
+                                  Spacewidgetheight(space: 10),
+                                  Divider(color: Appcolor.grytextfield),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Image(
+                                            image: AssetImage(Appimage.clock),
                                           ),
                                           Text(
-                                            '4.2',
+                                            '8:00 AM',
                                             style: TextStyle(
-                                              color: Colors.deepOrange,
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
                                             ),
                                           ),
-                                          Spacewidgetwidth(space: 5),
-                                          Text('85 trips'),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image(
+                                            image: AssetImage(
+                                              Appimage.calendar,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Tuesday, April 30, 2025',
+                                            style: TextStyle(
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image(image: AssetImage(Appimage.sl)),
+                                          Text(
+                                            '1 seat',
+                                            style: TextStyle(
+                                              fontSize: 8.45,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ],
                                   ),
-                                  Spacer(),
-                                  Text(
-                                    '₦3,500',
-                                    style: TextStyle(
-                                      fontSize: h * 0.02,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Divider(color: Appcolor.grytextfield),
-                              Spacewidgetheight(space: 10),
-
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.location_on_outlined,
-                                    color: Appcolor.primarrylight,
-                                  ),
-                                  Spacewidgetwidth(space: 2),
-                                  Text('Lagos (Ojota Bus Terminal)'),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Spacewidgetwidth(space: h * 0.012),
-                                  Text(
-                                    '|',
-                                    style: TextStyle(
-                                      fontSize: h * 0.026,
-                                      color: Appcolor.grytextfield,
-                                    ),
-                                  ),
-                                  // Container(
-                                  //   width: w * 0.68,
-                                  //   decoration: BoxDecoration(
-                                  //     border: Border(
-                                  //       bottom: BorderSide(
-                                  //         style: BorderStyle.soli,
-                                  //         color: Appcolor.grytextfield,
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
-                                  Text(
-                                    '-------------------------------------------------------- ',
-                                    style: TextStyle(
-                                      color: Appcolor.grytextfield,
-                                    ),
-                                  ),
-                                  Container(
-                                    height: h * 0.03,
-                                    width: w * 0.2,
-                                    decoration: BoxDecoration(
-                                      color: Color.fromRGBO(231, 255, 237, 1),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Confirmed',
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(52, 199, 89, 1),
+                                  Spacewidgetheight(space: h * 0.02),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 33,
+                                        width: 85,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.colorBlue,
+                                          borderRadius: BorderRadius.circular(
+                                            20,
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'View Trip',
+                                            style: TextStyle(
+                                              fontSize: 13.5,
+                                              color: AppColors.textWhite,
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Spacewidgetheight(space: 10),
-
-                              Row(
-                                children: [
-                                  Image(image: AssetImage(Appimage.s)),
-                                  Spacewidgetwidth(space: 2),
-                                  Text('Ibadan (Iwo Road Park)'),
-                                ],
-                              ),
-                              Spacewidgetheight(space: 10),
-                              Divider(color: Appcolor.grytextfield),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Image(image: AssetImage(Appimage.clock)),
-                                      Text('8:00 AM'),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Image(
-                                        image: AssetImage(Appimage.calendar),
+                                      Spacewidgetwidth(space: w * 0.03),
+                                      Container(
+                                        height: 33,
+                                        width: 83,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: AppColors.primaryBlue,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            20,
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Chat',
+                                            style: TextStyle(
+                                              color: AppColors.primaryBlue,
+                                              fontSize: 13.5,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      Text('Tuesday, April 30, 2025'),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Image(image: AssetImage(Appimage.sl)),
-                                      Text('1 seat'),
+                                      Spacewidgetwidth(space: w * 0.03),
+                                      Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          fontSize: 13.5,
+                                          color: AppColors.primaryRed,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ],
                               ),
-                              Spacewidgetheight(space: h * 0.02),
-                              Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: Appcolor.primary,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(15),
-                                      child: Text(
-                                        'View Trip',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                  Spacewidgetwidth(space: w * 0.03),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Appcolor.primary,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(15),
-                                      child: Text('Chat'),
-                                    ),
-                                  ),
-                                  Spacewidgetwidth(space: w * 0.03),
-                                  Text(
-                                    'Cancel',
-                                    style: TextStyle(color: Colors.red),
-                                  ),
-                                ],
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
                     ),
+                    Spacewidgetwidth(space: w * 0.015),
                   ],
                 ),
               ),
-              Spacewidgetheight(space: h * 0.05),
+              Spacewidgetheight(space: h * 0.02),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Booking & Request',
-                    style: TextStyle(
-                      fontSize: h * 0.026,
-                      fontWeight: FontWeight.w600,
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.textPrimary,
+                      fontSize: 15.5,
                     ),
                   ),
-                  Text('View all', style: TextStyle(color: Appcolor.primary)),
+                  Text(
+                    'View all',
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.colorBlue,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.5,
+                    ),
+                  ),
                 ],
               ),
               Spacewidgetheight(space: h * 0.05),
@@ -840,13 +977,13 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   borderRadius: BorderRadius.circular(h * 0.02),
                 ),
                 child: Container(
-                  height: h * 0.25,
+                  height: 211,
 
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(h * 0.02),
                   ),
-                  width: w * 0.8,
+                  width: 298,
                   child: Padding(
                     padding: EdgeInsets.all(15),
                     child: Column(
@@ -862,23 +999,30 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                               children: [
                                 Text(
                                   'Aisha B.',
-                                  style: TextStyle(fontSize: h * 0.022),
+                                  style: AppThemes.titleLarge.copyWith(
+                                    color: AppColors.textPrimary,
+                                    fontSize: 15.5,
+                                  ),
                                 ),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.star,
                                       color: Colors.deepOrange,
-                                      size: h * 0.02,
+                                      size: 10,
                                     ),
                                     Text(
                                       '4.2',
                                       style: TextStyle(
-                                        color: Colors.deepOrange,
+                                        fontSize: 10,
+                                        color: AppColors.primaryOrange,
                                       ),
                                     ),
                                     Spacewidgetwidth(space: 5),
-                                    Text('85 trips'),
+                                    Text(
+                                      '85 trips',
+                                      style: TextStyle(fontSize: 8.5),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -888,14 +1032,15 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                               height: h * 0.03,
                               width: w * 0.2,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(255, 240, 218, 1),
+                                color: AppColors.fadeorang,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Center(
                                 child: Text(
                                   'Pending',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(255, 149, 0, 1),
+                                    fontSize: 12,
+                                    color: AppColors.primaryOrange,
                                   ),
                                 ),
                               ),
@@ -907,21 +1052,61 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                         Row(
                           children: [
                             Image(image: AssetImage(Appimage.s)),
-                            Text('Ikeja'),
+                            Text(
+                              'Ikeja',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             SizedBox(width: w * 0.1, child: Divider()),
                             Icon(
                               Icons.location_on_outlined,
                               color: Appcolor.primarrylight,
                             ),
-                            Text('Lekki'),
+                            Text(
+                              'Lekki',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.025),
                         Row(
                           children: [
-                            Custombuttom(tittle: 'Accept', width: w * 0.2),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(Confirmrecruitingctrip());
+                              },
+                              child: Container(
+                                height: 33,
+                                width: 85,
+                                decoration: BoxDecoration(
+                                  gradient: AppColors.buttongradient,
+                                  color: AppColors.colorBlue,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Accept',
+                                    style: TextStyle(
+                                      fontSize: 13.5,
+                                      color: AppColors.textWhite,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                             Spacewidgetwidth(space: 20),
-                            Text('Reject', style: TextStyle(color: Colors.red)),
+                            Text(
+                              'Reject',
+                              style: TextStyle(
+                                color: AppColors.error,
+                                fontSize: 16,
+                              ),
+                            ),
                           ],
                         ),
                       ],
@@ -935,116 +1120,161 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                 children: [
                   Text(
                     'Recent Past Trips',
-                    style: TextStyle(
-                      fontSize: h * 0.026,
-                      fontWeight: FontWeight.w600,
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.textPrimary,
+                      fontSize: 15.5,
                     ),
                   ),
-                  Text('View all', style: TextStyle(color: Appcolor.primary)),
+                  Text(
+                    'View all',
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.colorBlue,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.5,
+                    ),
+                  ),
                 ],
               ),
+
               Spacewidgetheight(space: h * 0.05),
               Spacewidgetwidth(space: w * 0.015),
-              Card(
-                elevation: 8,
-                shadowColor: const Color.fromARGB(12, 13, 125, 244),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(h * 0.02),
-                ),
-                child: Container(
-                  height: h * 0.25,
-
-                  decoration: BoxDecoration(
-                    color: Colors.white,
+              GestureDetector(
+                onTap: () {},
+                child: Card(
+                  elevation: 8,
+                  shadowColor: const Color.fromARGB(12, 13, 125, 244),
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(h * 0.02),
                   ),
-                  width: w * 0.8,
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Passenger',
-                          style: TextStyle(
-                            fontSize: h * 0.027,
-                            fontWeight: FontWeight.w700,
+                  child: Container(
+                    height: h * 0.25,
+
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(h * 0.02),
+                    ),
+                    width: w * 0.8,
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Passenger',
+                            style: AppThemes.titleLarge.copyWith(
+                              color: AppColors.textPrimary,
+                              fontSize: 15.5,
+                            ),
                           ),
-                        ),
-                        Spacewidgetheight(space: h * 0.02),
-                        Row(
-                          children: [
-                            Icon(Icons.location_on),
-                            Text('Enugu (Holy Ghost Park)'),
-                            Spacer(),
-                            Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(231, 255, 237, 1),
-                                borderRadius: BorderRadius.circular(10),
+                          Spacewidgetheight(space: h * 0.02),
+                          Row(
+                            children: [
+                              Icon(Icons.location_on),
+                              Text(
+                                'Enugu (Holy Ghost Park)',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
-                              child: Center(
-                                child: Text(
-                                  '✅ Completed',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(52, 199, 89, 1),
+                              Spacer(),
+                              Container(
+                                height: h * 0.03,
+                                width: w * 0.2,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(231, 255, 237, 1),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Completed',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: AppColors.success,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Spacewidgetheight(space: h * 0.02),
-                        Row(
-                          children: [
-                            Image(image: AssetImage(Appimage.s)),
-                            Text('Ibadan (Iwo Road Park)'),
-                          ],
-                        ),
-                        Spacewidgetheight(space: h * 0.02),
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Appcolor.primary,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: Text(
-                                  'View Details',
-                                  style: TextStyle(color: Colors.white),
+                            ],
+                          ),
+                          Spacewidgetheight(space: h * 0.02),
+                          Row(
+                            children: [
+                              Image(image: AssetImage(Appimage.s)),
+                              Text(
+                                'Ibadan (Iwo Road Park)',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: AppColors.textSecondary,
                                 ),
                               ),
-                            ),
-                            Spacewidgetwidth(space: w * 0.03),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Appcolor.primary),
-                                borderRadius: BorderRadius.circular(20),
+                            ],
+                          ),
+                          Spacewidgetheight(space: h * 0.02),
+                          Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Get.to(Tripoverviewp());
+                                },
+                                child: Container(
+                                  height: 33,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.colorBlue,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'View Details',
+                                      style: TextStyle(
+                                        fontSize: 13.5,
+                                        color: AppColors.textWhite,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: Text('Book Again'),
+                              Spacewidgetwidth(space: w * 0.03),
+                              Container(
+                                height: 33,
+                                width: 83,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: AppColors.primaryBlue,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Book Again',
+                                    style: TextStyle(
+                                      color: AppColors.primaryBlue,
+                                      fontSize: 13.5,
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                            Spacewidgetwidth(space: w * 0.03),
-                            Text(
-                              'Cancel',
-                              style: TextStyle(color: Appcolor.primary),
-                            ),
-                          ],
-                        ),
-                      ],
+                              Spacewidgetwidth(space: w * 0.03),
+                              Text(
+                                'Cancel',
+                                style: TextStyle(
+                                  fontSize: 13.5,
+                                  color: AppColors.colorBlue,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
               Spacewidgetheight(space: h * 0.05),
               Container(
-                height: h * 0.15,
-                width: w.toDouble(),
+                height: 122,
+                width: 392,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -1059,12 +1289,51 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   children: [
                     Text(
                       ' Invite friends and get ₦500 off your next trip!',
-                      style: TextStyle(color: Appcolor.primary),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.colorBlue,
+                      ),
                     ),
-                    Custombuttom(tittle: 'Refer & Earn', width: w * 0.29),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Appcolor.gradientblue,
+                              Appcolor.gradientorang,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(w * 0.06),
+                        ),
+                        height: 35,
+                        alignment: Alignment.center,
+                        width: 120,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Refer & Earn',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textWhite,
+                              ),
+                            ),
+                            Spacewidgetwidth(space: w * 0.02),
+
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                              color: AppColors.textWhite,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
+              Spacewidgetheight(space: 150),
             ],
           ),
         ),

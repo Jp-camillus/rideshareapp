@@ -7,11 +7,15 @@ class Custombuttom extends StatefulWidget {
   final Function()? tap;
 
   final double width;
+  final double? height;
+  final double? fontsize;
   const Custombuttom({
     super.key,
     required this.tittle,
     required this.width,
     this.tap,
+    this.height,
+    this.fontsize,
   });
 
   @override
@@ -27,15 +31,19 @@ class _CustombuttomState extends State<Custombuttom> {
       onTap: widget.tap,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Appcolor.gradientblue, Appcolor.gradientorang],
-          ),
+          gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
-        height: h * 0.06,
+        height: widget.height ?? h * 0.06,
         alignment: Alignment.center,
         width: widget.width,
-        child: Text(widget.tittle, style: TextStyle(color: Colors.white)),
+        child: Text(
+          widget.tittle,
+          style: TextStyle(
+            color: AppColors.textWhite,
+            fontSize: widget.fontsize ?? 16,
+          ),
+        ),
       ),
     );
   }
@@ -44,6 +52,7 @@ class _CustombuttomState extends State<Custombuttom> {
 class Custombuttomwithicon extends StatefulWidget {
   final String tittle;
   final double width;
+  final double? height;
   final Widget icon;
   final Function()? tap;
 
@@ -53,6 +62,7 @@ class Custombuttomwithicon extends StatefulWidget {
     required this.width,
     required this.icon,
     this.tap,
+    this.height,
   });
 
   @override
@@ -68,12 +78,10 @@ class _CustombuttomwithiconState extends State<Custombuttomwithicon> {
       onTap: widget.tap,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Appcolor.gradientblue, Appcolor.gradientorang],
-          ),
+          gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
-        height: h * 0.06,
+        height: widget.height ?? h * 0.06,
         alignment: Alignment.center,
         width: widget.width,
         child: Padding(
@@ -82,7 +90,10 @@ class _CustombuttomwithiconState extends State<Custombuttomwithicon> {
             children: [
               widget.icon,
               Spacewidgetwidth(space: w * 0.02),
-              Text(widget.tittle, style: TextStyle(color: Colors.white)),
+              Text(
+                widget.tittle,
+                style: TextStyle(fontSize: 16, color: AppColors.textWhite),
+              ),
             ],
           ),
         ),

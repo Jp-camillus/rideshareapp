@@ -4,6 +4,7 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/screen/auth/signup/all_set.dart';
 import 'package:rideshareapp/screen/auth/signup/phone_number_verification.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -23,36 +24,38 @@ class Signupsuccessfull extends StatelessWidget {
             Center(
               child: Text(
                 'Account Created!',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontSize: h * 0.035,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppThemes.titleMedium.copyWith(color: AppColors.success),
               ),
             ),
             Spacewidgetheight(space: 10),
             Center(
               child: Text(
                 'Welcome aboard, Aisha!',
-                style: TextStyle(
-                  fontSize: h * 0.032,
-                  fontWeight: FontWeight.w400,
+                style: AppThemes.titleSmall.copyWith(
+                  color: AppColors.textPrimary,
                 ),
               ),
             ),
+            Spacewidgetheight(space: 3),
+
             Center(
               child: Text(
                 'Your account has been created successfully. Let’s finish ',
-                style: TextStyle(),
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
               ),
             ),
             Center(
               child: Text(
                 'setting things up so you can start booking or posting ',
-                style: TextStyle(),
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
               ),
             ),
-            Center(child: Text('trips.', style: TextStyle())),
+            Center(
+              child: Text(
+                'trips.',
+                style: TextStyle(fontSize: 14, color: AppColors.textPrimary),
+              ),
+            ),
             Spacewidgetheight(space: 30),
             Container(
               height: h * 0.45,
@@ -86,7 +89,7 @@ class Signupsuccessfull extends StatelessWidget {
                           ),
                           height: h * 0.06,
                           alignment: Alignment.center,
-                          width: w * 0.35,
+                          width: w * 0.39,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(

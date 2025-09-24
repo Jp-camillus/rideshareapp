@@ -5,6 +5,7 @@ import 'package:get/get_core/get_core.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/homescreen/homescreen.dart';
+import 'package:rideshareapp/screen/nav/bottom_nav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class SelectRole extends StatelessWidget {
@@ -17,7 +18,6 @@ class SelectRole extends StatelessWidget {
     var w = MediaQuery.of(context).size.width.round();
 
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
@@ -140,7 +140,7 @@ class SelectRole extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Get.to(Homescreen());
+                                  Get.to(MainDashboard());
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(

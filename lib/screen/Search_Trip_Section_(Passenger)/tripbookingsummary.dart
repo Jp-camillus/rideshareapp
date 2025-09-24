@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:rideshareapp/constant/appcolor.dart'
-    show Appcolor, primarrylight;
+import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -27,21 +27,21 @@ class Tripbookingsummary extends StatelessWidget {
                   Get.back();
                 },
                 child: CircleAvatar(
-                  
+                  backgroundColor: AppColors.cardLight,
                   child: Icon(Icons.arrow_back, color: Appcolor.primarrylight),
                 ),
               ),
               Spacewidgetheight(space: h * 0.02),
               Text(
                 'Trip Booking Summary',
-                style: TextStyle(
-                  fontSize: h * 0.025,
-                  fontWeight: FontWeight.w700,
+                style: AppThemes.titleSmall.copyWith(
+                  fontSize: 18,
+                  color: AppColors.textPrimary,
                 ),
               ),
               Spacewidgetheight(space: h * 0.01),
               Container(
-                height: h * 0.5,
+                height: h * 0.58,
                 width: w.toDouble(),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -63,6 +63,7 @@ class Tripbookingsummary extends StatelessWidget {
                                 Positioned(
                                   top: h * 0.01,
                                   left: w * 0.11,
+                                  bottom: 20,
                                   child: Container(
                                     height: h * 0.05,
                                     width: w * 0.17,
@@ -75,14 +76,18 @@ class Tripbookingsummary extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  child: Container(
-                                    height: h * 0.05,
-                                    width: w * 0.17,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(Appimage.smileman),
+                                  child: Positioned(
+                                    bottom: 40,
+
+                                    child: Container(
+                                      height: h * 0.05,
+                                      width: w * 0.17,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(Appimage.smileman),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -97,9 +102,9 @@ class Tripbookingsummary extends StatelessWidget {
                             children: [
                               Text(
                                 'Chinedu O.',
-                                style: TextStyle(
-                                  fontSize: h * 0.025,
-                                  fontWeight: FontWeight.w700,
+                                style: AppThemes.titleMedium.copyWith(
+                                  color: AppColors.textPrimary,
+                                  fontSize: 18,
                                 ),
                               ),
                               Row(
@@ -107,15 +112,24 @@ class Tripbookingsummary extends StatelessWidget {
                                 children: [
                                   Icon(
                                     Icons.star,
-                                    color: Colors.deepOrange,
-                                    size: h * 0.02,
+                                    color: AppColors.primaryOrange,
+                                    size: 12.58,
                                   ),
                                   Text(
                                     '4.2',
-                                    style: TextStyle(color: Colors.deepOrange),
+                                    style: TextStyle(
+                                      fontSize: 12.58,
+                                      color: AppColors.primaryOrange,
+                                    ),
                                   ),
                                   Spacewidgetwidth(space: 5),
-                                  Text('(250)'),
+                                  Text(
+                                    '(250)',
+                                    style: TextStyle(
+                                      fontSize: 12.58,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
                                 ],
                               ),
                               Row(
@@ -130,6 +144,10 @@ class Tripbookingsummary extends StatelessWidget {
                                       Text(
                                         'Building 8, 77 N WASHINGTON ST, ',
                                         overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontSize: 10.58,
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -148,10 +166,17 @@ class Tripbookingsummary extends StatelessWidget {
                           Text(
                             'Date',
                             style: TextStyle(
-                              color: Color.fromRGBO(75, 79, 99, 1),
+                              fontSize: 12.9,
+                              color: AppColors.textSecondary,
                             ),
                           ),
-                          Text('May 2 @ 7:00 AM'),
+                          Text(
+                            'May 2 @ 7:00 AM',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
                       Spacewidgetheight(space: 20),
@@ -161,10 +186,17 @@ class Tripbookingsummary extends StatelessWidget {
                           Text(
                             'Seat',
                             style: TextStyle(
-                              color: Color.fromRGBO(75, 79, 99, 1),
+                              fontSize: 12.9,
+                              color: AppColors.textSecondary,
                             ),
                           ),
-                          Text('1seat'),
+                          Text(
+                            '1seat',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
                       Spacewidgetheight(space: 20),
@@ -174,10 +206,17 @@ class Tripbookingsummary extends StatelessWidget {
                           Text(
                             'Price',
                             style: TextStyle(
-                              color: Color.fromRGBO(75, 79, 99, 1),
+                              fontSize: 12.9,
+                              color: AppColors.textSecondary,
                             ),
                           ),
-                          Text('₦2,500'),
+                          Text(
+                            '₦2,500',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
                       Spacewidgetheight(space: 20),
@@ -187,10 +226,17 @@ class Tripbookingsummary extends StatelessWidget {
                           Text(
                             'Charges',
                             style: TextStyle(
-                              color: Color.fromRGBO(75, 79, 99, 1),
+                              fontSize: 12.9,
+                              color: AppColors.textSecondary,
                             ),
                           ),
-                          Text('#300'),
+                          Text(
+                            '#300',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
                         ],
                       ),
                       Spacewidgetheight(space: 10),
@@ -199,7 +245,13 @@ class Tripbookingsummary extends StatelessWidget {
                         children: [
                           Image(image: AssetImage(Appimage.clock)),
                           Spacewidgetwidth(space: 10),
-                          Text('Free cancellation before January 15'),
+                          Text(
+                            'Free cancellation before January 15',
+                            style: TextStyle(
+                              fontSize: 12.9,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
                         ],
                       ),
                       Spacewidgetheight(space: h * 0.051),
@@ -217,23 +269,29 @@ class Tripbookingsummary extends StatelessWidget {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: EdgeInsets.all(13),
                           child: Row(
                             children: [
                               Text(
                                 'Total',
                                 style: TextStyle(
-                                  fontSize: h * 0.025,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                  color: AppColors.textPrimary,
                                 ),
                               ),
-                              Text(' (NGN)'),
+                              Text(
+                                ' (NGN)',
+                                style: TextStyle(
+                                  fontSize: 12.9,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Spacer(),
                               Text(
                                 '₦1,200',
                                 style: TextStyle(
-                                  fontSize: h * 0.025,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                  color: AppColors.textPrimary,
                                 ),
                               ),
                             ],
@@ -247,27 +305,42 @@ class Tripbookingsummary extends StatelessWidget {
               Spacewidgetheight(space: h * 0.02),
               Text(
                 'Select Payment Method:',
-                style: TextStyle(
-                  fontSize: h * 0.022,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(fontSize: 16, color: AppColors.textPrimary),
               ),
               Row(
                 children: [
                   Radio(value: false, groupValue: true, onChanged: (value) {}),
-                  Text('Wallet'),
+                  Text(
+                    'Wallet',
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                 ],
               ),
               Row(
                 children: [
                   Radio(value: false, groupValue: true, onChanged: (value) {}),
-                  Text('Bank Transfer'),
+                  Text(
+                    'Bank Transfer',
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                 ],
               ),
               Row(
                 children: [
                   Radio(value: false, groupValue: true, onChanged: (value) {}),
-                  Text('Debit/Credit Card'),
+                  Text(
+                    'Debit/Credit Card',
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                 ],
               ),
               Spacewidgetheight(space: h * 0.02),
@@ -276,7 +349,10 @@ class Tripbookingsummary extends StatelessWidget {
                   Spacewidgetwidth(space: w * 0.12),
                   Text(
                     'Other Options',
-                    style: TextStyle(color: Appcolor.primarrylight),
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      color: AppColors.primaryBlue,
+                    ),
                   ),
                   Icon(
                     Icons.arrow_forward_ios_outlined,
@@ -291,7 +367,8 @@ class Tripbookingsummary extends StatelessWidget {
                 children: [
                   Custombuttom(
                     tittle: 'Confirm Booking & Pay',
-                    width: w * 0.388,
+                    width: 198,
+                    height: 48,
                   ),
                 ],
               ),

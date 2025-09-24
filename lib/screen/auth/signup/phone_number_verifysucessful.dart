@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/screen/auth/signup/uploadprofilepicture.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -22,21 +23,39 @@ class PhoneNumberVerifysucessful extends StatelessWidget {
             Center(
               child: Text(
                 'Phone Number Verified',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontSize: h * 0.035,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppThemes.titleMedium.copyWith(color: AppColors.success),
               ),
             ),
             Spacewidgetheight(space: 10),
             Center(
               child: Text(
                 'You have successfully verified your phone',
-                style: TextStyle(),
+                style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
               ),
             ),
-            Center(child: Text('number +2347079731575 ', style: TextStyle())),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    'number ',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    '+2347079731575 ',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                ),
+              ],
+            ),
 
             Spacewidgetheight(space: 30),
             Container(
@@ -71,7 +90,7 @@ class PhoneNumberVerifysucessful extends StatelessWidget {
                           ),
                           height: h * 0.06,
                           alignment: Alignment.center,
-                          width: w * 0.35,
+                          width: w * 0.39,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(

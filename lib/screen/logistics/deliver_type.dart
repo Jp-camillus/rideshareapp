@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/logistics/selectvehicletype.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class DeliverType extends StatelessWidget {
@@ -76,7 +79,22 @@ class DeliverType extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Step 3 of 5'), Text('60% Complete')],
+                    children: [
+                      Text(
+                        'Step 3 of 5',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      Text(
+                        '60% Complete',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
                     height: h * 0.0152,
@@ -91,7 +109,7 @@ class DeliverType extends StatelessWidget {
                           width: w * 0.6,
                           height: h * 0.0152,
                           decoration: BoxDecoration(
-                            color: Appcolor.primary,
+                            color: AppColors.colorBlue,
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
@@ -108,21 +126,16 @@ class DeliverType extends StatelessWidget {
                   ),
                   Spacewidgetheight(space: h * 0.03),
                   Container(
-                    height: h * 0.881,
-                    width: w * 0.902,
+                    height: 450.2195129394531,
+                    width: 398,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(255, 112, 67, 1),
-                          Color.fromRGBO(0, 86, 179, 1),
-                        ],
-                      ),
+                      gradient: AppColors.buttongradient,
                     ),
                     child: Center(
                       child: Container(
-                        height: h * 0.8808,
-                        width: w * 0.9,
+                        height: 448.2195129394531,
+                        width: 396,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -137,9 +150,8 @@ class DeliverType extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Delivery Type',
-                                    style: TextStyle(
-                                      fontSize: h * 0.025,
-                                      fontWeight: FontWeight.w500,
+                                    style: AppThemes.titleMedium.copyWith(
+                                      color: AppColors.textPrimary,
                                     ),
                                   ),
                                 ],
@@ -161,8 +173,20 @@ class DeliverType extends StatelessWidget {
                                       leading: Image(
                                         image: AssetImage(Appimage.clock),
                                       ),
-                                      title: Text('Instant Delivery'),
-                                      subtitle: Text('Find nearest driver now'),
+                                      title: Text(
+                                        'Instant Delivery',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        'Find nearest driver now',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -184,36 +208,33 @@ class DeliverType extends StatelessWidget {
                                       leading: Image(
                                         image: AssetImage(Appimage.kkkkkk),
                                       ),
-                                      title: Text('Scheduled Delivery'),
-                                      subtitle: Text('Select date & time'),
+                                      title: Text(
+                                        'Scheduled Delivery',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        'Select date & time',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: AppColors.textSecondary,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
-                              Spacewidgetheight(space: 10),
-                              Text('Select Date & Time'),
-                              Spacewidgetheight(space: 10),
-                              Spacewidgetheight(space: h * 0.02),
-                              Container(
-                                height: h * 0.11,
-                                width: w.toDouble(),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Color.fromRGBO(209, 213, 219, 1),
-                                  ),
-                                  borderRadius: BorderRadius.circular(h * 0.02),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [],
-                                ),
-                              ),
+
                               Spacewidgetheight(space: h * 0.02),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(Selectvehicletype());
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -266,6 +287,7 @@ class DeliverType extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

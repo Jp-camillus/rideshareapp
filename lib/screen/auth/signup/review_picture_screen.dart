@@ -5,6 +5,7 @@ import 'package:get/get_core/get_core.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/screen/auth/signup/all_set.dart';
 import 'package:rideshareapp/screen/auth/signup/signupsuccessfull.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class ReviewPictureScreen extends StatelessWidget {
@@ -18,7 +19,6 @@ class ReviewPictureScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width.round();
 
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
@@ -40,16 +40,25 @@ class ReviewPictureScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Review Picture',
-                          style: TextStyle(
-                            fontSize: h * 0.035,
-                            fontWeight: FontWeight.w500,
+                          style: AppThemes.titleLarge.copyWith(
+                            color: AppColors.textPrimary,
                           ),
                         ),
                         const Spacewidgetheight(space: 10),
                         const Text(
                           'Please review your picture and make sure that  ',
+                          style: TextStyle(
+                            fontSize: 13.9,
+                            color: AppColors.textSecondary,
+                          ),
                         ),
-                        const Text("people can clearly see your face "),
+                        const Text(
+                          "people can clearly see your face ",
+                          style: TextStyle(
+                            fontSize: 13.9,
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -5,6 +5,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signup/otp_verification_screen.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class PhoneNumberVerification extends StatefulWidget {
@@ -39,16 +40,25 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                 children: [
                   Text(
                     'Add your Phone Number',
-                    style: TextStyle(
-                      fontSize: h * 0.035,
-                      fontWeight: FontWeight.w500,
+                    style: AppThemes.titleLarge.copyWith(
+                      color: AppColors.textPrimary,
                     ),
                   ),
                   const Spacewidgetheight(space: 10),
                   const Text(
                     'Enter your active phone number to verify your identity.  ',
+                    style: TextStyle(
+                      fontSize: 13.9,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
-                  const Text("We'll send you a 6-digit code via SMS. "),
+                  const Text(
+                    "We'll send you a 6-digit code via SMS. ",
+                    style: TextStyle(
+                      fontSize: 13.9,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -61,7 +71,13 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Phone Number'),
+                  const Text(
+                    'Phone Number',
+                    style: TextStyle(
+                      fontSize: 13.9,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   const Spacewidgetheight(space: 10),
                   IntlPhoneField(
                     controller: inputfieldcontroller,
@@ -95,7 +111,10 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                     leading: Image(image: AssetImage(Appimage.sl)),
                     title: Text(
                       'Your number is safe with us and will only be used for verification and trip communication.',
-                      style: TextStyle(fontSize: h * 0.018),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                   ),
                 ],
@@ -131,21 +150,22 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            gradient: activatebutton
-                                ? LinearGradient(
-                                    colors: [
-                                      Appcolor.gradientblue,
-                                      Appcolor.gradientorang,
-                                    ],
-                                  )
-                                : const LinearGradient(
-                                    colors: [Colors.grey, Colors.grey],
-                                  ),
+                            gradient:
+                                activatebutton
+                                    ? LinearGradient(
+                                      colors: [
+                                        Appcolor.gradientblue,
+                                        Appcolor.gradientorang,
+                                      ],
+                                    )
+                                    : const LinearGradient(
+                                      colors: [Colors.grey, Colors.grey],
+                                    ),
                             borderRadius: BorderRadius.circular(w * 0.06),
                           ),
                           height: h * 0.06,
                           alignment: Alignment.center,
-                          width: w * 0.38,
+                          width: w * 0.5,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(

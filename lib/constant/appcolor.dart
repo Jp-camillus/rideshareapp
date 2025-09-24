@@ -14,11 +14,15 @@ class Appcolor {
   // static const gradientblue = Color.fromRGBO(0, 122, 255, 1);
 }
 
-// Use App Colors please !!!! 
+// Use App Colors please !!!!
 class AppColors {
   // LIGHT MODE
   static const Color primaryBlue = Color(0xFF007AFF);
   static const Color primaryPurple = Color(0xFF6C63FF);
+  static const Color fadeblue = Color(0xFFE6F2FF);
+  static const Color fadeorang = Color.fromRGBO(255, 240, 218, 1);
+  static const Color fadegreen = Color(0xFFEDFFF2);
+  static const Color fadecardgreen = Color(0xFFE8FFEB);
   static const Color primaryOrange = Color(0xFFFF7043);
   static const Color primaryRed = Color(0xFFFF3D71);
 
@@ -62,5 +66,7 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+  static const LinearGradient buttongradient = LinearGradient(
+    colors: [Appcolor.gradientblue, Appcolor.gradientorang],
+  );
 }
-

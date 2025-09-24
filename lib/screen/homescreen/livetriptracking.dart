@@ -34,9 +34,10 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: ontap
-                          ? AssetImage(Appimage.maps)
-                          : AssetImage(Appimage.mapcar),
+                      image:
+                          ontap
+                              ? AssetImage(Appimage.maps)
+                              : AssetImage(Appimage.mapcar),
                     ),
                   ),
                 ),
@@ -49,7 +50,6 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       Get.back();
                     },
                     child: CircleAvatar(
-                      
                       child: Icon(
                         Icons.arrow_back,
                         color: Appcolor.primarrylight,
@@ -80,9 +80,10 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(16),
-                        child: ontap
-                            ? Icon(Icons.keyboard_arrow_down_rounded)
-                            : Icon(Icons.keyboard_arrow_up_sharp),
+                        child:
+                            ontap
+                                ? Icon(Icons.keyboard_arrow_down_rounded)
+                                : Icon(Icons.keyboard_arrow_up_sharp),
                       ),
                     ),
                   ),

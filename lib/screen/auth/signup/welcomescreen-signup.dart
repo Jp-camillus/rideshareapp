@@ -4,6 +4,7 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signup/create-your-account.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -15,7 +16,6 @@ class Welcomescreensignup extends StatelessWidget {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();
     return Scaffold(
-      
       body: Column(
         children: [
           Spacewidgetheight(space: h * 0.1),
@@ -110,18 +110,18 @@ class Welcomescreensignup extends StatelessWidget {
                   children: [
                     Text(
                       'Welcome',
-                      style: TextStyle(
-                        color: Appcolor.primarrylight,
-                        fontSize: h * 0.039,
-                        fontWeight: FontWeight.w500,
+                      style: AppThemes.titleLarge.copyWith(
+                        color: AppColors.primaryBlue,
+                        fontSize: 32,
                       ),
                     ),
                     Spacewidgetwidth(space: w * 0.02),
                     Text(
                       'back!',
-                      style: TextStyle(
-                        fontSize: h * 0.039,
-                        fontWeight: FontWeight.w500,
+                      style: AppThemes.titleLarge.copyWith(
+                        fontSize: 32,
+
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -133,6 +133,10 @@ class Welcomescreensignup extends StatelessWidget {
                   //   fontSize: h * 0.039,
                   //   fontWeight: FontWeight.w500,
                   // ),
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 16,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Text(
                   'across Nigeria',
@@ -140,9 +144,14 @@ class Welcomescreensignup extends StatelessWidget {
                   //   fontSize: h * 0.039,
                   //   fontWeight: FontWeight.w500,
                   // ),
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 16,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Spacewidgetheight(space: h * 0.07),
                 Custombuttomwithicon(
+                  height: 58,
                   tap: () {
                     Get.to(Createyouraccount());
                   },
@@ -151,7 +160,13 @@ class Welcomescreensignup extends StatelessWidget {
                   icon: Icon(Icons.email_outlined, color: Colors.white),
                 ),
                 Spacewidgetheight(space: h * 0.05),
-                Text('Or sign up with'),
+                Text(
+                  'Or sign up with',
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 15,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
                 Spacewidgetheight(space: h * 0.02),
 
                 Container(
@@ -168,14 +183,26 @@ class Welcomescreensignup extends StatelessWidget {
                         children: [
                           Image(image: AssetImage(Appimage.googl)),
                           Spacewidgetwidth(space: 5),
-                          Text('Google'),
+                          Text(
+                            'Google',
+                            style: AppThemes.titleSmall.copyWith(
+                              fontSize: 16,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
                         children: [
                           Image(image: AssetImage(Appimage.facebook)),
                           Spacewidgetwidth(space: 5),
-                          Text('Facebook'),
+                          Text(
+                            'Facebook',
+                            style: AppThemes.titleSmall.copyWith(
+                              fontSize: 16,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -186,12 +213,18 @@ class Welcomescreensignup extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Already have an account?'),
+                    Text(
+                      'Already have an account?',
+                      style: TextStyle(fontSize: 13.83),
+                    ),
                     Spacewidgetwidth(space: 5),
 
                     Text(
                       'Sign In',
-                      style: TextStyle(color: Appcolor.primarrylight),
+                      style: TextStyle(
+                        color: AppColors.primaryBlue,
+                        fontSize: 13.83,
+                      ),
                     ),
                   ],
                 ),

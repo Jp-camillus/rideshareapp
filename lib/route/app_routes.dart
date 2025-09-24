@@ -17,7 +17,6 @@ class AppRoutes {
   static const String myTrips = '/my-trips';
   static const String receipts = '/receipts';
   static const String account = '/account';
-  
 
   // Profile Routes
   static const String profile = '/profile';

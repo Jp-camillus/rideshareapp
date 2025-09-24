@@ -70,61 +70,62 @@ class CustomBottomNavWidget extends StatelessWidget {
   }
 
   Widget _buildNavItem({
-  required int index,
-  required String icon,
-  required String activeIcon,
-  required String label,
-  required BottomNavController controller,
-}) {
-  final isSelected = controller.selectedIndex.value == index;
+    required int index,
+    required String icon,
+    required String activeIcon,
+    required String label,
+    required BottomNavController controller,
+  }) {
+    final isSelected = controller.selectedIndex.value == index;
 
-  return GestureDetector(
-    onTap: () => controller.changeIndex(index),
-    child: Transform.translate(
-      offset: isSelected ? Offset(0, -25) : Offset.zero,
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 250),
-        curve: Curves.easeInOut,
-        width: 70,
-        height: 65,
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: isSelected
-            ? BoxDecoration(
-                color: Get.find<AppThemes>().themeMode.value == ThemeMode.light
-                    ? AppColors.cardLight
-                    : AppColors.darkCard,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Appcolor.topbackground.withOpacity(0.25),
-                    blurRadius: 12,
-                    offset: const Offset(6, 0),
-                  ),
-                ],
-              )
-            : null,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SvgPicture.asset(
-              isSelected ? activeIcon : icon,
-              width: 26,
-              height: 26,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 8,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                color: isSelected ? Colors.orange : Colors.grey[500],
+    return GestureDetector(
+      onTap: () => controller.changeIndex(index),
+      child: Transform.translate(
+        offset: isSelected ? Offset(0, -25) : Offset.zero,
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 250),
+          curve: Curves.easeInOut,
+          width: 70,
+          height: 65,
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          decoration:
+              isSelected
+                  ? BoxDecoration(
+                    color:
+                        Get.find<AppThemes>().themeMode.value == ThemeMode.light
+                            ? AppColors.cardLight
+                            : AppColors.darkCard,
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Appcolor.topbackground.withOpacity(0.25),
+                        blurRadius: 12,
+                        offset: const Offset(6, 0),
+                      ),
+                    ],
+                  )
+                  : null,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SvgPicture.asset(
+                isSelected ? activeIcon : icon,
+                width: 26,
+                height: 26,
               ),
-            ),
-          ],
+              const SizedBox(height: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 8,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                  color: isSelected ? Colors.orange : Colors.grey[500],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 }

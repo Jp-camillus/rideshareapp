@@ -5,6 +5,8 @@ import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signin/signin.dart';
+import 'package:rideshareapp/screen/auth/signup/create-your-account.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -19,7 +21,6 @@ class Welcomescreensignin extends GetView<LoginController> {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();
     return Scaffold(
-      
       body: Column(
         children: [
           Spacewidgetheight(space: h * 0.1),
@@ -118,19 +119,19 @@ class Welcomescreensignin extends GetView<LoginController> {
                       },
                       child: Text(
                         'Welcome',
-                        style: TextStyle(
-                          color: Appcolor.primarrylight,
-                          fontSize: h * 0.039,
-                          fontWeight: FontWeight.w500,
+                        style: AppThemes.titleLarge.copyWith(
+                          color: AppColors.primaryBlue,
+                          fontSize: 32,
                         ),
                       ),
                     ),
                     Spacewidgetwidth(space: w * 0.02),
                     Text(
                       'back!',
-                      style: TextStyle(
-                        fontSize: h * 0.039,
-                        fontWeight: FontWeight.w500,
+                      style: AppThemes.titleLarge.copyWith(
+                        fontSize: 32,
+
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -138,13 +139,17 @@ class Welcomescreensignin extends GetView<LoginController> {
                 Image(image: AssetImage(Appimage.arrow)),
                 Text(
                   'Log in to access your rides, bookings, and',
-                  // style: TextStyle(
-                  //   fontSize: h * 0.039,
-                  //   fontWeight: FontWeight.w500,
-                  // ),
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 16,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Text(
                   'messages',
+                  style: AppThemes.titleSmall.copyWith(
+                    fontSize: 16,
+                    color: AppColors.textSecondary,
+                  ),
                   // style: TextStyle(
                   //   fontSize: h * 0.039,
                   //   fontWeight: FontWeight.w500,
@@ -152,6 +157,7 @@ class Welcomescreensignin extends GetView<LoginController> {
                 ),
                 Spacewidgetheight(space: h * 0.07),
                 Custombuttomwithicon(
+                  height: 58,
                   tap: () {
                     Get.to(Signin());
                   },
@@ -165,11 +171,22 @@ class Welcomescreensignin extends GetView<LoginController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('I want to create an account ?'),
-                    Spacewidgetwidth(space: 5),
                     Text(
-                      'Sign Up',
-                      style: TextStyle(color: Appcolor.primarrylight),
+                      'I want to create an account ?',
+                      style: TextStyle(fontSize: 13.83),
+                    ),
+                    Spacewidgetwidth(space: 5),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(Createyouraccount());
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          color: AppColors.primaryBlue,
+                          fontSize: 13.83,
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class SearchTripSectionpassenger1 extends StatelessWidget {
@@ -35,7 +36,7 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        
+                        backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,
@@ -82,9 +83,8 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                   children: [
                     Text(
                       'Where are you headed?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: h * 0.02,
+                      style: AppThemes.titleSmall.copyWith(
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -117,19 +117,29 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                           children: [
                             Text(
                               'Find a ride and carpool anywhere \nin Nigeria',
-                              style: TextStyle(
-                                fontSize: h * 0.025,
-                                fontWeight: FontWeight.w700,
+                              style: AppThemes.titleMedium.copyWith(
+                                color: AppColors.textPrimary,
+                                fontSize: 20,
                               ),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.all(0),
                               leading: Icon(Icons.location_on_outlined),
-                              title: Text('From'),
+                              title: Text(
+                                'From',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
                             ),
                             TextField(
                               decoration: InputDecoration(
                                 hintText: 'where you are',
+                                hintStyle: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
                             ),
                             Row(
@@ -141,12 +151,22 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                             ListTile(
                               contentPadding: EdgeInsets.all(0),
                               leading: Image(image: AssetImage(Appimage.s)),
-                              title: Text('To'),
+                              title: Text(
+                                'To',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
                             ),
                             TextField(
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0),
                                 hintText: 'where you are',
+                                hintStyle: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textSecondary,
+                                ),
                               ),
                             ),
                             Spacewidgetheight(space: 5),
@@ -164,10 +184,17 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                                     Text(
                                       'Date',
                                       style: TextStyle(
-                                        color: Color.fromRGBO(107, 114, 128, 1),
+                                        fontSize: 12,
+                                        color: AppColors.textSecondary,
                                       ),
                                     ),
-                                    Text('02-04-2025'),
+                                    Text(
+                                      '02-04-2025',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
                                   ],
                                 ),
                                 Spacewidgetwidth(space: 50),
@@ -177,10 +204,17 @@ class SearchTripSectionpassenger1 extends StatelessWidget {
                                     Text(
                                       'Time',
                                       style: TextStyle(
-                                        color: Color.fromRGBO(107, 114, 128, 1),
+                                        fontSize: 12,
+                                        color: AppColors.textSecondary,
                                       ),
                                     ),
-                                    Text('07:00AM'),
+                                    Text(
+                                      '07:00AM',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],

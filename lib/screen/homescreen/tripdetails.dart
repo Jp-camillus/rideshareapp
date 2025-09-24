@@ -29,7 +29,6 @@ class Tripdetails extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,
