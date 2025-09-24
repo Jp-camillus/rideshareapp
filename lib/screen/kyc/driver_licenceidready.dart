@@ -261,7 +261,7 @@ class DriverLicenceidready extends StatelessWidget {
                       Spacewidgetwidth(space: 10),
                       GestureDetector(
                         onTap: () {
-                          Get.to(Homescreen());
+                          // Get.to(Homescreen());
                           _viekycstatus(context);
                         },
                         child: Text(

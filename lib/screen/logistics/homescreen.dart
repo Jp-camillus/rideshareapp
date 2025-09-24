@@ -5,6 +5,9 @@ import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/homescreen/tripdetails.dart';
 import 'package:rideshareapp/screen/logistics/pickupanddropoffdetails.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/confirmrecruitingctrip.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/tripoverview.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/upcomingtripview.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -127,9 +130,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
               Spacewidgetheight(space: h * 0.03),
 
               GestureDetector(
-                onTap: () {
-                  Get.to(Pickupanddropoffdetails());
-                },
+                onTap: () {},
                 child: Container(
                   height: h * 0.17,
                   width: w.toDouble(),
@@ -215,45 +216,50 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: h * 0.17,
-                    width: w * 0.43,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Appcolor.gradientorang,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image(image: AssetImage(Appimage.box)),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
-                                size: h * 0.02,
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(Pickupanddropoffdetails());
+                    },
+                    child: Container(
+                      height: h * 0.17,
+                      width: w * 0.43,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Appcolor.gradientorang,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image(image: AssetImage(Appimage.box)),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: h * 0.02,
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Send Package',
+                              style: AppThemes.titleLarge.copyWith(
+                                fontSize: 15,
+                                color: AppColors.textWhite,
                               ),
-                            ],
-                          ),
-                          Text(
-                            'Send Package',
-                            style: AppThemes.titleLarge.copyWith(
-                              fontSize: 15,
-                              color: AppColors.textWhite,
                             ),
-                          ),
-                          Text(
-                            'Create delivery order',
-                            style: AppThemes.titleSmall.copyWith(
-                              fontSize: 10,
-                              color: AppColors.textWhite,
+                            Text(
+                              'Create delivery order',
+                              style: AppThemes.titleSmall.copyWith(
+                                fontSize: 10,
+                                color: AppColors.textWhite,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -337,17 +343,17 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   ),
                 ],
               ),
+
               Spacewidgetheight(space: h * 0.028),
 
               Spacewidgetheight(space: 20),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Get.to(Tripdetails());
-                      },
+                      onTap: () {},
                       child: Card(
                         elevation: 8,
                         shadowColor: const Color.fromARGB(15, 13, 125, 244),
@@ -362,9 +368,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                           height: 325,
                           width: 308,
                           child: GestureDetector(
-                            onTap: () {
-                              Get.to(Tripdetails());
-                            },
+                            onTap: () {},
                             child: Padding(
                               padding: EdgeInsets.all(15),
                               child: Column(
@@ -645,9 +649,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                     ),
                     Spacewidgetwidth(space: w * 0.015),
                     GestureDetector(
-                      onTap: () {
-                        Get.to(Tripdetails());
-                      },
+                      onTap: () {},
                       child: Card(
                         elevation: 8,
                         shadowColor: const Color.fromARGB(15, 13, 125, 244),
@@ -662,9 +664,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                           height: 325,
                           width: 308,
                           child: GestureDetector(
-                            onTap: () {
-                              Get.to(Tripdetails());
-                            },
+                            onTap: () {},
                             child: Padding(
                               padding: EdgeInsets.all(15),
                               child: Column(
@@ -1076,20 +1076,25 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                         Spacewidgetheight(space: h * 0.025),
                         Row(
                           children: [
-                            Container(
-                              height: 33,
-                              width: 85,
-                              decoration: BoxDecoration(
-                                gradient: AppColors.buttongradient,
-                                color: AppColors.colorBlue,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Accept',
-                                  style: TextStyle(
-                                    fontSize: 13.5,
-                                    color: AppColors.textWhite,
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(Confirmrecruitingctrip());
+                              },
+                              child: Container(
+                                height: 33,
+                                width: 85,
+                                decoration: BoxDecoration(
+                                  gradient: AppColors.buttongradient,
+                                  color: AppColors.colorBlue,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Accept',
+                                    style: TextStyle(
+                                      fontSize: 13.5,
+                                      color: AppColors.textWhite,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -1208,19 +1213,24 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                           Spacewidgetheight(space: h * 0.02),
                           Row(
                             children: [
-                              Container(
-                                height: 33,
-                                width: 90,
-                                decoration: BoxDecoration(
-                                  color: AppColors.colorBlue,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'View Details',
-                                    style: TextStyle(
-                                      fontSize: 13.5,
-                                      color: AppColors.textWhite,
+                              GestureDetector(
+                                onTap: () {
+                                  Get.to(Tripoverviewp());
+                                },
+                                child: Container(
+                                  height: 33,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.colorBlue,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'View Details',
+                                      style: TextStyle(
+                                        fontSize: 13.5,
+                                        color: AppColors.textWhite,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -1323,6 +1333,7 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
                   ],
                 ),
               ),
+              Spacewidgetheight(space: 150),
             ],
           ),
         ),

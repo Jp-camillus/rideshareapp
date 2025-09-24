@@ -4,11 +4,12 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Upcomingtripoverview extends StatelessWidget {
-  const Upcomingtripoverview({super.key});
+class Ongoingtripoverview extends StatelessWidget {
+  const Ongoingtripoverview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -210,12 +211,12 @@ class Upcomingtripoverview extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              '--------------------------------------------------- ',
+                              '--------------------------------------------- ',
                               style: TextStyle(color: Appcolor.grytextfield),
                             ),
                             Container(
                               height: h * 0.03,
-                              width: w * 0.2,
+                              width: w * 0.18,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(247, 255, 250, 1),
                                 borderRadius: BorderRadius.circular(10),
@@ -329,7 +330,6 @@ class Upcomingtripoverview extends StatelessWidget {
                               'Verified',
                               style: TextStyle(
                                 fontSize: 12,
-
                                 color: Color.fromRGBO(52, 199, 89, 1),
                               ),
                             ),
@@ -346,9 +346,21 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.02),
                         Row(
                           children: [
-                            Text('Make & Model:'),
+                            Text(
+                              'Make & Model:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('Toyota Corolla'),
+                            Text(
+                              'Toyota Corolla',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.02),
@@ -394,7 +406,7 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.01),
                         Spacewidgetheight(space: h * 0.01),
                         Text(
-                          '---------------------------------------------------------------------- ',
+                          '-------------------------------------------------- ',
                           style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
@@ -402,10 +414,9 @@ class Upcomingtripoverview extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Custombuttom(
-                              tittle: 'Chat Driver',
+                              tittle: 'Track Trip',
+                              width: w * 0.25,
                               fontsize: 12.9,
-
-                              width: w * 0.23,
                             ),
                             Spacewidgetwidth(space: 20),
                             GestureDetector(
@@ -429,6 +440,7 @@ class Upcomingtripoverview extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

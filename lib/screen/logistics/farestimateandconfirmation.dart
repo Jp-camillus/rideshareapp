@@ -751,15 +751,26 @@ class _FarestimateandconfirmationState
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.w700,
-                      fontSize: h * 0.025,
+                      fontSize: 23.48,
                     ),
                   ),
                   Spacewidgetheight(space: 20),
-                  Text('Your package has been successfully'),
-                  Text(' delivered.'),
+                  Text(
+                    'Your package has been successfully delivered.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16.44,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetheight(space: 20),
 
-                  Custombuttom(tittle: 'Rate Driver', width: w * 0.3),
+                  Custombuttom(
+                    tittle: 'Rate Driver',
+                    width: 130,
+                    height: 48,
+                    fontsize: 16,
+                  ),
                   Spacewidgetheight(space: h * 0.02),
                   Container(
                     height: h * 0.2,
@@ -778,7 +789,8 @@ class _FarestimateandconfirmationState
                           Text(
                             'Package Details',
                             style: TextStyle(
-                              fontSize: h * 0.028,
+                              fontSize: 18.15,
+                              color: AppColors.textPrimary,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -786,10 +798,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Type'),
+                              Text(
+                                'Type',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 'small parcel',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),
@@ -797,10 +818,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Weight'),
+                              Text(
+                                'Weight',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 '0-5kg',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),
@@ -808,10 +838,19 @@ class _FarestimateandconfirmationState
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Vehicle'),
+                              Text(
+                                'Vehicle',
+                                style: TextStyle(
+                                  fontSize: 13.59,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
                               Text(
                                 'car',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                style: TextStyle(
+                                  fontSize: 15.29,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ],
                           ),

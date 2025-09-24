@@ -5,6 +5,7 @@ import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/screen/auth/signin/loginscreenpin.dart';
 import 'package:rideshareapp/screen/homescreen/homescreen.dart';
+import 'package:rideshareapp/screen/nav/bottom_nav.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -35,7 +36,7 @@ class _FingerprintState extends State<Fingerprint> {
             const SnackBar(content: Text("Fingerprint Verified ✅")),
           );
 
-          Get.to(Homescreen());
+          Get.to(MainDashboard());
           // Navigate to home or next screen
           // Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen()));
         }

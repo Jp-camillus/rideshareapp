@@ -151,6 +151,7 @@ class Welcomescreensignup extends StatelessWidget {
                 ),
                 Spacewidgetheight(space: h * 0.07),
                 Custombuttomwithicon(
+                  height: 58,
                   tap: () {
                     Get.to(Createyouraccount());
                   },

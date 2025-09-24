@@ -340,9 +340,7 @@ class AccountSettingsScreen extends StatelessWidget {
                                   ],
                                 ),
                                 child: Custombuttom(
-                                  tap: () {
-                                    Get.to(Applyasalogisticspartner());
-                                  },
+                                  tap: () {},
                                   tittle: 'Start now',
                                   width: 120,
                                 ),
@@ -364,6 +362,9 @@ class AccountSettingsScreen extends StatelessWidget {
                     title: 'Subscription Plan',
                   ),
                   _settingsTile(
+                    ontap: () {
+                      Get.to(Applyasalogisticspartner());
+                    },
                     icon: Appimage.van,
                     title: 'Become a Logistics Partner',
                     subtitle: 'Earn more by delivering packages on SwiftRides',
@@ -546,6 +547,7 @@ class AccountSettingsScreen extends StatelessWidget {
   Widget _settingsTile({
     required String icon,
     required String title,
+    Function()? ontap,
     String? subtitle,
     bool isLinkTitle = false,
     bool logouttil = false,
@@ -582,7 +584,7 @@ class AccountSettingsScreen extends StatelessWidget {
                 )
                 : null,
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-        onTap: () {},
+        onTap: ontap,
       ),
     );
   }

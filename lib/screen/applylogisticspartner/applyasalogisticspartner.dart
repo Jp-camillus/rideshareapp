@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/nav/bottom_nav.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
@@ -403,7 +404,9 @@ class _ApplyasalogisticspartnerState extends State<Applyasalogisticspartner> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        _showpackagedelivereddialogu();
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -446,6 +449,107 @@ class _ApplyasalogisticspartnerState extends State<Applyasalogisticspartner> {
         ),
       ),
       bottomNavigationBar: const CustomBottomNavWidget(),
+    );
+  }
+
+  _showpackagedelivereddialogu() {
+    var h = MediaQuery.of(context).size.height.round();
+    var w = MediaQuery.of(context).size.width.round();
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.white,
+          child: Container(
+            height: h * 0.58,
+            width: w.toDouble(),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Color.fromRGBO(18, 18, 29, 0.05),
+                        child: Image(image: AssetImage(Appimage.close)),
+                      ),
+                    ],
+                  ),
+                  Image(image: AssetImage(Appimage.good)),
+                  Text(
+                    'Application Submitted!',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 23.48,
+                    ),
+                  ),
+                  Spacewidgetheight(space: 20),
+                  Text(
+                    'Your application to become a Logistics Partner has been received. Our team will review and get back to you within 24–48 hours.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16.44,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                  Text(
+                    "We'll contact you via:",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                  Spacewidgetheight(space: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.email,
+                        size: 16,
+                        color: AppColors.textSecondary,
+                      ),
+                      Spacewidgetwidth(space: 3),
+                      Text(
+                        "Email",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                      Icon(
+                        Icons.call,
+                        size: 16,
+                        color: AppColors.textSecondary,
+                      ),
+                      Spacewidgetwidth(space: 3),
+                      Text(
+                        "Call",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacewidgetheight(space: 20),
+
+                  Custombuttom(
+                    tap: () {
+                      Get.offAll(MainDashboard());
+                    },
+                    tittle: 'Continue to Dashboard',
+                    fontsize: 16,
+                    width: 214,
+                    height: 48,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 

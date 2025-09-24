@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -29,7 +30,7 @@ class SearchTripdetails extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        
+                        backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,
@@ -42,8 +43,8 @@ class SearchTripdetails extends StatelessWidget {
                 Spacewidgetheight(space: h * 0.03),
 
                 Container(
-                  height: h * 1.051,
-                  width: w.toDouble(),
+                  height: 825,
+                  width: 392,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(h * 0.02),
@@ -52,13 +53,18 @@ class SearchTripdetails extends StatelessWidget {
                     padding: EdgeInsets.all(h * 0.025),
                     child: Column(
                       children: [
-                        Spacewidgetheight(space: h * 0.03),
                         Row(
                           children: [
                             Image(image: AssetImage(Appimage.s)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Ikeja, Lagos'),
+                            Text(
+                              'Ikeja, Lagos',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: 5),
 
                             Container(width: w * 0.07, child: Divider()),
@@ -71,7 +77,13 @@ class SearchTripdetails extends StatelessWidget {
                             ),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Lekki Phase 1'),
+                            Text(
+                              'Lekki Phase 1',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
@@ -81,30 +93,37 @@ class SearchTripdetails extends StatelessWidget {
                             Image(image: AssetImage(Appimage.calendar)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('May 10, 2025 – 8:00 AM'),
-                            Spacewidgetwidth(space: w * 0.2),
-                            Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(231, 255, 237, 1),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Confirmed',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(52, 199, 89, 1),
-                                  ),
-                                ),
+                            Text(
+                              'May 10, 2025 – 8:00 AM',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
                               ),
                             ),
+                            Spacewidgetwidth(space: w * 0.2),
+                            // Container(
+                            //   height: h * 0.03,
+                            //   width: w * 0.2,
+                            //   decoration: BoxDecoration(
+                            //     color: AppColors.fadegreen,
+                            //     borderRadius: BorderRadius.circular(10),
+                            //   ),
+                            //   child: Center(
+                            //     child: Text(
+                            //       'Confirmed',
+                            //       style: TextStyle(
+                            //         fontSize: 10,
+                            //         color: AppColors.success,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.016),
                         Text(
-                          '------------------------------------------------------------------------------------------- ',
-                          style: TextStyle(color: Appcolor.grytextfield),
+                          '------------------------------------------------------------- ',
+                          style: TextStyle(color: AppColors.textSecondary),
                         ),
                         Row(
                           children: [
@@ -145,7 +164,10 @@ class SearchTripdetails extends StatelessWidget {
                             Spacewidgetwidth(space: 10),
                             Text(
                               'Aisha B.',
-                              style: TextStyle(fontSize: h * 0.022),
+                              style: AppThemes.titleSmall.copyWith(
+                                color: AppColors.textPrimary,
+                                fontSize: 13,
+                              ),
                             ),
                             Spacewidgetwidth(space: 10),
                             Row(
@@ -153,27 +175,48 @@ class SearchTripdetails extends StatelessWidget {
                                 Icon(
                                   Icons.star,
                                   color: Colors.deepOrange,
-                                  size: h * 0.02,
+                                  size: 13,
                                 ),
                                 Text(
                                   '4.2',
-                                  style: TextStyle(color: Colors.deepOrange),
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.primaryOrange,
+                                  ),
                                 ),
                                 Spacewidgetwidth(space: 5),
-                                Text('85 trips'),
+                                Text(
+                                  '85 trips',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppColors.textPrimary,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.015),
                         Row(
                           children: [
                             Image(image: AssetImage(Appimage.claritycarline)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Vehicle:'),
+                            Text(
+                              'Vehicle:',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('Toyota Corolla 2018'),
+                            Text(
+                              'Toyota Corolla 2018',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
@@ -182,26 +225,50 @@ class SearchTripdetails extends StatelessWidget {
                             Image(image: AssetImage(Appimage.no)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Plate:'),
+                            Text(
+                              'Plate:',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('ABC-234LK'),
+                            Text(
+                              'ABC-234LK',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Text(
-                          '------------------------------------------------------------------------------------------- ',
-                          style: TextStyle(color: Appcolor.grytextfield),
+                          '--------------------------------------------------------------- ',
+                          style: TextStyle(color: AppColors.textSecondary),
                         ),
                         Row(
                           children: [
                             Image(image: AssetImage(Appimage.chair)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Seat:'),
+                            Text(
+                              'Seat:',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('3 Seat'),
+                            Text(
+                              '3 Seat',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.015),
                         Container(
                           height: h * 0.12,
                           decoration: BoxDecoration(
@@ -220,11 +287,19 @@ class SearchTripdetails extends StatelessWidget {
                                     Text(
                                       '₦2,500',
                                       style: TextStyle(
+                                        fontSize: 15,
+                                        color: AppColors.textPrimary,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     Spacewidgetwidth(space: w * 0.01),
-                                    Text('per Seat'),
+                                    Text(
+                                      'per Seat',
+                                      style: TextStyle(
+                                        fontSize: 13.9,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
                                   ],
                                 ),
                                 Spacer(),
@@ -247,11 +322,18 @@ class SearchTripdetails extends StatelessWidget {
                                       ),
                                     ),
                                     Spacewidgetwidth(space: 5),
-                                    Text('1'),
+                                    Text(
+                                      '1',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.textPrimary,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
                                     Spacewidgetwidth(space: 5),
                                     Container(
-                                      height: h * 0.025,
-                                      width: w * 0.06,
+                                      height: 20,
+                                      width: 20,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(5),
                                         border: Border.all(
@@ -261,19 +343,26 @@ class SearchTripdetails extends StatelessWidget {
                                       alignment: Alignment.center,
                                       child: Text(
                                         '+',
-                                        style: TextStyle(
-                                          fontSize: h * 0.02,
-                                          color: Colors.black,
-                                        ),
+                                        textAlign: TextAlign.center,
+
+                                        style: TextStyle(color: Colors.black),
                                       ),
                                     ),
                                     Spacewidgetwidth(space: 5),
-                                    Text('Total:'),
+                                    Text(
+                                      'Total:',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
                                     Spacewidgetwidth(space: 5),
 
                                     Text(
                                       '₦2,500',
                                       style: TextStyle(
+                                        fontSize: 15,
+                                        color: AppColors.textPrimary,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
@@ -283,18 +372,17 @@ class SearchTripdetails extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.015),
                         Text(
-                          '------------------------------------------------------------------------------------------- ',
-                          style: TextStyle(color: Appcolor.grytextfield),
+                          '---------------------------------------------------------------- ',
+                          style: TextStyle(color: AppColors.textSecondary),
                         ),
                         Spacewidgetheight(space: h * 0.02),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
+                              height: 22.22334861755371,
+                              width: 67.6700439453125,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(247, 250, 255, 1),
                                 borderRadius: BorderRadius.circular(10),
@@ -303,12 +391,13 @@ class SearchTripdetails extends StatelessWidget {
                                 child: Text(
                                   'Cheapest',
                                   style: TextStyle(
+                                    fontSize: 10,
                                     color: Color.fromRGBO(50, 129, 255, 1),
                                   ),
                                 ),
                               ),
                             ),
-                            Spacewidgetwidth(space: 5),
+                            Spacewidgetwidth(space: 2),
                             Text(
                               '|',
                               style: TextStyle(
@@ -317,8 +406,8 @@ class SearchTripdetails extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
+                              height: 22.22334861755371,
+                              width: 67.6700439453125,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(247, 255, 250, 1),
                                 borderRadius: BorderRadius.circular(10),
@@ -327,12 +416,13 @@ class SearchTripdetails extends StatelessWidget {
                                 child: Text(
                                   'Fastest',
                                   style: TextStyle(
+                                    fontSize: 10,
                                     color: Color.fromRGBO(46, 177, 91, 1),
                                   ),
                                 ),
                               ),
                             ),
-                            Spacewidgetwidth(space: 5),
+                            Spacewidgetwidth(space: 2),
                             Text(
                               '|',
                               style: TextStyle(
@@ -341,8 +431,8 @@ class SearchTripdetails extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
+                              height: 22.22334861755371,
+                              width: 75.6700439453125,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(255, 247, 253, 1),
                                 borderRadius: BorderRadius.circular(10),
@@ -351,6 +441,7 @@ class SearchTripdetails extends StatelessWidget {
                                 child: Text(
                                   'Recommended',
                                   style: TextStyle(
+                                    fontSize: 10,
                                     color: Color.fromRGBO(243, 47, 202, 0.8),
                                   ),
                                 ),
@@ -368,22 +459,29 @@ class SearchTripdetails extends StatelessWidget {
                             Text(
                               'Verified',
                               style: TextStyle(
+                                fontSize: 13.9,
                                 color: Color.fromRGBO(52, 199, 89, 1),
                               ),
                             ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('13 Completed Trips'),
+                            Text(
+                              '13 Completed Trips',
+                              style: TextStyle(
+                                fontSize: 13.9,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                             Spacer(),
                             Image(image: AssetImage(Appimage.message)),
                             Image(image: AssetImage(Appimage.call)),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.015),
                         Row(
                           children: [
                             Container(
-                              height: h * 0.16,
-                              width: w * 0.7,
+                              height: 120.01248168945312,
+                              width: 300,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(242, 248, 255, 1),
                                 border: Border.all(
@@ -392,10 +490,9 @@ class SearchTripdetails extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12),
+                                padding: const EdgeInsets.all(10),
                                 child: Column(
                                   children: [
-                                    Spacewidgetheight(space: h * 0.029),
                                     Row(
                                       children: [
                                         Image(
@@ -405,14 +502,26 @@ class SearchTripdetails extends StatelessWidget {
                                         ),
                                         Spacewidgetwidth(space: 5),
 
-                                        Text('Sarah'),
+                                        Text(
+                                          'Sarah',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Spacewidgetheight(space: h * 0.005),
 
                                     Row(
                                       children: [
-                                        Text('Very punctual and safe driver!'),
+                                        Text(
+                                          'Very punctual and safe driver!',
+                                          style: TextStyle(
+                                            fontSize: 13.9,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Spacewidgetheight(space: h * 0.005),
@@ -426,32 +535,57 @@ class SearchTripdetails extends StatelessWidget {
                                         ),
                                         Spacewidgetwidth(space: 5),
 
-                                        Text('James'),
+                                        Text(
+                                          'James',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Spacewidgetheight(space: h * 0.005),
 
-                                    Row(children: [Text('Smooth ride.')]),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Smooth ride.',
+                                          style: TextStyle(
+                                            fontSize: 13.9,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.015),
                         Row(
                           children: [
                             Image(image: AssetImage(Appimage.clock)),
                             Text(
                               'Driver will pick you at ikeja bus stop by 6:30 AM',
+                              style: TextStyle(
+                                fontSize: 12.5,
+                                color: AppColors.textSecondary,
+                              ),
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.07),
+                        Spacewidgetheight(space: h * 0.01),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Custombuttom(tittle: 'Book Now', width: w * 0.23),
+                            Custombuttom(
+                              tittle: 'Book Now',
+                              fontsize: 16.57,
+                              width: 127.71427917480469,
+                              height: 49.857139587402344,
+                            ),
                             Spacewidgetwidth(space: 10),
                             GestureDetector(
                               onTap: () {
@@ -464,8 +598,14 @@ class SearchTripdetails extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: 10),
-                        Text('Free cancellation up to 1 hour before departure'),
+                        Spacewidgetheight(space: 2),
+                        Text(
+                          'Free cancellation up to 1 hour before departure',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
                       ],
                     ),
                   ),

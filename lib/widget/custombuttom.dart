@@ -7,11 +7,15 @@ class Custombuttom extends StatefulWidget {
   final Function()? tap;
 
   final double width;
+  final double? height;
+  final double? fontsize;
   const Custombuttom({
     super.key,
     required this.tittle,
     required this.width,
     this.tap,
+    this.height,
+    this.fontsize,
   });
 
   @override
@@ -30,12 +34,15 @@ class _CustombuttomState extends State<Custombuttom> {
           gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
-        height: h * 0.06,
+        height: widget.height ?? h * 0.06,
         alignment: Alignment.center,
         width: widget.width,
         child: Text(
           widget.tittle,
-          style: TextStyle(color: AppColors.textWhite, fontSize: 16),
+          style: TextStyle(
+            color: AppColors.textWhite,
+            fontSize: widget.fontsize ?? 16,
+          ),
         ),
       ),
     );
@@ -45,6 +52,7 @@ class _CustombuttomState extends State<Custombuttom> {
 class Custombuttomwithicon extends StatefulWidget {
   final String tittle;
   final double width;
+  final double? height;
   final Widget icon;
   final Function()? tap;
 
@@ -54,6 +62,7 @@ class Custombuttomwithicon extends StatefulWidget {
     required this.width,
     required this.icon,
     this.tap,
+    this.height,
   });
 
   @override
@@ -72,7 +81,7 @@ class _CustombuttomwithiconState extends State<Custombuttomwithicon> {
           gradient: AppColors.buttongradient,
           borderRadius: BorderRadius.circular(w * 0.06),
         ),
-        height: h * 0.06,
+        height: widget.height ?? h * 0.06,
         alignment: Alignment.center,
         width: widget.width,
         child: Padding(

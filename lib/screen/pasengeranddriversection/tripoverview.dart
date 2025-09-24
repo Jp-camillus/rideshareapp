@@ -3,10 +3,13 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/livetriptracking.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart' show CustomBottomNavWidget;
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Tripoverview extends StatelessWidget {
-  const Tripoverview({super.key});
+class Tripoverviewp extends StatelessWidget {
+  const Tripoverviewp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +31,19 @@ class Tripoverview extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
+                        backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
-                          color: Appcolor.primarrylight,
+                          color: AppColors.primaryBlue,
                         ),
                       ),
                     ),
-                    Image(image: AssetImage(Appimage.pointlocation)),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(Livetriptrackingp());
+                      },
+                      child: Image(image: AssetImage(Appimage.pointlocation)),
+                    ),
                   ],
                 ),
                 Spacewidgetheight(space: h * 0.03),
@@ -43,9 +52,8 @@ class Tripoverview extends StatelessWidget {
                   children: [
                     Text(
                       'Trip Overview',
-                      style: TextStyle(
-                        fontSize: h * 0.022,
-                        fontWeight: FontWeight.bold,
+                      style: AppThemes.titleSmall.copyWith(
+                        color: AppColors.textPrimary,
                       ),
                     ),
                     Container(
@@ -83,9 +91,9 @@ class Tripoverview extends StatelessWidget {
                           children: [
                             Text(
                               'Trip Details',
-                              style: TextStyle(
-                                fontSize: h * 0.02,
-                                fontWeight: FontWeight.w500,
+                              style: AppThemes.titleSmall.copyWith(
+                                fontSize: 18,
+                                color: AppColors.textPrimary,
                               ),
                             ),
                           ],
@@ -94,17 +102,35 @@ class Tripoverview extends StatelessWidget {
 
                         Row(
                           children: [
-                            Text('From: '),
+                            Text(
+                              'From: ',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
 
                             Image(image: AssetImage(Appimage.s)),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Ikeja, Lagos'),
+                            Text(
+                              'Ikeja, Lagos',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: 5),
 
                             Container(width: w * 0.07, child: Divider()),
                             Spacewidgetwidth(space: 5),
-                            Text('To: '),
+                            Text(
+                              'To: ',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
 
                             Icon(
                               Icons.location_on_outlined,
@@ -113,45 +139,101 @@ class Tripoverview extends StatelessWidget {
                             ),
                             Spacewidgetwidth(space: 5),
 
-                            Text('Lekki Phase 1'),
+                            Expanded(
+                              child: Text(
+                                'Lekki Phase 1',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Date & Time:'),
+                            Text(
+                              'Date & Time:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('May 5, 2025 – 4:00 PM'),
+                            Text(
+                              'May 5, 2025 – 4:00 PM',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Seats Available:'),
+                            Text(
+                              'Seats Available:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('3 Seats'),
+                            Text(
+                              '3 Seats',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Price per Seat:'),
+                            Text(
+                              'Price per Seat:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('₦1500'),
+                            Text(
+                              '₦1500',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Trip Type:'),
+                            Text(
+                              'Trip Type:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('One-time'),
+                            Text(
+                              'One-time',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
 
                         Spacewidgetheight(space: h * 0.016),
                         Text(
-                          '------------------------------------------------------------------------------------------- ',
+                          '------------------------------------------------------ ',
                           style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
@@ -159,9 +241,9 @@ class Tripoverview extends StatelessWidget {
                           children: [
                             Text(
                               'Vehicle Info',
-                              style: TextStyle(
-                                fontSize: h * 0.02,
-                                fontWeight: FontWeight.w500,
+                              style: AppThemes.titleSmall.copyWith(
+                                fontSize: 16,
+                                color: AppColors.textPrimary,
                               ),
                             ),
                           ],
@@ -170,31 +252,67 @@ class Tripoverview extends StatelessWidget {
 
                         Row(
                           children: [
-                            Text('Make & Model:'),
+                            Text(
+                              'Make & Model:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('Toyota Corolla'),
+                            Text(
+                              'Toyota Corolla',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Year:'),
+                            Text(
+                              'Year:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('2018'),
+                            Text(
+                              '2018',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
-                            Text('Plate Number:'),
+                            Text(
+                              'Plate Number:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('ABC123JK'),
+                            Text(
+                              'ABC123JK',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.01),
                         Spacewidgetheight(space: h * 0.01),
                         Text(
-                          '------------------------------------------------------------------------------------------- ',
+                          '---------------------------------------------------- ',
                           style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
@@ -202,9 +320,8 @@ class Tripoverview extends StatelessWidget {
                           children: [
                             Text(
                               'Passenger Requests',
-                              style: TextStyle(
-                                fontSize: h * 0.02,
-                                fontWeight: FontWeight.w500,
+                              style: AppThemes.titleSmall.copyWith(
+                                color: AppColors.textPrimary,
                               ),
                             ),
                           ],
@@ -218,7 +335,7 @@ class Tripoverview extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(5),
                             child: Row(
                               children: [
                                 CircleAvatar(
@@ -228,12 +345,30 @@ class Tripoverview extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Sarah O.'),
+                                    Text(
+                                      'Sarah O.',
+                                      style: AppThemes.titleSmall.copyWith(
+                                        fontSize: 16,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
                                     Row(
                                       children: [
-                                        Text('Status:'),
+                                        Text(
+                                          'Status:',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.textSecondary,
+                                          ),
+                                        ),
                                         Spacewidgetwidth(space: 5),
-                                        Text('✅ Booked (2 seats)'),
+                                        Text(
+                                          '✅ Booked (2 seats)',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -252,7 +387,7 @@ class Tripoverview extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(5),
                             child: Column(
                               children: [
                                 Row(
@@ -267,12 +402,30 @@ class Tripoverview extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('John D.'),
+                                        Text(
+                                          'John D.',
+                                          style: AppThemes.titleSmall.copyWith(
+                                            fontSize: 16,
+                                            color: AppColors.textPrimary,
+                                          ),
+                                        ),
                                         Row(
                                           children: [
-                                            Text('Status:'),
+                                            Text(
+                                              'Status:',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: AppColors.textSecondary,
+                                              ),
+                                            ),
                                             Spacewidgetwidth(space: 5),
-                                            Text('⏳ Pending (1 seat)'),
+                                            Text(
+                                              '⏳ Pending (1 seat)',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: AppColors.textPrimary,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ],
@@ -292,7 +445,7 @@ class Tripoverview extends StatelessWidget {
                                         color: Appcolor.primary,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12),
+                                        padding: const EdgeInsets.all(8),
                                         child: Text(
                                           'Accept',
                                           style: TextStyle(color: Colors.white),
@@ -306,7 +459,7 @@ class Tripoverview extends StatelessWidget {
                                         color: Color.fromRGBO(247, 250, 255, 1),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12),
+                                        padding: const EdgeInsets.all(8),
                                         child: Text(
                                           'Reject',
                                           style: TextStyle(
@@ -335,6 +488,7 @@ class Tripoverview extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

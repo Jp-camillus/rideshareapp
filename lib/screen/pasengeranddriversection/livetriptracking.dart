@@ -3,16 +3,20 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/screen/pasengeranddriversection/confirmrecruitingctrip.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
+import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Livetriptracking extends StatefulWidget {
-  const Livetriptracking({super.key});
+class Livetriptrackingp extends StatefulWidget {
+  const Livetriptrackingp({super.key});
 
   @override
-  State<Livetriptracking> createState() => _LivetriptrackingState();
+  State<Livetriptrackingp> createState() => _LivetriptrackingpState();
 }
 
-class _LivetriptrackingState extends State<Livetriptracking> {
+class _LivetriptrackingpState extends State<Livetriptrackingp> {
   bool ontap = false;
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,7 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       Get.back();
                     },
                     child: CircleAvatar(
+                      backgroundColor: AppColors.cardLight,
                       child: Icon(
                         Icons.arrow_back,
                         color: Appcolor.primarrylight,
@@ -99,9 +104,8 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                     children: [
                       Text(
                         'Trip Details',
-                        style: TextStyle(
-                          fontSize: h * 0.02,
-                          fontWeight: FontWeight.w500,
+                        style: AppThemes.titleSmall.copyWith(
+                          color: AppColors.textPrimary,
                         ),
                       ),
                     ],
@@ -110,18 +114,42 @@ class _LivetriptrackingState extends State<Livetriptracking> {
 
                   Row(
                     children: [
-                      Text('Route:  '),
-                      Text('From:  '),
+                      Text(
+                        'Route:  ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                      Text(
+                        'From:  ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
 
                       Image(image: AssetImage(Appimage.s)),
                       Spacewidgetwidth(space: 5),
 
-                      Text('Ikeja, Lagos'),
+                      Text(
+                        'Ikeja, Lagos',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
                       Spacewidgetwidth(space: 5),
 
                       Container(width: w * 0.07, child: Divider()),
                       Spacewidgetwidth(space: 5),
-                      Text('To: '),
+                      Text(
+                        'To: ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
 
                       Icon(
                         Icons.location_on_outlined,
@@ -130,16 +158,34 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       ),
                       Spacewidgetwidth(space: 5),
 
-                      Text('Lekki Phase 1'),
+                      Text(
+                        'Lekki Phase 1',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
                     ],
                   ),
                   Spacewidgetheight(space: h * 0.02),
                   Row(
                     children: [
-                      Text('Started:  '),
+                      Text(
+                        'Started:  ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
                       Spacewidgetwidth(space: 5),
 
-                      Text('7:00AM – May 2, 2025'),
+                      Text(
+                        '7:00AM – May 2, 2025',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
                     ],
                   ),
                   Spacewidgetheight(space: h * 0.02),
@@ -168,7 +214,10 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                           Spacewidgetwidth(space: 10),
                           Text(
                             'Sarah O.',
-                            style: TextStyle(fontWeight: FontWeight.w600),
+                            style: AppThemes.titleSmall.copyWith(
+                              color: AppColors.textPrimary,
+                              fontSize: 16,
+                            ),
                           ),
                           Row(
                             children: [
@@ -178,10 +227,7 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                                 color: Colors.deepOrange,
                               ),
                               Spacewidgetwidth(space: 5),
-                              Text(
-                                '4.2',
-                                style: TextStyle(color: Colors.deepOrange),
-                              ),
+                              Text('4.2'),
                             ],
                           ),
                           Spacewidgetwidth(space: 5),
@@ -202,7 +248,7 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                               padding: const EdgeInsets.all(12),
                               child: Text(
                                 'Mark Pickup',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: AppColors.textWhite),
                               ),
                             ),
                           ),
@@ -210,10 +256,20 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       ),
                     ),
                   ),
-                  Row(children: [Text('Status: Awaiting')]),
+                  Row(
+                    children: [
+                      Text(
+                        'Status: Awaiting',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
                   Spacewidgetheight(space: h * 0.01),
                   Text(
-                    '---------------------------------------------------------------------------------------------------------- ',
+                    '-------------------------------------------------- ',
                     style: TextStyle(color: Appcolor.grytextfield),
                   ),
                   Container(
@@ -228,7 +284,10 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                           Spacewidgetwidth(space: 10),
                           Text(
                             'Sarah O.',
-                            style: TextStyle(fontWeight: FontWeight.w600),
+                            style: AppThemes.titleSmall.copyWith(
+                              color: AppColors.textPrimary,
+                              fontSize: 16,
+                            ),
                           ),
                           Row(
                             children: [
@@ -262,7 +321,7 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                               padding: const EdgeInsets.all(12),
                               child: Text(
                                 'Mark Pickup',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: AppColors.textWhite),
                               ),
                             ),
                           ),
@@ -270,18 +329,61 @@ class _LivetriptrackingState extends State<Livetriptracking> {
                       ),
                     ),
                   ),
-                  Row(children: [Text('Status: Awaiting')]),
-                  Spacewidgetheight(space: h * 0.01),
+                  Row(
+                    children: [
+                      Text(
+                        'Status: Awaiting',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacewidgetheight(space: h * 0.02),
                   // Text(
                   //   '---------------------------------------------------------------------------------------------------------- ',
                   //   style: TextStyle(color: Appcolor.grytextfield),
                   // ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '🚨 Emergency',
+                        style: TextStyle(color: AppColors.error, fontSize: 16),
+                      ),
+                      Spacewidgetwidth(space: 5),
+                      Image(image: AssetImage(Appimage.message)),
+                      Spacewidgetwidth(space: 5),
+                      Image(image: AssetImage(Appimage.call)),
+                    ],
+                  ),
+                  Spacewidgetheight(space: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Custombuttom(
+                        tap: () {
+                          Get.to(Confirmrecruitingctrip());
+                        },
+                        tittle: 'Mark Trip as Completed',
+                        width: 219,
+                        height: 48,
+                      ),
+                      Spacewidgetwidth(space: 10),
+                      Text(
+                        'Cancel',
+                        style: TextStyle(color: AppColors.colorBlue),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

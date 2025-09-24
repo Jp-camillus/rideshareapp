@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class BookingConfirmation extends StatelessWidget {
-  const BookingConfirmation({super.key});
+class Tripbookedsuccessfully extends StatelessWidget {
+  const Tripbookedsuccessfully({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,31 +36,10 @@ class BookingConfirmation extends StatelessWidget {
                 ),
               ],
             ),
-            Spacewidgetheight(space: h * 0.1),
-            Center(
-              child: Container(
-                height: h * 0.2,
-                width: w * 0.4,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.contain,
-                    image: AssetImage(Appimage.tickbac),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Center(
-                  child: Image(
-                    height: h * 0.07,
-                    width: w * 0.29,
+            Spacewidgetheight(space: h * 0.3),
 
-                    fit: BoxFit.contain,
-                    image: AssetImage(Appimage.doublecheck),
-                  ),
-                ),
-              ),
-            ),
             Text(
-              'You’ve Booked!',
+              'Trip Booked Successfully!',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
@@ -68,7 +48,15 @@ class BookingConfirmation extends StatelessWidget {
             ),
             Spacewidgetheight(space: h * 0.02),
             Text(
-              'Your ride with Chinedu on May 2 is confirmed.',
+              'You’ve joined Bayo A.’s recurring ride from',
+              style: TextStyle(
+                fontSize: 12.9,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textPrimary,
+              ),
+            ),
+            Text(
+              'Ikorodu to Island (Mon–Fri).',
               style: TextStyle(
                 fontSize: 12.9,
                 fontWeight: FontWeight.w700,
@@ -140,7 +128,7 @@ class BookingConfirmation extends StatelessWidget {
                 GestureDetector(
                   onTap: () {},
                   child: Text(
-                    'View Ticket',
+                    'Add to Calender',
                     style: TextStyle(color: AppColors.colorBlue),
                   ),
                 ),
@@ -149,6 +137,7 @@ class BookingConfirmation extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

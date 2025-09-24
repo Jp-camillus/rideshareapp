@@ -4,11 +4,11 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
-import 'package:rideshareapp/widget/custombuttom.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Upcomingtripoverview extends StatelessWidget {
-  const Upcomingtripoverview({super.key});
+class Tripoverviewp2 extends StatelessWidget {
+  const Tripoverviewp2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,11 @@ class Upcomingtripoverview extends StatelessWidget {
                         backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
-                          color: Appcolor.primarrylight,
+                          color: AppColors.primaryBlue,
                         ),
                       ),
                     ),
+                    Image(image: AssetImage(Appimage.pointlocation)),
                   ],
                 ),
                 Spacewidgetheight(space: h * 0.03),
@@ -49,11 +50,27 @@ class Upcomingtripoverview extends StatelessWidget {
                         color: AppColors.textPrimary,
                       ),
                     ),
+                    Container(
+                      height: h * 0.03,
+                      width: w * 0.2,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(247, 250, 255, 1),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'You (Driver)',
+                          style: TextStyle(
+                            color: Color.fromRGBO(50, 129, 255, 1),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
 
                 Container(
-                  height: h * 0.9,
+                  height: h * 0.85,
                   width: w.toDouble(),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -69,7 +86,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             Text(
                               'Trip Details',
                               style: AppThemes.titleSmall.copyWith(
-                                fontSize: 12.9,
+                                fontSize: 18,
                                 color: AppColors.textPrimary,
                               ),
                             ),
@@ -91,7 +108,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             Spacewidgetwidth(space: 5),
 
                             Text(
-                              'Ikeja, Lagos',
+                              'Ikorodu',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textPrimary,
@@ -117,7 +134,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             Spacewidgetwidth(space: 5),
 
                             Text(
-                              'Lekki Phase 1',
+                              'Island',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textPrimary,
@@ -137,7 +154,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             ),
                             Spacewidgetwidth(space: w * 0.05),
                             Text(
-                              'May 5, 2025 – 4:00 PM',
+                              'Every Mon–Fri',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textPrimary,
@@ -148,16 +165,18 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
+                            Image(image: AssetImage(Appimage.clock)),
                             Text(
-                              'Seats Available:',
+                              ' 7:00 AM ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: AppColors.textSecondary,
+                                color: AppColors.textPrimary,
                               ),
                             ),
                             Spacewidgetwidth(space: w * 0.05),
+                            Icon(Icons.arrow_forward),
                             Text(
-                              '3 Seats',
+                              ' 4:00 PM',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textPrimary,
@@ -165,26 +184,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.01),
-                        Row(
-                          children: [
-                            Text(
-                              'Price per Seat:',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textSecondary,
-                              ),
-                            ),
-                            Spacewidgetwidth(space: w * 0.05),
-                            Text(
-                              '₦1500',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textPrimary,
-                              ),
-                            ),
-                          ],
-                        ),
+
                         Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
@@ -197,7 +197,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             ),
                             Spacewidgetwidth(space: w * 0.05),
                             Text(
-                              'One-time',
+                              'Recurring Trip',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textPrimary,
@@ -207,43 +207,23 @@ class Upcomingtripoverview extends StatelessWidget {
                         ),
 
                         Spacewidgetheight(space: h * 0.016),
-                        Row(
-                          children: [
-                            Text(
-                              '--------------------------------------------------- ',
-                              style: TextStyle(color: Appcolor.grytextfield),
-                            ),
-                            Container(
-                              height: h * 0.03,
-                              width: w * 0.2,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(247, 255, 250, 1),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Confirmed',
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    color: Color.fromRGBO(46, 177, 91, 1),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                        Text(
+                          '----------------------------------------------------------- ',
+                          style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
                         Row(
                           children: [
                             Text(
-                              ' Driver & Vehicle Info',
+                              'Driver Info',
                               style: AppThemes.titleSmall.copyWith(
-                                fontSize: 12.9,
+                                fontSize: 16,
                                 color: AppColors.textPrimary,
                               ),
                             ),
                           ],
                         ),
+                        Spacewidgetheight(space: h * 0.02),
                         Row(
                           children: [
                             Container(
@@ -281,77 +261,41 @@ class Upcomingtripoverview extends StatelessWidget {
                               ),
                             ),
                             Spacewidgetwidth(space: 10),
-                            Text(
-                              'Aisha B.',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textPrimary,
-                              ),
-                            ),
-                            Spacewidgetwidth(space: 10),
-                            Row(
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.deepOrange,
-                                  size: 12,
-                                ),
                                 Text(
-                                  '4.2',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.primaryOrange,
-                                  ),
-                                ),
-                                Spacewidgetwidth(space: 5),
-                                Text(
-                                  '85 trips',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
+                                  'Bayo A.',
+                                  style: AppThemes.titleLarge.copyWith(
+                                    color: AppColors.textPrimary,
+                                    fontSize: 20,
                                   ),
                                 ),
                               ],
                             ),
                             Spacer(),
-                            Image(image: AssetImage(Appimage.message)),
-                            Spacewidgetwidth(space: 5),
-                            Image(image: AssetImage(Appimage.call)),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
                         Row(
                           children: [
-                            Image(image: AssetImage(Appimage.verifyicon)),
-                            Spacewidgetwidth(space: 5),
-
                             Text(
-                              'Verified',
-                              style: TextStyle(
-                                fontSize: 12,
-
-                                color: Color.fromRGBO(52, 199, 89, 1),
-                              ),
-                            ),
-                            Spacewidgetwidth(space: w * 0.05),
-                            Text(
-                              '13 Completed Trips',
+                              'Make & Model:',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
                             ),
-                          ],
-                        ),
-                        Spacewidgetheight(space: h * 0.02),
-                        Row(
-                          children: [
-                            Text('Make & Model:'),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('Toyota Corolla'),
+                            Text(
+                              'Toyota Corolla',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
                             Text(
@@ -371,7 +315,7 @@ class Upcomingtripoverview extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacewidgetheight(space: h * 0.02),
+                        Spacewidgetheight(space: h * 0.01),
                         Row(
                           children: [
                             Text(
@@ -394,32 +338,157 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.01),
                         Spacewidgetheight(space: h * 0.01),
                         Text(
-                          '---------------------------------------------------------------------- ',
+                          '----------------------------------------------------------- ',
                           style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Custombuttom(
-                              tittle: 'Chat Driver',
-                              fontsize: 12.9,
-
-                              width: w * 0.23,
-                            ),
-                            Spacewidgetwidth(space: 20),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                'Cancel Trip',
-                                style: TextStyle(
-                                  color: AppColors.error,
-                                  fontSize: 12.9,
-                                ),
+                            Text(
+                              'Trip Schedule',
+                              style: AppThemes.titleSmall.copyWith(
+                                color: AppColors.textPrimary,
                               ),
                             ),
                           ],
                         ),
+                        Spacewidgetheight(space: h * 0.02),
+                        Row(
+                          children: [
+                            Image(image: AssetImage(Appimage.kkkkkk)),
+                            Text(
+                              'Days:',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                            Text(
+                              'Monday to Friday',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Spacewidgetheight(space: 5),
+
+                        Row(
+                          children: [
+                            Image(image: AssetImage(Appimage.clock)),
+                            Text(
+                              'Departure:',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                            Text(
+                              '7:00 AM',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Spacewidgetheight(space: 5),
+                        Row(
+                          children: [
+                            Image(image: AssetImage(Appimage.clock)),
+                            Text(
+                              'Return Trip:',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                            Text(
+                              '4:00 PM (if applicable)',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Spacewidgetheight(space: 5),
+                        Row(
+                          children: [
+                            Text(
+                              'Price: ',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                            Text(
+                              '₦2500 ',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                            Text(
+                              ' per day',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Spacewidgetheight(space: 20),
+                        Container(
+                          height: 60,
+                          width: w.toDouble(),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [AppColors.fadeblue, AppColors.fadeorang],
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Total (5 Days):',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
+                                    Text(
+                                      '(NGN)',
+                                      style: TextStyle(
+                                        fontSize: 13.65,
+                                        color: AppColors.textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'X9PQ6',
+                                  style: TextStyle(
+                                    fontSize: 18.2,
+                                    color: AppColors.textPrimary,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Spacewidgetheight(space: h * 0.02),
+
+                        Spacewidgetheight(space: h * 0.02),
                       ],
                     ),
                   ),
@@ -429,6 +498,7 @@ class Upcomingtripoverview extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

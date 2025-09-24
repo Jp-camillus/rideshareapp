@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
 class Matchingtriplist extends StatelessWidget {
@@ -17,11 +18,15 @@ class Matchingtriplist extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Spacewidgetheight(space: h * 0.15),
+            Spacewidgetheight(space: h * 0.1),
             Container(
               height: h * 0.1,
               width: w.toDouble(),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -41,7 +46,7 @@ class Matchingtriplist extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        
+                        backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,
@@ -65,9 +70,17 @@ class Matchingtriplist extends StatelessWidget {
                 children: [
                   Text(
                     'Trip available',
-                    style: TextStyle(fontWeight: FontWeight.w700),
+                    style: AppThemes.titleSmall.copyWith(
+                      color: AppColors.textPrimary,
+                    ),
                   ),
-                  Text('55 Results'),
+                  Text(
+                    '55 Results',
+                    style: TextStyle(
+                      fontSize: 12.9,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                   _buildcard(context),
                   _buildcard(context),
                   _buildcard(context),
@@ -103,7 +116,13 @@ class Matchingtriplist extends StatelessWidget {
                   Image(image: AssetImage(Appimage.s)),
                   Spacewidgetwidth(space: 5),
 
-                  Text('Ikeja, Lagos'),
+                  Text(
+                    'Ikeja, Lagos',
+                    style: TextStyle(
+                      fontSize: 12.77,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
 
                   Container(width: w * 0.07, child: Divider()),
@@ -116,7 +135,13 @@ class Matchingtriplist extends StatelessWidget {
                   ),
                   Spacewidgetwidth(space: 5),
 
-                  Text('Lekki Phase 1'),
+                  Text(
+                    'Lekki Phase 1',
+                    style: TextStyle(
+                      fontSize: 12.77,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               Row(
@@ -159,7 +184,13 @@ class Matchingtriplist extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Chinedu O.', style: TextStyle(fontSize: h * 0.016)),
+                      Text(
+                        'Chinedu O.',
+                        style: TextStyle(
+                          fontSize: 13.62,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -197,17 +228,23 @@ class Matchingtriplist extends StatelessWidget {
                       Spacewidgetwidth(space: 5),
                       Text(
                         '₦1,200',
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                          fontSize: 13.62,
+                          color: AppColors.textPrimary,
+                        ),
                       ),
                     ],
                   ),
                   Spacer(),
                   Text(
                     'View Trip',
-                    style: TextStyle(color: Appcolor.primarrylight),
+                    style: TextStyle(
+                      fontSize: 13.62,
+                      color: AppColors.primaryBlue,
+                    ),
                   ),
                   Icon(
-                    size: h * 0.02,
+                    size: h * 0.01,
                     Icons.arrow_forward_ios,
                     color: Appcolor.primarrylight,
                   ),
@@ -218,18 +255,48 @@ class Matchingtriplist extends StatelessWidget {
               Row(
                 children: [
                   Image(image: AssetImage(Appimage.calendar)),
-                  Text('Friday May 10, 2025'),
+                  Text(
+                    'Friday May 10, 2025',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
-                  Text("|"),
+                  Text(
+                    "|",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
                   Image(image: AssetImage(Appimage.clock)),
-                  Text('8:00 AM'),
+                  Text(
+                    '8:00 AM',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
-                  Text("|"),
+                  Text(
+                    "|",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   Spacewidgetwidth(space: 5),
                   Image(image: AssetImage(Appimage.chair)),
 
-                  Text(' 3 seat'),
+                  Text(
+                    ' 3 seat',
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               Row(
@@ -246,7 +313,8 @@ class Matchingtriplist extends StatelessWidget {
                       child: Text(
                         'Cheapest',
                         style: TextStyle(
-                          color: Color.fromRGBO(50, 129, 255, 1),
+                          fontSize: 13,
+                          color: AppColors.primaryBlue,
                         ),
                       ),
                     ),
@@ -255,21 +323,24 @@ class Matchingtriplist extends StatelessWidget {
                   Text(
                     '|',
                     style: TextStyle(
-                      fontSize: h * 0.028,
-                      color: Appcolor.grytextfield,
+                      fontSize: 13,
+                      color: AppColors.textSecondary,
                     ),
                   ),
                   Container(
                     height: h * 0.03,
                     width: w * 0.2,
                     decoration: BoxDecoration(
-                      color: Color.fromRGBO(247, 255, 250, 1),
+                      color: AppColors.fadegreen,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(
                       child: Text(
                         'Fastest',
-                        style: TextStyle(color: Color.fromRGBO(46, 177, 91, 1)),
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: AppColors.success,
+                        ),
                       ),
                     ),
                   ),
@@ -277,13 +348,13 @@ class Matchingtriplist extends StatelessWidget {
                   Text(
                     '|',
                     style: TextStyle(
-                      fontSize: h * 0.028,
-                      color: Appcolor.grytextfield,
+                      fontSize: 13,
+                      color: AppColors.textSecondary,
                     ),
                   ),
                   Container(
                     height: h * 0.03,
-                    width: w * 0.2,
+                    width: w * 0.23,
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(255, 247, 253, 1),
                       borderRadius: BorderRadius.circular(10),
@@ -292,6 +363,7 @@ class Matchingtriplist extends StatelessWidget {
                       child: Text(
                         'Recommended',
                         style: TextStyle(
+                          fontSize: 13,
                           color: Color.fromRGBO(243, 47, 202, 0.8),
                         ),
                       ),

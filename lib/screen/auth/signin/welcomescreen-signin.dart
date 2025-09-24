@@ -5,6 +5,7 @@ import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signin/signin.dart';
+import 'package:rideshareapp/screen/auth/signup/create-your-account.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -156,6 +157,7 @@ class Welcomescreensignin extends GetView<LoginController> {
                 ),
                 Spacewidgetheight(space: h * 0.07),
                 Custombuttomwithicon(
+                  height: 58,
                   tap: () {
                     Get.to(Signin());
                   },
@@ -174,11 +176,16 @@ class Welcomescreensignin extends GetView<LoginController> {
                       style: TextStyle(fontSize: 13.83),
                     ),
                     Spacewidgetwidth(space: 5),
-                    Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: AppColors.primaryBlue,
-                        fontSize: 13.83,
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(Createyouraccount());
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          color: AppColors.primaryBlue,
+                          fontSize: 13.83,
+                        ),
                       ),
                     ),
                   ],

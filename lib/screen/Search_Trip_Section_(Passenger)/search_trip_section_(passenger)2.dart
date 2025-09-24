@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -36,7 +37,7 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                         Get.back();
                       },
                       child: CircleAvatar(
-                        
+                        backgroundColor: AppColors.cardLight,
                         child: Icon(
                           Icons.arrow_back,
                           color: Appcolor.primarrylight,
@@ -83,9 +84,8 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                   children: [
                     Text(
                       'Where are you headed?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: h * 0.02,
+                      style: AppThemes.titleSmall.copyWith(
+                        color: AppColors.textPrimary,
                       ),
                     ),
                   ],
@@ -118,9 +118,9 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                           children: [
                             Text(
                               'Find a ride and carpool anywhere \nin Nigeria',
-                              style: TextStyle(
-                                fontSize: h * 0.025,
-                                fontWeight: FontWeight.w700,
+                              style: AppThemes.titleMedium.copyWith(
+                                color: AppColors.textPrimary,
+                                fontSize: 20,
                               ),
                             ),
                             Spacewidgetheight(space: h * 0.05),
@@ -137,13 +137,16 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                                   contentPadding: EdgeInsets.all(0),
                                   title: Text(
                                     'iMMEDIATE PICK-UP',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
+                                    style: AppThemes.titleSmall.copyWith(
+                                      color: AppColors.textPrimary,
                                     ),
                                   ),
                                   subtitle: Text(
                                     'GET A RIDE WITHIN FEW MINUTES',
-                                    style: TextStyle(fontSize: h * 0.015),
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: AppColors.textSecondary,
+                                    ),
                                   ),
                                   trailing: Checkbox(
                                     value: false,
@@ -166,13 +169,16 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                                   contentPadding: EdgeInsets.all(0),
                                   title: Text(
                                     'SCHEDULE RIDE',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
+                                    style: AppThemes.titleSmall.copyWith(
+                                      color: AppColors.textPrimary,
                                     ),
                                   ),
                                   subtitle: Text(
                                     'SCHEDULE YOUR RIDE FROM 60 MINUTES IN ADVANCE',
-                                    style: TextStyle(fontSize: h * 0.015),
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: AppColors.textSecondary,
+                                    ),
                                   ),
                                   trailing: Checkbox(
                                     value: false,
@@ -184,8 +190,12 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                             Spacewidgetheight(space: 20),
                             Text(
                               'Select Preference',
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                              style: AppThemes.titleSmall.copyWith(
+                                color: AppColors.textPrimary,
+                              ),
                             ),
+                            Spacewidgetheight(space: 10),
+
                             Row(
                               children: [
                                 Radio(
@@ -193,25 +203,50 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
                                   groupValue: 3,
                                   onChanged: (value) {},
                                 ),
-                                Text('Male'),
+                                Text(
+                                  'Male',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                                 Radio(
                                   value: true,
                                   groupValue: 3,
                                   onChanged: (value) {},
                                 ),
-                                Text('Female'),
+                                Text(
+                                  'Female',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                                 Radio(
                                   value: false,
                                   groupValue: 3,
                                   onChanged: (value) {},
                                 ),
-                                Text('Both'),
+                                Text(
+                                  'Both',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
                               ],
                             ),
+                            Spacewidgetheight(space: 10),
                             Row(
                               children: [
                                 Image(image: AssetImage(Appimage.person)),
-                                Text('Select Passengers'),
+                                Text(
+                                  'Select Passengers',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textPrimary,
+                                  ),
+                                ),
                                 Spacer(),
                                 Row(
                                   children: [
@@ -254,9 +289,12 @@ class SearchTripSectionpassenger2 extends StatelessWidget {
 
                             Spacewidgetheight(space: h * 0.05),
                             Custombuttomwithicon(
+                              height: 48,
                               tittle: 'Search a Trip',
-                              width: w * 0.35,
-                              icon: Icon(Icons.search),
+                              width: 167,
+                              icon: Image(
+                                image: AssetImage(Appimage.searchnormal),
+                              ),
                             ),
                           ],
                         ),

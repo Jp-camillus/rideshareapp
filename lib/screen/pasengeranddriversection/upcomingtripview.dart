@@ -4,11 +4,12 @@ import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
-class Upcomingtripoverview extends StatelessWidget {
-  const Upcomingtripoverview({super.key});
+class Upcomingtripview extends StatelessWidget {
+  const Upcomingtripview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -116,11 +117,14 @@ class Upcomingtripoverview extends StatelessWidget {
                             ),
                             Spacewidgetwidth(space: 5),
 
-                            Text(
-                              'Lekki Phase 1',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColors.textPrimary,
+                            Expanded(
+                              child: Text(
+                                'Lekki Phase 1',
+                                maxLines: 2,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.textPrimary,
+                                ),
                               ),
                             ),
                           ],
@@ -210,7 +214,7 @@ class Upcomingtripoverview extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              '--------------------------------------------------- ',
+                              '---------------------------------------- ',
                               style: TextStyle(color: Appcolor.grytextfield),
                             ),
                             Container(
@@ -346,9 +350,21 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.02),
                         Row(
                           children: [
-                            Text('Make & Model:'),
+                            Text(
+                              'Make & Model:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
                             Spacewidgetwidth(space: w * 0.05),
-                            Text('Toyota Corolla'),
+                            Text(
+                              'Toyota Corolla',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
                           ],
                         ),
                         Spacewidgetheight(space: h * 0.02),
@@ -394,7 +410,7 @@ class Upcomingtripoverview extends StatelessWidget {
                         Spacewidgetheight(space: h * 0.01),
                         Spacewidgetheight(space: h * 0.01),
                         Text(
-                          '---------------------------------------------------------------------- ',
+                          '----------------------------------------------------- ',
                           style: TextStyle(color: Appcolor.grytextfield),
                         ),
                         Spacewidgetheight(space: h * 0.03),
@@ -429,6 +445,7 @@ class Upcomingtripoverview extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }
