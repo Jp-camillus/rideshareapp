@@ -3,9 +3,11 @@ import 'package:get/route_manager.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signin/loginscreenpin.dart';
 import 'package:rideshareapp/screen/homescreen/homescreen.dart';
 import 'package:rideshareapp/screen/nav/bottom_nav.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -123,7 +125,7 @@ class _FingerprintState extends State<Fingerprint> {
 
             GestureDetector(
               onTap: () {
-                Get.to(Loginscreenpin(phoneNumber: '99999999999999'));
+                NavigationService().navigateTo(AppRoutes.loginscreen);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

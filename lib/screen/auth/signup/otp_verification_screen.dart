@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signup/phone_number_verification.dart';
 import 'package:rideshareapp/screen/auth/signup/phone_number_verifysucessful.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -327,8 +329,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                         children: [
                                           GestureDetector(
                                             onTap: () {
-                                              Get.to(
-                                                PhoneNumberVerifysucessful(),
+                                              NavigationService().navigateTo(
+                                                AppRoutes
+                                                    .phonenumberverificationsuccessfull,
                                               );
                                             },
                                             child: Container(
@@ -420,8 +423,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                           children: [
                                             GestureDetector(
                                               onTap: () {
-                                                Get.to(
-                                                  PhoneNumberVerifysucessful(),
+                                                NavigationService().navigateTo(
+                                                  AppRoutes
+                                                      .phonenumberverificationsuccessfull,
                                                 );
                                               },
                                               child: Container(

@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signup/signupsuccessfull.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/customtextfield.dart';
@@ -166,7 +168,7 @@ class _CreateyouraccountState extends State<Createyouraccount> {
               ),
               Custombuttom(
                 tap: () {
-                  Get.to(Signupsuccessfull());
+                  NavigationService().navigateTo(AppRoutes.signupsucessfull);
                 },
                 tittle: 'Sign Up',
                 width: w.toDouble(),

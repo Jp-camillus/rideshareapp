@@ -4,7 +4,9 @@ import 'package:get/utils.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signup/otp_verification_screen.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -143,8 +145,8 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
                       GestureDetector(
                         onTap: () {
                           if (activatebutton) {
-                            Get.to(
-                              OtpVerificationScreen(phoneNumber: '09199898999'),
+                            NavigationService().navigateTo(
+                              AppRoutes.otpverification,
                             );
                           }
                         },

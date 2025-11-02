@@ -120,7 +120,7 @@ class Welcomescreensignin extends GetView<LoginController> {
                       child: Text(
                         'Welcome',
                         style: AppThemes.titleLarge.copyWith(
-                          color: AppColors.primaryBlue,
+                          color: AppColors.colorBlue,
                           fontSize: 32,
                         ),
                       ),
@@ -159,7 +159,7 @@ class Welcomescreensignin extends GetView<LoginController> {
                 Custombuttomwithicon(
                   height: 58,
                   tap: () {
-                    Get.to(Signin());
+                    NavigationService().navigateTo(AppRoutes.signin);
                   },
                   tittle: 'Login your Account',
                   width: w.toDouble(),
@@ -178,7 +178,9 @@ class Welcomescreensignin extends GetView<LoginController> {
                     Spacewidgetwidth(space: 5),
                     GestureDetector(
                       onTap: () {
-                        Get.to(Createyouraccount());
+                        NavigationService().navigateTo(
+                          AppRoutes.createyouraccount,
+                        );
                       },
                       child: Text(
                         'Sign Up',

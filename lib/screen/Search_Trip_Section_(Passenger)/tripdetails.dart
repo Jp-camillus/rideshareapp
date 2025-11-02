@@ -618,6 +618,58 @@ class SearchTripdetails extends StatelessWidget {
     );
   }
 
+  void canceldialogue(BuildContext context) {
+    var h = MediaQuery.of(context).size.height.round();
+    var w = MediaQuery.of(context).size.width.round();
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          child: Container(
+            height: 266,
+            width: 298.55859375,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(18),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image(image: AssetImage(Appimage.bluemessage)),
+                  Text(
+                    'Are you sure you want to cancel this request?',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Custombuttom(
+                        tittle: 'Yes i am sure',
+                        width: 120,
+                        height: 35,
+                      ),
+                      Spacewidgetwidth(space: 10),
+                      Text(
+                        "No don't",
+                        style: TextStyle(color: AppColors.error),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   void cancelbuttondialogue(BuildContext context) {
     var h = MediaQuery.of(context).size.height.round();
     var w = MediaQuery.of(context).size.width.round();

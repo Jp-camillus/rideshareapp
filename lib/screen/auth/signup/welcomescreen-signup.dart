@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signup/create-your-account.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -111,7 +113,7 @@ class Welcomescreensignup extends StatelessWidget {
                     Text(
                       'Welcome',
                       style: AppThemes.titleLarge.copyWith(
-                        color: AppColors.primaryBlue,
+                        color: AppColors.colorBlue,
                         fontSize: 32,
                       ),
                     ),
@@ -153,7 +155,7 @@ class Welcomescreensignup extends StatelessWidget {
                 Custombuttomwithicon(
                   height: 58,
                   tap: () {
-                    Get.to(Createyouraccount());
+                    NavigationService().navigateTo(AppRoutes.createyouraccount);
                   },
                   tittle: 'Sign Up with Email Address',
                   width: w.toDouble(),
@@ -219,11 +221,16 @@ class Welcomescreensignup extends StatelessWidget {
                     ),
                     Spacewidgetwidth(space: 5),
 
-                    Text(
-                      'Sign In',
-                      style: TextStyle(
-                        color: AppColors.primaryBlue,
-                        fontSize: 13.83,
+                    GestureDetector(
+                      onTap: () {
+                        NavigationService().navigateTo(AppRoutes.fingerprint);
+                      },
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: AppColors.primaryBlue,
+                          fontSize: 13.83,
+                        ),
                       ),
                     ),
                   ],

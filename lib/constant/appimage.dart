@@ -1,8 +1,10 @@
 class Appimage {
   static const agwas = 'asset/images/agwas.jpg';
+  static const shareandearn = 'asset/images/sharanarn.png';
   static const delivery = 'asset/images/delivery.png';
   static const cameraborder = 'asset/images/cameraborder.png';
   static const carandmap = 'asset/images/carandmap.png';
+  static const swiftRides = 'asset/images/SwiftRides.png';
   static const customerman = 'asset/images/customerman.png';
   static const customerservice = 'asset/images/customerservice.png';
   static const customerservicemesage = 'asset/images/customerservicemesage.png';
@@ -21,6 +23,9 @@ class Appimage {
   static const backmap = 'asset/images/backmap.png';
   static const fadecar = 'asset/images/fadecar.png';
   static const maps = 'asset/images/Maps.png';
+  static const fingerprintt = 'asset/images/fingerprint.png';
+  static const fingerprintwithhand = 'asset/images/fingerprintwithhand.png';
+  static const lockandkey = 'asset/images/lockandkey.png';
   static const card = 'asset/images/card.png';
   static const s1 = 'asset/images/s1.png';
   static const s2 = 'asset/images/s2.png';
@@ -87,6 +92,8 @@ class Appimage {
   static const cameraadd = 'asset/svg/cameraadd.png';
   static const solarcameralinear = 'asset/svg/solar_camera-linear.png';
   static const clock = 'asset/svg/clock.png';
+  static const notificatcionmicrophone =
+      'asset/svg/notificatcionmicrophone.png';
   static const cameraplus = 'asset/svg/camera-plus.png';
   static const call = 'asset/svg/Call.png';
   static const notiff = 'asset/svg/notiff.png';
@@ -106,6 +113,7 @@ class Appimage {
   static const like = 'asset/svg/like.png';
   static const logout = 'asset/svg/logout.png';
   static const lock = 'asset/svg/lock.png';
+  static const lok = 'asset/svg/lok.png';
   static const setting = 'asset/svg/setting-5.png';
   static const arrow2 = 'asset/svg/arrow2.png';
   static const blue2arrow = 'asset/svg/blue2arrow.png';
@@ -129,6 +137,18 @@ class Appimage {
   static const carbonreview = 'asset/svg/carbon_review.png';
   // static const lok = 'asset/svg/lok.png';
   static const searchnormal = 'asset/svg/search-normal.png';
+  static const searchblack = 'asset/svg/searchblack.png';
+  static const pen = 'asset/svg/pen.png';
+  static const support = 'asset/svg/support.png';
+  static const file = 'asset/svg/file.png';
+  static const camera = 'asset/svg/camera.png';
+  static const recorderblack = 'asset/svg/recorderblack.png';
+  static const sendblue = 'asset/svg/sendblue.png';
+  static const notificationblue = 'asset/svg/notificationblue.png';
+  static const recorder = 'asset/svg/recorder.png';
+  static const dollar = 'asset/svg/dollar.png';
+  static const settinggreen = 'asset/svg/setting.png';
+  static const searchgrey = 'asset/svg/searchgrey.png';
   static const claritycarline = 'asset/svg/clarity_car-line.png';
   static const maskgroup = 'asset/images/Mask group.png';
   static const c = 'asset/images/c.png';

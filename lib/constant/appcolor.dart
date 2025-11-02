@@ -67,6 +67,6 @@ class AppColors {
     end: Alignment.bottomRight,
   );
   static const LinearGradient buttongradient = LinearGradient(
-    colors: [Appcolor.gradientblue, Appcolor.gradientorang],
+    colors: [AppColors.primaryBlue, Appcolor.gradientorang],
   );
 }

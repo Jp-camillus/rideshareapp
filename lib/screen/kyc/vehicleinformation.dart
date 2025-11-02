@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/widget/bottomnav.dart';
 import 'package:rideshareapp/widget/customtextfield.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
 
@@ -155,6 +156,7 @@ class Vehicleinformation extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavWidget(),
     );
   }
 }

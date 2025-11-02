@@ -172,8 +172,9 @@ class _CameraScreenState extends State<CameraScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                ReviewPictureScreen(imagePath: image.path),
+                            builder:
+                                (context) =>
+                                    ReviewPictureScreen(imagePath: image.path),
                           ),
                         );
                       } catch (e) {

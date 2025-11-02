@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rideshareapp/screen/applylogisticspartner/accountsetting.dart';
+import 'package:rideshareapp/screen/bookingrequest/bookingandrequest.dart';
 import 'package:rideshareapp/screen/logistics/homescreen.dart';
 import 'package:rideshareapp/screen/pasengeranddriversection/upcomingtrippassenger.dart';
 
@@ -29,7 +30,7 @@ class MainDashboard extends GetView<BottomNavController> {
           case 1:
             return const Upcomingtrippassenger();
           case 2:
-            return const ReceiptsScreen();
+            return const Bookingandrequest();
           case 3:
             return const AccountSettingsScreen();
           default:

@@ -3,7 +3,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
+import 'package:rideshareapp/screen/accountsettings/subscriptionplan.dart';
 import 'package:rideshareapp/screen/applylogisticspartner/applyasalogisticspartner.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -215,8 +218,17 @@ class AccountSettingsScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15),
                                     color: AppColors.fadeblue,
                                   ),
-                                  child: const Image(
-                                    image: AssetImage(Appimage.messageoutline),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      NavigationService().navigateTo(
+                                        AppRoutes.chatscreen,
+                                      );
+                                    },
+                                    child: const Image(
+                                      image: AssetImage(
+                                        Appimage.messageoutline,
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Positioned(
@@ -247,8 +259,15 @@ class AccountSettingsScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(15),
                                 color: AppColors.fadegreen,
                               ),
-                              child: const Image(
-                                image: AssetImage(Appimage.greenwallet),
+                              child: GestureDetector(
+                                onTap: () {
+                                  NavigationService().navigateTo(
+                                    AppRoutes.wallet,
+                                  );
+                                },
+                                child: const Image(
+                                  image: AssetImage(Appimage.greenwallet),
+                                ),
                               ),
                             ),
                           ),
@@ -271,93 +290,115 @@ class AccountSettingsScreen extends StatelessWidget {
                   const SizedBox(height: 18),
 
                   // PROMO CARD - Ready to Drive & Earn
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColors.fadecardgreen,
-                      borderRadius: BorderRadius.circular(_cardRadius),
-                    ),
-                    padding: const EdgeInsets.all(12),
-                    child: Row(
-                      children: [
-                        // promo image
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Container(
-                            color: Colors.white,
-                            width: 78,
-                            height: 78,
-                            child: Image.asset(
-                              Appimage.mrktar,
-                              fit: BoxFit.contain,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: AppColors.fadecardgreen,
+                        borderRadius: BorderRadius.circular(_cardRadius),
+                      ),
+                      padding: const EdgeInsets.all(12),
+                      child: Row(
+                        children: [
+                          // promo image
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Container(
+                              color: Colors.white,
+                              width: 78,
+                              height: 78,
+                              child: Image.asset(
+                                Appimage.mrktar,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
-                        ),
 
-                        const SizedBox(width: 12),
+                          const SizedBox(width: 12),
 
-                        // text + button
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Ready to Drive & Earn?',
-                                style: AppThemes.bodySmall.copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColors.colorBlue,
-                                ),
-                              ),
-                              const SizedBox(height: 6),
-                              const Text(
-                                'To start receiving passenger bookings freely with no charges, select a monthly driver plan.',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              // gradient pill button
-                              Container(
-                                decoration: BoxDecoration(
-                                  gradient: const LinearGradient(
-                                    colors: [
-                                      Color(0xFF6B5BFF),
-                                      Color(0xFFB86DFF),
-                                    ],
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.centerRight,
+                          // text + button
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Ready to Drive & Earn?',
+                                  style: AppThemes.bodySmall.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    color: AppColors.colorBlue,
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: const Color(
-                                        0xFF6B5BFF,
-                                      ).withOpacity(0.18),
-                                      blurRadius: 12,
-                                      offset: const Offset(0, 6),
+                                ),
+                                const SizedBox(height: 6),
+                                const Text(
+                                  'To start receiving passenger bookings freely with no charges, select a monthly driver plan.',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                // gradient pill button
+                                Container(
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFF6B5BFF),
+                                        Color(0xFFB86DFF),
+                                      ],
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
                                     ),
-                                  ],
+                                    borderRadius: BorderRadius.circular(30),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: const Color(
+                                          0xFF6B5BFF,
+                                        ).withOpacity(0.18),
+                                        blurRadius: 12,
+                                        offset: const Offset(0, 6),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Custombuttom(
+                                    tap: () {
+                                      NavigationService().navigateTo(
+                                        AppRoutes.subscription,
+                                      );
+                                    },
+                                    tittle: 'Start now',
+                                    width: 120,
+                                  ),
                                 ),
-                                child: Custombuttom(
-                                  tap: () {},
-                                  tittle: 'Start now',
-                                  width: 120,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
 
                   const SizedBox(height: 18),
 
                   // SETTINGS LIST
-                  _settingsTile(icon: Appimage.person, title: 'Personal Info'),
-                  _settingsTile(icon: Appimage.car, title: 'Vehicle Info'),
                   _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.profiles);
+                    },
+                    icon: Appimage.person,
+                    title: 'Personal Info',
+                  ),
+                  _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.vehicleinfo);
+                    },
+                    icon: Appimage.car,
+                    title: 'Vehicle Info',
+                  ),
+                  _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.subscription);
+                    },
                     icon: Appimage.setting,
                     title: 'Subscription Plan',
                   ),
@@ -371,26 +412,54 @@ class AccountSettingsScreen extends StatelessWidget {
                     isLinkTitle: true,
                   ),
                   _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.paymentmethod);
+                    },
                     icon: Appimage.wallet,
                     title: 'Payment Methods',
                   ),
                   _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(
+                        AppRoutes.accountandsecurity,
+                      );
+                    },
                     icon: Appimage.lock,
                     title: 'Account & Security',
                   ),
                   _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(
+                        AppRoutes.shareandearnscreen,
+                      );
+                    },
                     icon: Appimage.money,
                     title: 'Account & Security',
                     subtitle: 'Earn #500 for each friend you refer',
                   ),
-                  _settingsTile(icon: Appimage.notiff, title: 'Notifications'),
+                  _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.notifications);
+                    },
+                    icon: Appimage.notiff,
+                    title: 'Notifications',
+                  ),
                   _settingsTile(icon: Appimage.clock, title: 'Payment History'),
                   _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.kycverification);
+                    },
                     icon: Appimage.verify,
                     title: 'KYC Verification',
                   ),
                   _settingsTile(icon: Appimage.globe, title: 'Globe'),
-                  _settingsTile(icon: Appimage.like, title: 'Help & Support'),
+                  _settingsTile(
+                    ontap: () {
+                      NavigationService().navigateTo(AppRoutes.helps);
+                    },
+                    icon: Appimage.like,
+                    title: 'Help & Support',
+                  ),
                   Container(
                     margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(

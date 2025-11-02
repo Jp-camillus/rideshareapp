@@ -3,11 +3,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
 import 'package:rideshareapp/constant/appimage.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/homescreen/tripdetails.dart';
 import 'package:rideshareapp/screen/logistics/pickupanddropoffdetails.dart';
 import 'package:rideshareapp/screen/pasengeranddriversection/confirmrecruitingctrip.dart';
 import 'package:rideshareapp/screen/pasengeranddriversection/tripoverview.dart';
 import 'package:rideshareapp/screen/pasengeranddriversection/upcomingtripview.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -174,45 +176,52 @@ class _LogisticshomescreenState extends State<Logisticshomescreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: h * 0.17,
-                    width: w * 0.43,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Appcolor.primary,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image(image: AssetImage(Appimage.locationwhite)),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
-                                size: h * 0.02,
+                  GestureDetector(
+                    onTap: () {
+                      NavigationService().navigateTo(AppRoutes.postaridequest);
+                    },
+                    child: Container(
+                      height: h * 0.17,
+                      width: w * 0.43,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Appcolor.primary,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image(
+                                  image: AssetImage(Appimage.locationwhite),
+                                ),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: h * 0.02,
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Post a trip',
+                              style: AppThemes.titleLarge.copyWith(
+                                fontSize: 15,
+                                color: AppColors.textWhite,
                               ),
-                            ],
-                          ),
-                          Text(
-                            'Post a trip',
-                            style: AppThemes.titleLarge.copyWith(
-                              fontSize: 15,
-                              color: AppColors.textWhite,
                             ),
-                          ),
-                          Text(
-                            'Offer seat as a Driver',
-                            style: AppThemes.titleSmall.copyWith(
-                              fontSize: 10,
-                              color: AppColors.textWhite,
+                            Text(
+                              'Offer seat as a Driver',
+                              style: AppThemes.titleSmall.copyWith(
+                                fontSize: 10,
+                                color: AppColors.textWhite,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

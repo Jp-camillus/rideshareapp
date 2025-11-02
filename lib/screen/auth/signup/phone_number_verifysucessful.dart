@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:rideshareapp/constant/appcolor.dart';
+import 'package:rideshareapp/route/app_routes.dart';
 import 'package:rideshareapp/screen/auth/signup/uploadprofilepicture.dart';
+import 'package:rideshareapp/services/navigation_service.dart';
 import 'package:rideshareapp/theme/app_theme.dart';
 import 'package:rideshareapp/widget/custombuttom.dart';
 import 'package:rideshareapp/widget/spacewidget.dart';
@@ -76,7 +78,9 @@ class PhoneNumberVerifysucessful extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.to(Uploadprofilepicture());
+                          NavigationService().navigateTo(
+                            AppRoutes.uploadprofilepicture,
+                          );
                         },
                         child: Container(
                           decoration: BoxDecoration(

@@ -81,27 +81,29 @@ class _LoginscreenpinState extends State<Loginscreenpin> {
           color: filled ? Colors.black54 : const Color(0xFFE0E3E7),
           width: 1.2,
         ),
-        boxShadow: filled
-            ? [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.06),
-                  blurRadius: 6,
-                  offset: const Offset(0, 2),
-                ),
-              ]
-            : null,
+        boxShadow:
+            filled
+                ? [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.06),
+                    blurRadius: 6,
+                    offset: const Offset(0, 2),
+                  ),
+                ]
+                : null,
       ),
       alignment: Alignment.center,
-      child: filled
-          ? Text(
-              value ?? "",
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.black87,
-                fontWeight: FontWeight.w600,
-              ),
-            )
-          : null,
+      child:
+          filled
+              ? Text(
+                value ?? "",
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+              : null,
     );
   }
 
@@ -234,7 +236,6 @@ class _LoginscreenpinState extends State<Loginscreenpin> {
     final w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      
       body: SafeArea(
         child: Column(
           children: [
